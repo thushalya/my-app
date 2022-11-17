@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { createChart, CrosshairMode } from "lightweight-charts";
-import { removeDuplicates } from "../../utils/functions";
+import { removeDuplicates,resetExternalIndicatorData,resetInternalIndicators } from "../../utils/functions";
 import { compare } from "../../utils/functions";
 import { useLocation } from "react-router-dom";
 import Loader from "../../components/loader/Loader";
@@ -367,6 +367,17 @@ function CryptoChart({ market, interval, internalIndicators }) {
     return () => {
       chart.current.remove();
       eventSource.close();
+      resetExternalIndicatorData(dispatch)
+      resetInternalIndicators(dispatch)
+      dispatch(
+        updateCryptoChartData({
+          cryptoChartData: [],
+          cryptoVolumeData: [],
+        })
+      );
+      dispatch(updateCryptoDataLimit(280))
+      dispatch(updateCryptoTimeStamp(0))
+
     };
   }, [market, interval, internalIndicators,chartType]);
 
