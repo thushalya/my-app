@@ -811,6 +811,63 @@ font-size: 22px;
   .main-title {
     display: block !important;
   }
+}
+
+.prosidebar{
+  background-color: #24262D;
+  width: 30%;
+  color: white;
+}
+
+.watchlist-loader{
+  margin-top: 60px; 
+}
+
+.watchlist-header{
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+  letter-spacing: 1px;
+}
+
+.watchlist-datagrid{
+  height: 400px;
+  width: 100%;
+  margin-top:-50px;
+}
+
+@media screen and (max-width: 800px) {
+  .watchlist-loader{
+    margin-top: 100px; 
+    margin-left: -52px;
+  }
+
+  .no-item-loader{
+    margin-top: 100px; 
+    margin-left: -50px;
+  }
+
+  .watchlist-header{
+    margin-top: 50px;
+    font-size: 50px;
+  }
+}
+
+
+@media only screen and (max-width: 1003px) 
+{
+    .subOne-details .logo-name {
+        display: block !important;
+      }
+    
+      .main-title {
+        display: block !important;
+      }
+}
+@media only screen and (max-width: 800px) {
+
+  .CryptoHeader header {
+      font-size: 17px;
     .subOne-details header {
       font-size: 23px;
     }

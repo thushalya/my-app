@@ -54,16 +54,17 @@ const style = {
     paddingRight:0
     // bgcolor: 'background.paper',
   };
-const style_1 = {
-    position: 'relative',
-    top: '50%',
-    width: 800,
-    maxWidth: '100%',
-    transform: 'translate(0%, -5%)',
-    bgcolor: 'background.paper',
-    marginTop: -48,
-    height: '650px'
-};
+// const style_1 = {
+//     position: 'relative',
+//     top: '50%',
+//     width: 800,
+//     maxWidth: '100%',
+//     transform: 'translate(0%, -5%)',
+//     bgcolor: 'background.paper',
+//     marginTop: -48,
+//     height: '650px'
+// };
+
 const styles = theme => ({
     textField: {
         width: '90%',
@@ -268,7 +269,7 @@ if (loader) {
         {/* {console.log('image',state['ImagePath'])} */}
         <HeaderTwo  imagepath={state['ImagePath']}/>
         
-        <div className='form-container col-xl-5 mt-5 pt-5 mx-auto' style={ style_1}>
+        <div className='form-container col-xl-5 mt-5 pt-5 mx-auto profile-form display-flex flex-column'>
             
             <h1 className='fs-1 text-primary' style={{marginTop:'-40px'}}>Profile Details</h1>
 
@@ -276,7 +277,7 @@ if (loader) {
             <div onMouseEnter={()=>setIsShown(true)} onMouseLeave={()=>setIsShown(false)} className="profile-pic-div" style={{position: 'relative', left: '50%', marginTop:'-200px', maxWidth:'50%'}}>
                 <img  data-testid='profile-pic' src={state['ImagePath']} id="photo" className='photo'/>
                 <input onChange={handleChangePhoto} type="file" id="file" className='file'/>
-                {isShown &&(<label    htmlFor="file" id="uploadBtn" className='uploadBtn'>Choose Photo</label>)}
+            { show && <label    htmlFor="file" id="uploadBtn" className='uploadBtn'>Choose Photo</label>}
             </div>
             <Form className="form-group register-form container col-xl-10 d-flex flex-column " style={style}>
 

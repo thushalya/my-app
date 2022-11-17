@@ -1,10 +1,10 @@
 // loader 
 import React from 'react';
 import Lottie from 'react-lottie';
-import animationData from './watchlist_loader.json';
+import animationData from './no_items.json';
 
 
-const WatchlistLoader = () => {
+const NoItemsLoader = () => {
     const defaultOptions = {
         loop: true,
         autoplay: true,
@@ -15,11 +15,11 @@ const WatchlistLoader = () => {
     };
     
     return (
-        <div className="watchlist-loader">
+        <div className="no-item-loader">
         <Lottie options={defaultOptions} height={500} width={500}/>
         </div>
     );
 };
 
-export default WatchlistLoader;
+export default NoItemsLoader;
 

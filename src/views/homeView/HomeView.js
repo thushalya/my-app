@@ -79,9 +79,9 @@ function HomeView() {
               <p>Make your trading life simpler</p>
             </div>
           </div>
-          <Flip duration={3000}>
+          {/* <Flip duration={3000}>
             <PWA />
-          </Flip>
+          </Flip> */}
 
           <div className="market-cards">
             <Slide left duration={1500}>
