@@ -757,16 +757,9 @@ font-size: 22px;
 .pwa-button:hover {
   background-color: #01213c !important;
 }
-
-.chartTypes-select {
-  height: 27px;
-  color: white;
-  background-color: #2E3035;
-  font-size: 14px;
-  width: 56px;
-}
-
 .chartType-menu {
+  width: 100px;
+  height: 40px;
   font-size: 14px !important;
 }
 
@@ -777,6 +770,7 @@ font-size: 22px;
 
 .chart-type-img {
   margin-left: -6px;
+ margin-right: 10px;
 }
 
 
@@ -1218,12 +1212,6 @@ font-size: 22px;
     width: 12px;
   }
 
-  .chartType-menu {
-    font-size: 12px !important;
-    height: 20px !important;
-
-
-  }
 
   .chartType-menu:hover {
     background-color: #20232B !important;
