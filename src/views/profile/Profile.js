@@ -274,7 +274,7 @@ if (loader) {
 
 
             <div onMouseEnter={()=>setIsShown(true)} onMouseLeave={()=>setIsShown(false)} className="profile-pic-div" style={{position: 'relative', left: '50%', marginTop:'-200px', maxWidth:'50%'}}>
-                <img  data-testid='profile-pic' src={state['ImagePath']? state['ImagePath']:'src/assets/DefaultProfilePic/user.jpg'} id="photo" className='photo'/>
+                <img  data-testid='profile-pic' src={state['ImagePath']} id="photo" className='photo'/>
                 <input onChange={handleChangePhoto} type="file" id="file" className='file'/>
                 {isShown &&(<label    htmlFor="file" id="uploadBtn" className='uploadBtn'>Choose Photo</label>)}
             </div>

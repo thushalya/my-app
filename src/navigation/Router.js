@@ -19,8 +19,8 @@ import TokenRequest from './../views/notification/TokenRequest';
 function Router() {
 
   const ROLES = {
-    Admin: "1",
-    User: "2",
+    Admin: "2",
+    User: "1",
   };
   return (
     <BrowserRouter>
@@ -39,10 +39,10 @@ function Router() {
         <Route path="*" element={<NotFound />}></Route>
         <Route path="/unauthorized" element={<Unauthorized />} />
         <Route path="/users" element={<AllUsers/>}/>
-        <Route path="/profile" element={<RequireAuth allowedRoles={[ROLES.User]}><Profile /></RequireAuth>} />
+        <Route path="/profile" element={<RequireAuth allowedRoles={[ROLES.User, ROLES.Admin]}><Profile /></RequireAuth>} />
         {/* <Route path="/updateProfile" element={<RequireAuth allowedRoles={[ROLES.User]}><UpdateProfile /></RequireAuth>} /> */}
-        <Route path="/watchlist" element={<RequireAuth allowedRoles={[ROLES.User]}><Watchlist /></RequireAuth>} />
-        <Route path="/adminDashboard" element={<RequireAuth allowedRoles={[ROLES.User]}><AllUsers/></RequireAuth>} />
+        <Route path="/watchlist" element={<RequireAuth allowedRoles={[ROLES.User, ROLES.Admin]}><Watchlist /></RequireAuth>} />
+        <Route path="/admin" element={<RequireAuth allowedRoles={[ROLES.Admin]}><AllUsers/></RequireAuth>} />
         {/* <Route path="/notification" element={<TokenRequest/>}></Route> */}
       </Routes>
     </BrowserRouter>
