@@ -837,7 +837,7 @@ font-size: 22px;
       font-size: 15px;
     }
     .volume-value {
-      font-size: 9px;
+      font-size: 10px;
       color: #a0a1a4;
       margin-left: 11px;
     }
@@ -976,6 +976,9 @@ font-size: 22px;
   }
     .CryptoIntervals header {
       display: none;
+    }
+    .CryptoTypes{
+      margin-top: 135px;
     }
 }
 
@@ -1126,6 +1129,9 @@ font-size: 22px;
     object-fit: contain;
     width: 13px;
   }
+  .volume-value{
+    margin-top: 2px;
+  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -1211,7 +1217,9 @@ font-size: 22px;
     object-fit: contain;
     width: 12px;
   }
-
+  .CryptoTypes{
+    height: 250px;
+  }
 
   .chartType-menu:hover {
     background-color: #20232B !important;
@@ -1223,16 +1231,16 @@ font-size: 22px;
     object-fit: contain;
     width: 12px;
   }
+  .volume-value {
+    font-size: 9px;
+    margin-left: 11px;
+    
+  }
 }
 
 @media only screen and (max-width: 420px) {
 
 
-  .CryptoTypes td {
-    margin-left: -5px;
-    margin-right: -5px;
-
-  }
 
   .CryptoHeader header {
     font-size: 10px;
@@ -1291,6 +1299,8 @@ font-size: 22px;
   .crypto-top {
     height: 70px;
   }
-
+.CryptoTypes {
+  margin-top: 125px;
+}
 
 }
