@@ -1,0 +1,11 @@
+.pagination {
+    background: none;
+}
+
+.Pagination.first, Pagination.last, Pagination.previous, Pagination.next, Pagination.item {
+    margin: 10px;
+}
+
+a {
+    color: black;
+}

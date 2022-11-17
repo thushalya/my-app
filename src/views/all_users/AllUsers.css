@@ -1,0 +1,36 @@
+.alluser_header {
+    color: #1376BD;
+    text-align: center;
+}
+
+.form {
+    justify-content: right;
+    display:flex;
+}
+
+.category {
+    padding: 5px;
+    width: fit-content;
+    color: white;
+    background: #1376BD;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* display: inline-block; */
+}
+
+.card_title {
+    text-align: right;
+    border-bottom: 1px solid #1376BD;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.paginate_div {
+    justify-content: center;
+    display: flex;
+}

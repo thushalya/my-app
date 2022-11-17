@@ -1,0 +1,29 @@
+.form-container {
+    text-align: center;
+    border: 1px solid #1376BD;
+
+}
+/* .button{
+  border-radius: 30px;
+  border: none;
+  color: #bc4848;
+  padding: 5px 15px 5px 15px; 
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  margin: 20px 0px 60px ;
+} */
+
+.error {
+  color: crimson;
+  width: fit-content;
+  padding: 5px;
+  margin: 2px;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+  
