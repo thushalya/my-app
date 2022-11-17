@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { createChart, CrosshairMode } from "lightweight-charts";
-import Loader from "../../components/loader/Loader";
+import Loader from "../../components/loaders/chartLoader/Loader";
 import { useLocation } from "react-router";
 import { compare } from "../../utils/functions";
 import { removeDuplicates ,resetExternalIndicatorData,resetInternalIndicators} from "../../utils/functions";
@@ -59,6 +59,7 @@ function StockChart({ market, interval, internalIndicators }) {
 
   useEffect(() => {
     console.log("Chart data1", stockChartData);
+    setLoading(true)
     chart.current = createChart(ref.current, {
       width: 0,
       height: 0,
@@ -191,7 +192,10 @@ function StockChart({ market, interval, internalIndicators }) {
 
         volumeSeries.current.setData(tempVolumeData);
 
-        setLoading(false);
+        setTimeout(()=>{
+          setLoading(false);
+        },1500)
+
         dispatch(
           updateStockChartData({
             stockChartData: tempChartData,
@@ -520,10 +524,10 @@ function StockChart({ market, interval, internalIndicators }) {
 
   return (
     <>
-      {loading ? <Loader position="relative" left="46.5%" top="9%" /> : null}
+      {loading ? <Loader margin={150} /> : null}
       <div
         className="StockChart"
-        style={{ display: loading ? "none" : "block" }}
+        style={{ display: loading ? "none" : "block", marginBottom: "15px" }}
         ref={ref}
         onMouseUpCapture={loadPrevious}
         onTouchEnd={loadPrevious}

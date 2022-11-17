@@ -4,7 +4,7 @@ import { removeDuplicates ,compare} from "../../utils/functions";
 import { useLocation } from "react-router-dom";
 import { Typography } from "@mui/material";
 import config from "../../config.json";
-import Loader from "../loader/Loader";
+import Loader from "../../components/loaders/chartLoader/Loader";
 import { useDispatch, useSelector } from "react-redux";
 import {
   updateCryptoDataLimit,
@@ -128,7 +128,9 @@ function LineChart({
         console.log("external indicator data",externalIndicatorData[type])
         lineSeries.current.setData(tempLineData);
 
-        setLoading(false);
+        setTimeout(()=>{
+          setLoading(false)
+        },2500)
       })
       .catch();
 
@@ -235,32 +237,34 @@ function LineChart({
 
   return (
     <>
-      {/* {loading ? <Loader position="relative" left="46.5%" top="9%" /> : null} */}
-      <div className="d-flex flex-row">
-        <div
-          className="CryptoChart"
-          ref={ref}
-          onMouseUpCapture={loadPrevious}
-          onTouchEnd={loadPrevious}
-          style={{
-            marginBottom: "-10px",
-            marginLeft: "15px",
-            marginRight: "20px",
-          }}
-        />
-        <div>
-          <Typography
+      {loading ? <Loader margin={65} /> : null}
+      <div style={{display: loading ? "none" : "block"}}>
+        <div className="d-flex flex-row">
+          <div
+            className="CryptoChart"
+            ref={ref}
+            onMouseUpCapture={loadPrevious}
+            onTouchEnd={loadPrevious}
             style={{
-              margin: "0 auto",
-              marginTop: "1rem",
               marginBottom: "-10px",
-              color: "white",
-              width: "fit-content",
+              marginLeft: "15px",
+              marginRight: "20px",
             }}
-            variant="h6"
-          >
-            {type.toUpperCase()}
-          </Typography>
+          />
+          <div>
+            <Typography
+              style={{
+                margin: "0 auto",
+                marginTop: "5rem",
+                marginBottom: "-10px",
+                color: "white",
+                width: "fit-content",
+              }}
+              variant="h6"
+            >
+              {type.toUpperCase()}
+            </Typography>
+          </div>
         </div>
       </div>
       ;
