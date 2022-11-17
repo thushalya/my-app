@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import RequireAuth from "../utils/requireAuth";
+import RequireAuth from "../utils/RequireAuth";
 import Candle from "../views/candle/Candle";
-import HomeView from "../views/homeView/homeView";
+import HomeView from "../views/homeView/HomeView";
 import Login from "../views/login/Login";
 import Register from "../views/register/Register";
 import NotFound from "../views/invalid_prohibited/NotFound";
