@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import HeaderOne from "../../components/headers/HeaderOne";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { Form } from "react-bootstrap";
+import { Form, Toast } from "react-bootstrap";
 import Validation from "../../Validations";
 import AuthServices from "../../services/AuthServices";
 import IconButton from "@mui/material/IconButton";
@@ -97,6 +97,7 @@ function Login() {
       if (errors.Password) setPasswordError("Invalid password");
     } else {
       try {
+        console.log("trying...")
         const response = await AuthServices.login(state);
         console.log(" response is", response);
         // check for 200
@@ -168,12 +169,21 @@ function Login() {
           })
 
         }
-        
+        // console.log("response is for login", response);
 
         navigate(from, { replace: true });
 
       }
       catch (error) {
+        Swal.fire({
+          title:'Login Failed',
+          text:'Please check your credentials',
+          icon:'error',
+          confirmButtonText:'OK',
+          background:'#111726',
+          color:'white',
+          timer: 3000,
+        })
         console.log(error)
         console.log("error",error?.response?.data?.message);
         console.log("Login failed");
