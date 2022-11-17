@@ -22,6 +22,7 @@ function StockIntervals({ changeInterval, addInternalIndicators, addExternalIndi
     <div className="CryptoIntervals crypto-bar">
       <ChartTypes />
       <div className="d-flex flex-row justify-content-evenly">
+        <header className="indicator-title">Indicators</header>
         <IndicatorMenuOne
           displayInternalIndicators={displayInternalIndicators}
         />

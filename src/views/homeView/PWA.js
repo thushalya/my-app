@@ -4,8 +4,17 @@ import GetAppIcon from "@mui/icons-material/GetApp";
 import Typography from "@mui/material/Button";
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 import Jump from "react-reveal/Jump";
+import { makeStyles } from "@mui/styles";
 
+ const useStyles = makeStyles((theme) => ({
+   font: {
+     "&.MuiTypography":{
+      fontSize:"1rem",
+     }
+   },
+ }));
 function PWA() {
+  const classes = useStyles();
   window.onload = function () {
     let deferredPrompt;
     const div = document.getElementById("add-to");
@@ -51,8 +60,8 @@ function PWA() {
         </header>
         <div id="add-to">
           <Button className="pwa-button" id="add-to-btn">
-            <PhoneIphoneIcon />
-            <Typography style={{ color: "#053ffbfc" }}>Install</Typography>
+            <PhoneIphoneIcon fontSize="large"/>
+            <Typography className={classes.font} style={{ color: "#053ffbfc" }}>Install</Typography>
           </Button>
         </div>
       </div>

@@ -5,9 +5,9 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import { useDispatch, useSelector } from "react-redux";
-import { LINE, CANDLESTICK ,BAR } from "../../utils/Constants";
+import { LINE, CANDLESTICK, BAR } from "../../utils/Constants";
 import { updateChartType } from "../../redux/chart";
-import Lines from "../../assets/line.svg"
+import Lines from "../../assets/line.svg";
 import Candles from "../../assets/candles.svg";
 import Bars from "../../assets/bar.svg";
 
@@ -20,7 +20,7 @@ const ChartTypes = () => {
 
   const handleChange = (e) => {
     setType(e.target.value);
-    console.log("type is",e.target.value )
+    console.log("type is", e.target.value);
   };
 
   useEffect(() => {
@@ -35,8 +35,7 @@ const ChartTypes = () => {
             height: "27px",
             color: "white",
             backgroundColor: "#2E3035",
-            fontSize: "14px",
-            width:"56px",
+            width: "66px",
           }}
           autoWidth
           value={type}
@@ -47,7 +46,7 @@ const ChartTypes = () => {
           <MenuItem
             style={{
               backgroundColor: "#292C31",
-              //   marginBottom: "1px",
+              marginBottom: "1px",
               marginTop: "-8px",
             }}
             className="chartType-menu"
@@ -58,12 +57,12 @@ const ChartTypes = () => {
               <img className="chart-type-img" src={Candles} />
             ) : (
               <span>
-                <img className="chart-type-img" src={Candles} /> {CANDLESTICK}
+                <img className="chart-type-img" src={Candles} /> Candles
               </span>
             )}
           </MenuItem>
           <MenuItem
-            style={{ backgroundColor: "#292C31" }}
+            style={{ backgroundColor: "#292C31", marginBottom: "1px" }}
             className="chartType-menu"
             key={1}
             value={LINE}
@@ -72,7 +71,7 @@ const ChartTypes = () => {
               <img className="chart-type-img" src={Lines} />
             ) : (
               <span>
-                <img className="chart-type-img" src={Lines} /> {LINE}
+                <img className="chart-type-img" src={Lines} /> Lines
               </span>
             )}
           </MenuItem>
@@ -86,7 +85,7 @@ const ChartTypes = () => {
               <img className="chart-type-img" src={Bars} />
             ) : (
               <span>
-                <img className="chart-type-img" src={Bars} /> {BAR}
+                <img className="chart-type-img" src={Bars} /> Bars
               </span>
             )}
           </MenuItem>

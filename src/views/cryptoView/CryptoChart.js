@@ -524,9 +524,11 @@ function CryptoChart({ market, interval, internalIndicators }) {
       window.removeEventListener("resize", handleResize);
       // chart.current.resize(windowDimensions["width"] * 0.85, 380);
       const width = windowDimensions["width"];
-      if (width >= 1220) {
-        chart.current.resize(1067, 395);
-      }
+      if(width >=1460)chart.current.resize(1330,455)
+      if(width>=1400 && width < 1460)chart.current.resize(1245,455)
+      if(width >=1350 && width <1400)chart.current.resize(1180,455)
+      if(width>=1285 && width<1350)chart.current.resize(1130,455)
+      if (width >= 1220 && width < 1285) chart.current.resize(1067, 455);
       if (width >= 1070 && width < 1220) {
         chart.current.resize(930, 370);
       }
@@ -541,9 +543,11 @@ function CryptoChart({ market, interval, internalIndicators }) {
       }
       if (width >= 550 && width < 650) chart.current.resize(430, 340);
       if (width >= 478 && width < 550) {
-        chart.current.resize(380, 320);
+        chart.current.resize(380, 300);
       }
-      if (width > 350 && width < 478) chart.current.resize(300, 280);
+      if (width >= 440 && width < 478) chart.current.resize(365, 240);
+      if(width>=400 && width <440)chart.current.resize(325,240)
+      if(width <400)chart.current.resize(280,240)
     };
   });
 
