@@ -94,7 +94,7 @@ function CryptoHeader({ market, interval }) {
   }, [market]);
 
   return (
-    <div className="CryptoHeader crypto-bar stock-header">
+    <div className="CryptoHeader crypto-bar stock-header crypto-top">
       {user && (
         <div className="d-flex">
           <p className="alerts-name" style={{ marginRight: "20px" }}>

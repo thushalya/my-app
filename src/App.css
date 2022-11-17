@@ -967,7 +967,7 @@ font-size: 22px;
     width: 280px;
   }
 
-  .CryptoHeader{
+  .crypto-top{
     height: 80px;
   }
   .volumes{
@@ -980,6 +980,9 @@ font-size: 22px;
     font-size: 10px;
 
   }
+    .CryptoIntervals header {
+      display: none;
+    }
 }
 
 @media only screen and (max-width: 705px) {
@@ -1033,11 +1036,6 @@ font-size: 22px;
     font-size: 10px !important;
     height: 28px;
   }
-
-  .CryptoIntervals header {
-    display: none;
-  }
-
   .interval-btns button {
     margin-left: 7px;
     width: 30px;
@@ -1302,7 +1300,7 @@ font-size: 22px;
     width: 10px;
     margin-bottom: 3px;
   }
-  .CryptoHeader {
+  .crypto-top {
     height: 70px;
   }
 
