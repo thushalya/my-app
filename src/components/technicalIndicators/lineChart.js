@@ -21,6 +21,8 @@ function LineChart({
   type
 }) {
 
+  const location = useLocation()
+
    const marketState = marketType=="crypto"? "BTC": "TSLA";
 
   var intervalState =

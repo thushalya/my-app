@@ -13,7 +13,7 @@ import { Fragment } from "react";
 import Token from "../../services/Token";
 import { useDispatch, useSelector } from "react-redux";
 import { decrement, setCount } from "../../redux/notification";
-import SimpleLoader from "../../components/loaders/lottieLoader/simpleLoader";
+import SimpleLoader from "../../components/loaders/lottieLoader/SimpleLoader"
 
 // TODO: 
 // 1. css fix

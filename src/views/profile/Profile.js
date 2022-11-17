@@ -39,7 +39,7 @@ import jwtDecode from "jwt-decode";
 import { ClassNames } from '@emotion/react';
 import { useDispatch, useSelector } from 'react-redux';
 import { saveImage } from '../../redux/profile';
-import SimpleLoader from '../../components/loaders/lottieLoader/simpleLoader';
+import SimpleLoader from '../../components/loaders/lottieLoader/SimpleLoader';
 import PageLoader from '../../components/pageLoader/PageLoader';
 import Swal from 'sweetalert2';
 

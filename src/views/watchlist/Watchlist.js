@@ -15,7 +15,7 @@ import PageLoader from '../../components/pageLoader/PageLoader';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeMarketList, saveWatchlist } from '../../redux/watchlist';
 import { WindowSharp } from '@mui/icons-material';
-import SimpleLoader from '../../components/loaders/lottieLoader/simpleLoader';
+import SimpleLoader from '../../components/loaders/lottieLoader/SimpleLoader';
 import WatchlistLoader from '../../components/loaders/watchlistLoader/WatchlistLoader';
 
 export default function Watchlist() {

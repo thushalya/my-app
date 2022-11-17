@@ -1,12 +1,12 @@
 import "./AllUsers.css";
 // import HeaderTwo from "../../components/headers/HeaderTwo";
-import Searchbar from "../../components/Searchbar/Searchbar";
+import Searchbar from "../../components/Searchbar/Searchbar.tsx";
 import { Card, Form, Button, Table, FormControl, InputGroup, DropdownButton, Dropdown, Pagination, } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import AdminServices from "../../services/API/AdminServices";
 import UserServices from "../../services/API/UserServices";
-import Paginate from "../../components/pagination/paginate";
+import Paginate from "../../components/pagination/paginate.tsx";
 // import { toast } from 'react-toastify';
 // import Loader from "../../components/loader/Loader";
 // import Messages from "../../helpers/Messages";
@@ -86,10 +86,10 @@ const AllUsers = () => {
       //   return ;
       // }
 
-      Messages.ErrorMessage({
-        error:error,
-        custom_message:'Activation change failed'
-      });
+      // Messages.ErrorMessage({
+      //   error:error,
+      //   custom_message:'Activation change failed'
+      // });
   }
     
     setTimeout(() => {
@@ -103,7 +103,7 @@ const AllUsers = () => {
   const searchUser = () => {
     // console.log("filter search", filter);
     // console.log("search by", search);
-    filterBy===""?setFilterBy("firstName"):null
+    filterBy === "" ? setFilterBy("firstName") : setFilterBy(null);
     getUsers(0, -1, search, filterBy);
   }
 
