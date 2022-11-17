@@ -3,7 +3,7 @@ import { createChart, CrosshairMode } from "lightweight-charts";
 import Loader from "../../components/loader/Loader";
 import { useLocation } from "react-router";
 import { compare } from "../../utils/functions";
-import { removeDuplicates } from "../../utils/functions";
+import { removeDuplicates ,resetExternalIndicatorData,resetInternalIndicators} from "../../utils/functions";
 import { getLineChart } from "../../components/technicalIndicators/lineSeries";
 import { getBbandsChart } from "../../components/technicalIndicators/bbandsIndicator";
 import config from "../../config.json";
@@ -317,9 +317,19 @@ function StockChart({ market, interval, internalIndicators }) {
       .timeScale()
       .subscribeVisibleLogicalRangeChange(onVisibleLogicalRangeChanged);
 
-    chart.current.timeScale().scrollToPosition(stockChartDataLength);
+    // chart.current.timeScale().scrollToPosition(stockChartDataLength);
     return () => {
       chart.current.remove();
+       resetExternalIndicatorData(dispatch);
+       resetInternalIndicators(dispatch);
+       dispatch(
+         updateStockChartData({
+           stockChartData: [],
+           stockVolumeData: [],
+         })
+       );
+       dispatch(updateStockDataLimit(280));
+       dispatch(updateStockTimeStamp(0));
     };
   }, [market, interval, internalIndicators, chartType]);
 

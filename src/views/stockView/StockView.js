@@ -15,6 +15,10 @@ import {
   updateIndicatorData,
 } from "../../redux/chart";
 import PageLoader from "../../components/pageLoader/PageLoader";
+import {
+  resetInternalIndicators,
+  resetExternalIndicatorData,
+} from "../../utils/functions";
 
 function StockView() {
 
@@ -47,16 +51,8 @@ function StockView() {
     );
     dispatch(updateStockDataLimit(280));
     dispatch(updateStockTimeStamp(0));
-    dispatch(updateIndicatorData({ indicatorType: "ma", data: [] }));
-    dispatch(updateIndicatorData({ indicatorType: "sma", data: [] }));
-    dispatch(updateIndicatorData({ indicatorType: "wma", data: [] }));
-    dispatch(updateIndicatorData({ indicatorType: "ema", data: [] }));
-    dispatch(
-      updateIndicatorData({
-        indicatorType: "bbands",
-        data: { upper: [], middle: [], lower: [] },
-      })
-    );
+    resetExternalIndicatorData(dispatch);
+    resetInternalIndicators(dispatch);
   };
   const changeInterval = (interval) => {
     setInterval(interval);
@@ -68,16 +64,8 @@ function StockView() {
     );
     dispatch(updateStockDataLimit(280));
     dispatch(updateStockTimeStamp(0));
-    dispatch(updateIndicatorData({ indicatorType: "ma", data: [] }));
-    dispatch(updateIndicatorData({ indicatorType: "sma", data: [] }));
-    dispatch(updateIndicatorData({ indicatorType: "wma", data: [] }));
-    dispatch(updateIndicatorData({ indicatorType: "ema", data: [] }));
-    dispatch(
-      updateIndicatorData({
-        indicatorType: "bbands",
-        data: { upper: [], middle: [], lower: [] },
-      })
-    );
+    resetExternalIndicatorData(dispatch);
+    resetInternalIndicators(dispatch);
   };
   const addInternalIndicators = (indicators) => {
     setInternalIndicators(indicators);
