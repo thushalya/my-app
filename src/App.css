@@ -677,7 +677,7 @@ body {
   background-color: #393C45;
   box-shadow: 5px 4px 5px 1px rgba(0, 0, 0, 0.8);
   margin-top: 120px;
-  height: 275px;
+  height: 340px;
   overflow-y: scroll;
 }
 
@@ -980,7 +980,7 @@ font-size: 22px;
       display: none;
     }
     .CryptoTypes{
-      margin-top: 135px;
+      margin-top: 144px;
     }
 }
 
@@ -1113,6 +1113,9 @@ font-size: 22px;
   
     .footer-details p {
       font-size: 10px;
+    }
+    .CryptoTypes{
+      height: 270px;
     }
 }
 
@@ -1302,7 +1305,7 @@ font-size: 22px;
     height: 70px;
   }
 .CryptoTypes {
-  margin-top: 125px;
+  margin-top: 135px;
 }
 
 }

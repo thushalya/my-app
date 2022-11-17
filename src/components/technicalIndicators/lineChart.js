@@ -200,26 +200,20 @@ function LineChart({
       window.removeEventListener("resize", handleResize);
       // chart.current.resize(windowDimensions["width"] * 0.85, 380);
       const width = windowDimensions["width"];
-      if (width >= 1220) {
-        chart.current.resize(1067, 200);
-      }
-      if (width >= 1070 && width < 1220) {
-        chart.current.resize(930, 200);
-      }
-      if (width >= 900 && width < 1070) {
-        chart.current.resize(800, 382000);
-      }
-      if (width >= 800 && width < 900) {
-        chart.current.resize(670, 200);
-      }
-      if (width >= 650 && width < 800) {
-        chart.current.resize(540, 200);
-      }
-      if (width >= 550 && width < 650) chart.current.resize(430, 200);
-      if (width >= 478 && width < 550) {
-        chart.current.resize(380, 150);
-      }
-      if (width > 350 && width < 478) chart.current.resize(320, 150);
+       if (width >= 1460) chart.current.resize(1330, 200);
+       if (width >= 1400 && width < 1460) chart.current.resize(1245, 200);
+       if (width >= 1350 && width < 1400) chart.current.resize(1180, 200);
+       if (width >= 1285 && width < 1350) chart.current.resize(1130, 200);
+       if (width >= 1220 && width < 1285) chart.current.resize(1067, 200);
+       if (width >= 1070 && width < 1220) chart.current.resize(930, 200);
+       if (width >= 900 && width < 1070) chart.current.resize(800, 200);
+       if (width >= 800 && width < 900) chart.current.resize(670, 200);
+       if (width >= 650 && width < 800) chart.current.resize(540, 200);
+       if (width >= 550 && width < 650) chart.current.resize(430, 200);
+       if (width >= 478 && width < 550) chart.current.resize(380, 200);
+       if (width >= 440 && width < 478) chart.current.resize(365, 200);
+       if (width >= 400 && width < 440) chart.current.resize(325, 200);
+       if (width < 400) chart.current.resize(280, 200);
     };
   });
 
