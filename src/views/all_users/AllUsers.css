@@ -1,5 +1,5 @@
 .alluser_header {
-    color: #1376BD;
+    color: #ffffff;
     text-align: center;
 }
 
@@ -33,4 +33,31 @@
 .paginate_div {
     justify-content: center;
     display: flex;
+}
+
+.user_display {
+    overflow-x: scroll;
+}
+
+.search-bar {
+    border-radius: 20px;
+    border: 2px solid 1376D;
+    height: 40px;
+    float: right;
+}
+    
+.flex-parent{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+@media screen and (max-width: 800px) {
+    .search-bar{
+        width: 200px;
+    }
+    .flex-parent{
+        justify-content: end;
+    }
+    
 }

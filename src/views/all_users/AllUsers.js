@@ -126,13 +126,13 @@ const AllUsers = () => {  // For the admin to view all users
         <WatchlistLoader />
         :
         <div className="all_users_container">
-        <h1 className="alluser_header" style={{marginTop:"50px", paddingBottom:'10px'}}>All Users</h1>
+        <h1 className="alluser_header" style={{marginTop:"50px", paddingBottom:'40px'}}>All Users</h1>
 
         <div className="container users">
 
 
          
-          <div className="d-flex justify-content-end">
+          <div className="flex-parent">
           <div data-testid='filter-btn' className="filter display-flex">
             <DropdownButton id="dropdown-basic-button" title="Filter By">
                 <Dropdown.Item onClick={()=>filterFunc('firstName')}>First Name</Dropdown.Item>
@@ -147,16 +147,11 @@ const AllUsers = () => {  // For the admin to view all users
             <input
               type="search"
               placeholder={"   Search " }
-              className="me-2"
+              className="me-2 search-bar"
               aria-label="Search"
               onChange={(event) => setSearch(event.target.value)}
               value={search}
-              style={{
-                borderRadius: "20px",
-                border: "2px solid #1376BD",
-                height: "40px",
-                float: "right",
-              }}
+              
             />
           </div>
           </div>
