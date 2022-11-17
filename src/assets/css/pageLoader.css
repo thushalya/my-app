@@ -71,3 +71,12 @@ span.loading{
     
 }
 
+@media screen and (max-width: 600px) {
+    .ring {
+        width: 250px;
+        height: 250px;
+    }
+    span.loading{
+        font-size: 20px;
+    }
+}
