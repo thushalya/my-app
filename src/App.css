@@ -500,6 +500,7 @@ body {
   margin-top: 10px;
   justify-content: space-between;
   align-items: center !important;
+  margin-bottom: 5px;
 
 }
 
@@ -573,10 +574,11 @@ body {
 }
 
 .CryptoIntervals {
-  height: 30px;
+  height: 35px;
   border-radius: 5px;
   margin-top: 5px;
   justify-content: space-around;
+  margin-bottom: 5px;
 }
 
 .CryptoIntervals header {

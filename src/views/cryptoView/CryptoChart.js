@@ -528,9 +528,7 @@ function CryptoChart({ market, interval, internalIndicators }) {
       if(width>=1400 && width < 1460)chart.current.resize(1245,455)
       if(width >=1350 && width <1400)chart.current.resize(1180,455)
       if(width>=1285 && width<1350)chart.current.resize(1130,455)
-      if (width >= 1220 && width < 1285) {
-        chart.current.resize(1067, 455);
-      }
+      if (width >= 1220 && width < 1285) chart.current.resize(1067, 455);
       if (width >= 1070 && width < 1220) {
         chart.current.resize(930, 370);
       }
