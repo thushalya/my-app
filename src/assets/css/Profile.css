@@ -86,6 +86,7 @@
 @media screen and (max-width: 800px) {
     .profile-form{
         transform: translate(0%, 15%);
+        width: 400px;
     }
     #uploadBtn{
         height: 40px;
