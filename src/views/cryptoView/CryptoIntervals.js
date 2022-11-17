@@ -23,6 +23,7 @@ function CryptoIntervals({ changeInterval, addInternalIndicators,addExternalIndi
     <div className="CryptoIntervals crypto-bar">
       <ChartTypes />
       <div className="d-flex flex-row justify-content-evenly align-items-center">
+        <header className="indicator-title">Indicators</header>
         <IndicatorMenuOne
           displayInternalIndicators={displayInternalIndicators}
         />
