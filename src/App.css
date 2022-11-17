@@ -1,24 +1,28 @@
-*{
+* {
   margin: 0px;
   padding: 0px;
   font-family: "Inter";
   font-style: normal;
 }
 
-body{
- background-color: rgba(10, 14, 23, 0.91) !important;
+body {
+  background-color: rgba(10, 14, 23, 0.91) !important;
 
 }
 
 .headerOne {
-  height: 70px;
+  height: 80px;
   border-bottom: 1px solid white;
   align-items: center !important;
 }
-.headerOne img{
+
+.headerOne img {
   object-fit: contain;
-  width:250px;
+  width: 330px;
   margin-left: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+
   cursor: pointer;
 }
 
@@ -27,54 +31,57 @@ body{
   font-size: 1.5rem;
 }
 
-.Register header{
+.Register header {
   color: white;
-    font-size: 1.8rem;
-    align-self: center;
-    margin-top: 3%;
-    margin-bottom: 5%;
+  font-size: 1.8rem;
+  align-self: center;
+  margin-top: 3%;
+  margin-bottom: 5%;
 }
 
-.inputLabel{
+.inputLabel {
   color: rgb(194, 193, 193) !important;
 }
 
-.register-form-label{
+.register-form-label {
   width: 130px;
   font-weight: 200;
   size: 10px !important;
-  
-}
- :root .inputLabel{
-  margin-bottom: 10px!important;
-}
-.register-container{
-  margin-top: 10px !important;
-  filter: drop-shadow(0px 4px 4px #000000) !important; 
+
 }
 
-.register-form-control{
+:root .inputLabel {
+  margin-bottom: 10px !important;
+}
+
+.register-container {
+  margin-top: 10px !important;
+  filter: drop-shadow(0px 4px 4px #000000) !important;
+}
+
+.register-form-control {
   border-radius: 5px !important;
   background-color: #30353F !important;
   border: none !important;
-  color: rgb(194, 193, 193)!important;
+  color: rgb(194, 193, 193) !important;
   height: 37px;
   margin-bottom: 12px !important;
-  
+
 }
 
-.outLineInput{
+.outLineInput {
   height: 37px;
-  
+
 }
 
-.google-btn{
+.google-btn {
   width: 100% !important;
   height: 46px !important;
   border-radius: 20px;
 
 }
-.login-btn{
+
+.login-btn {
   width: 90%;
   height: 38px;
   background: #286aef;
@@ -87,14 +94,14 @@ body{
   align-self: center;
 }
 
-.signup-btn{
+.signup-btn {
   margin-bottom: 10% !important;
   margin-top: 5% !important;
 }
 
-#login-btn:hover{
+#login-btn:hover {
   background: #027188;
-  
+
 }
 
 .Login header {
@@ -109,21 +116,23 @@ body{
   margin-top: 50px !important;
   filter: drop-shadow(0px 4px 4px #000000) !important;
 }
-.register-form p{
+
+.register-form p {
   color: #67696B;
 }
-.register-form span{
-  color:#01ADC2;
-  
+
+.register-form span {
+  color: #01ADC2;
+
 }
 
-.login-signup-error{
+.login-signup-error {
   margin-top: -10px;
-  margin-left: 20px;  
-  
+  margin-left: 20px;
+
 }
 
-.register-login-footer{
+.register-login-footer {
   display: flex;
   flex-direction: row;
   margin-bottom: -10px !important;
@@ -131,29 +140,31 @@ body{
 }
 
 /* headerTwo */
-.AppBar{
+.AppBar {
   background-color: rgba(10, 14, 23, 0) !important;
   position: -webkit-sticky;
   position: sticky !important;
   width: 100%;
   z-index: 100 !important;
-  
+
 
 }
 
-.AppBar img{
+.AppBar img {
   object-fit: contain;
-  width: 250px;
+  width: 330px;
   cursor: pointer;
-  
-  
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+
 }
 
-#menu-appbar{
+#menu-appbar {
   color: #0f2349;
 }
 
-.pages{
+.pages {
   display: flex !important;
   flex-direction: row !important;
   align-items: center;
@@ -163,10 +174,10 @@ body{
 
 
 
-.page-buttons{
+.page-buttons {
   /* margin-right: 9% !important; */
   text-decoration: none !important;
-  font-size: 0.8rem !important;
+  font-size: 1rem !important;
   padding: 0 !important;
   color: white;
   width: 80px;
@@ -174,45 +185,57 @@ body{
   text-align: center;
   align-items: center !important;
   border-radius: 10px;
-  margin-right: 7px;
+  margin-right: 10px;
 }
 
-.page-buttons:hover{
+.page-buttons:hover {
   background-color: #181b20 !important;
   color: white;
-  
-}
-#menu-appbar{
-  color:#000000;
+
 }
 
-.MuiMenuItem-root{
+#menu-appbar {
+  color: #000000;
+}
+
+.MuiMenuItem-root {
   color: white !important;
 }
 
-.menu-names{
+.menu-names {
   width: 100%;
   color: white !important;
   text-decoration: none;
   font-weight: 100 !important;
-  font-size: 13px !important;
+  font-size: 15px !important;
 
 }
 
 
-.page-box{
+.page-box {
   position: relative;
   left: 0px !important;
 }
 
-.headerTwo-icon{
+.headerTwo-icon {
   position: relative;
   right: 0% !important;
-  
+
 }
 
-.HomeSubOne{
+.HomeSubOne {
   background: linear-gradient(262.7deg, #092D35 22.81%, rgba(16, 63, 74, 0.583333) 58.09%, rgba(1, 14, 17, 0.78) 90.99%);
+  border-radius: 3px;
+  margin-top: 14px;
+  align-items: center;
+  padding-bottom: 12px;
+  margin-right: 40px;
+  margin-left: 40px;
+}
+
+.HomeSubTwo {
+
+  background: linear-gradient(270.49deg, #404041 4.5%, rgba(38, 39, 42, 0.95) 57.03%, rgba(32, 33, 36, 0.95) 94.49%);
   border-radius: 3px;
   margin-top: 11px;
   align-items: center;
@@ -220,114 +243,114 @@ body{
   margin-right: 40px;
   margin-left: 40px;
 }
-.HomeSubTwo{
 
-  background: linear-gradient(270.49deg, #404041 4.5%, rgba(38, 39, 42, 0.95) 57.03%, rgba(32, 33, 36, 0.95) 94.49%);
-  border-radius: 3px;
-    margin-top: 11px;
-    align-items: center;
-    padding-bottom: 12px;
-    margin-right: 40px;
-    margin-left: 40px;
-}
-
-.white{
+.white {
   color: #fff;
-  
+
 }
 
-.img-sec img{
+.img-sec img {
   object-fit: contain;
-  height: 250px;
+  height: 280px;
+  margin-top: 22px;
+  margin-bottom: 25px;
 
 }
 
-.logo-name{
+.logo-name {
   margin-right: 50px;
 }
 
-.main-title{
+.main-title {
   color: rgba(1, 159, 194, 0.79);
   display: inline;
 }
 
-.subOne-details header{
-  font-size: 25px;
+.subOne-details header {
+  font-size: 27px;
   font-weight: 900;
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.subOne-details h3{
-  margin-bottom: 30px ;
-  font-size: 22px;
+
+.subOne-details h3 {
+  margin-bottom: 32px;
+  font-size: 24px;
 }
-.h3-first{
+
+.h3-first {
   font-weight: 200;
 }
-.h3-second{
+
+.h3-second {
   font-weight: 600;
 }
 
-.star-icon{
-  color:#286AEF !important;
+.star-icon {
+  color: #286AEF !important;
   object-fit: contain;
   width: 15px !important;
   margin-bottom: 4px;
-  
+
 }
 
-.blue-keyword{
- color:#286AEF !important;
+.blue-keyword {
+  color: #286AEF !important;
 }
 
-.detail-list p{
-  font-size: 18px;
-  margin: 11px;
+.detail-list p {
+  font-size: 21px;
+  margin: 12px;
+  margin-bottom: 13px;
 }
 
-.app-description{
+.app-description {
   background: #30353F;
-  margin-top: 10px;
-  margin-bottom: 30px;
+  margin-top: 15px;
+  margin-bottom: 40px;
   color: white;
   align-self: center !important;
   width: 100%;
 }
 
-.app-description header{
-  font-size: 22px;
+.app-description header {
+  font-size: 25px;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
+  margin-top: 7px;
   color: rgba(1, 159, 194, 0.79);
- 
+
 }
 
-.app-details{
-  font-size: 13px;
+.app-details {
+  font-size: 16px;
   margin-left: 40px;
   color: rgb(218, 213, 213);
+  font-weight: 400;
+  margin-bottom: 4px;
 }
 
 .app-description {
   text-align: center;
 }
 
-.crypto-imgs img{
+.crypto-imgs img {
   object-fit: contain;
   width: 80px;
   margin-bottom: 10px;
   margin-left: 10px;
 }
 
-.crypto-imgs #img2{
+.crypto-imgs #img2 {
   object-fit: contain;
 
-  
-  
-} 
-.stock-imgs img{
+
+
+}
+
+.stock-imgs img {
   object-fit: contain;
-  width: 75px ;
+  width: 75px;
   margin-bottom: 10px;
   margin-top: 4px;
   padding-top: 2px;
@@ -335,28 +358,28 @@ body{
   ;
 }
 
-.CryptoSec{
-  width:280px;
+.CryptoSec {
+  width: 280px;
   background: linear-gradient(270deg, #3C3D40 2.33%, #38383A 34.89%, #2D2E32 67.44%, #282B30 100%);
-    box-shadow: 5px 5px 10px 2px #000000;
-    border-radius: 10px;
-    margin: 50px;
-    padding: 2%;
-    cursor: pointer;
-    height: 280px;
+  box-shadow: 5px 5px 10px 2px #000000;
+  border-radius: 10px;
+  margin: 50px;
+  padding: 2%;
+  cursor: pointer;
+  height: 280px;
 
 }
 
-.CryptoSec:hover{
+.CryptoSec:hover {
   transform: scale(1.03)
 }
 
-.CryptoSec p{
+.CryptoSec p {
   color: white;
   font-size: 12.5px;
 }
 
-.CryptoSec header{
+.CryptoSec header {
   color: white;
   font-weight: bold;
   font-size: 18px;
@@ -368,113 +391,123 @@ body{
   color: #0756f4;
   font-size: 13px;
   margin-bottom: 5px;
-  text-align:left;
+  text-align: left;
   font-weight: 500;
 }
 
-.market-cards{
+.market-cards {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 
 }
 
-.AlertDetails{
+.AlertDetails {
   color: white;
   align-items: center;
   margin-top: 30px;
   margin-bottom: 40px;
 }
-.alert-details{
-margin-right:40px;  
+
+.alert-details {
+  margin-right: 40px;
 }
-.alert-img-sec{
+
+.alert-img-sec {
   margin-left: 40px;
 }
-.alert-details header{
-  font-size:20px;
+
+.alert-details header {
+  font-size: 20px;
   font-weight: bold;
   margin-bottom: 20px;
-  
+
 }
-.alert-p-1{
+
+.alert-p-1 {
   font-size: 13px;
   margin-bottom: -2px;
   color: rgba(211, 209, 209, 0.79);
   font-weight: lighter;
-  
+
 }
-.alert-p-2{
+
+.alert-p-2 {
   font-size: 13px;
   color: rgba(211, 209, 209, 0.79);
   margin-bottom: 20px;
 }
-.alert-p-3{
+
+.alert-p-3 {
   font-weight: 500;
 }
-.alert-details-2{
+
+.alert-details-2 {
   color: #0756f4;
 }
-.alert-img-sec img{
+
+.alert-img-sec img {
   object-fit: contain;
   width: 130px;
 }
 
-.footer{
+.footer {
   background: rgba(0, 0, 0, 0.71);
   height: 200px;
   padding-top: 20px;
 }
 
-.footer header{
+.footer header {
   font-size: 20px;
   color: white;
   font-weight: 500;
 }
-.footer-details header{
+
+.footer-details header {
   margin-bottom: 10px;
 }
 
-.footer-details p{
+.footer-details p {
   font-size: 12px;
   color: rgb(185, 182, 182);
   font-weight: 400;
 }
 
-.footer-sub header{
+.footer-sub header {
   margin-bottom: 10px;
 }
 
-.footer-icons{
+.footer-icons {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
 
-.footer-icons-white{
+.footer-icons-white {
   color: white;
 }
 
-.crypto-charts{
+.crypto-charts {
   width: 89%;
   position: relative;
 }
 
-.stock-header  {
+.stock-header {
   justify-content: space-evenly !important;
 }
 
-.CryptoHeader{
+.CryptoHeader {
   height: 60px;
   border-radius: 10px;
   margin-top: 10px;
   justify-content: space-between;
 
 }
+
 .crypto-bar {
   display: flex;
   flex-direction: row;
-  
+
   background-color: #393C45;
   margin-left: 20px;
   align-items: center;
@@ -483,7 +516,7 @@ margin-right:40px;
 
 
 
-.CryptoHeader header{
+.CryptoHeader header {
   font-size: 20px;
   color: white;
   margin-left: 15px;
@@ -491,7 +524,7 @@ margin-right:40px;
   padding: 3px;
 }
 
-.CryptoHeader p{
+.CryptoHeader p {
   color: rgb(227, 221, 221);
   margin-left: 8px;
   margin-right: 8px;
@@ -499,23 +532,25 @@ margin-right:40px;
   font-weight: lighter !important;
   margin-bottom: -4px;
 }
-.alarm-icon{
+
+.alarm-icon {
   border-radius: 5px;
   box-shadow: inset 4px 4px 4px 4px rgba(0, 0, 0, 0.35);
   cursor: pointer;
   transform: scale(1.3)
 }
 
-.alarm-icon:hover{
+.alarm-icon:hover {
   transform: scale(1.4)
 }
-.volume-value{
+
+.volume-value {
   font-size: 11px;
   color: #a0a1a4;
   margin-left: 15px;
 }
 
-.watchlist-btn{
+.watchlist-btn {
   margin-right: 10px;
   font-size: 14px !important;
   text-align: center !important;
@@ -528,24 +563,27 @@ margin-right:40px;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: rgb(229, 223, 223);
 }
-.watchlist-btn:hover{
+
+.watchlist-btn:hover {
   background-color: #1557e4 !important;
 
 }
-.CryptoIntervals{
+
+.CryptoIntervals {
   height: 30px;
   border-radius: 5px;
   margin-top: 5px;
   justify-content: space-around;
 }
-.CryptoIntervals header{
+
+.CryptoIntervals header {
   color: white;
   font-size: 15px;
   margin-left: 15px;
   margin-right: 40px;
 }
 
-.indicator-img-btn{
+.indicator-img-btn {
   width: 35px;
   border-style: none;
   background: #20232B;
@@ -553,22 +591,23 @@ margin-right:40px;
   border-radius: 5px;
   margin-right: 5px;
 }
-.indicator-img-btn:hover{
+
+.indicator-img-btn:hover {
   background-color: #181b20;
 }
 
-.indicator-img-btn img{
+.indicator-img-btn img {
   object-fit: contain;
   width: 15px;
 }
 
-.interval-btns{
+.interval-btns {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
 
-.interval-btns :hover{
+.interval-btns :hover {
   /* background: #2c2f37 !important;  */
   opacity: 0.7;
 }
@@ -577,11 +616,11 @@ margin-right:40px;
   border: 1px solid white;
   background-color: blue;
 } */
-.interval-btns button{
+.interval-btns button {
   margin-left: 10px;
   width: 40px;
   border: none;
-  background:none !important;
+  background: none !important;
   color: rgb(214, 214, 214);
   background-color: #282B30 !important;
   padding: 2px;
@@ -589,30 +628,32 @@ margin-right:40px;
   cursor: pointer !important;
   font-size: 14px;
 }
+
 /* .indicato-list-names{
   font-size: 15px;
 } */
-.alertForm{
-  background-color:#212529;
+.alertForm {
+  background-color: #212529;
   color: #C2C1C1;
   text-align: center;
 }
 
-.alert-form-control{
+.alert-form-control {
   border-radius: 5px !important;
   background-color: #30353F !important;
   border: none !important;
-  color: rgb(194, 193, 193)!important;
+  color: rgb(194, 193, 193) !important;
   height: 37px;
   margin-bottom: 12px !important;
   text-align: center;
-  
-}
-.alert-form-control:disabled{
-  color: rgb(243, 76, 76)!important;
+
 }
 
-.Alerts{
+.alert-form-control:disabled {
+  color: rgb(243, 76, 76) !important;
+}
+
+.Alerts {
   /* box-shadow: 5px 4px 5px 1px rgba(0, 0, 0, 0.8); */
   /* margin-top: 120px; */
   height: 270px;
@@ -621,31 +662,34 @@ margin-right:40px;
   background-color: #212529;
 
 }
-.alerttable{
+
+.alerttable {
   width: 400px;
   font-size: 15px;
 }
 
-.CryptoTypes{
+.CryptoTypes {
   background-color: #393C45;
   box-shadow: 5px 4px 5px 1px rgba(0, 0, 0, 0.8);
   margin-top: 120px;
   height: 275px;
   overflow-y: scroll;
 }
-.CryptoTypes Table{
+
+.CryptoTypes Table {
   width: 100px;
   font-size: 15px;
 }
-.type-btn{
+
+.type-btn {
   width: 100%;
   background: none;
-  color:rgb(208, 200, 200);
+  color: rgb(208, 200, 200);
   border: none;
   height: 30px;
 }
 
-.type-btn-inter{
+.type-btn-inter {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -653,7 +697,7 @@ margin-right:40px;
   align-self: center !important;
 }
 
-.type-btn-inter p{
+.type-btn-inter p {
   margin-top: 15px;
   margin-left: 5px;
 }
@@ -665,65 +709,79 @@ margin-right:40px;
   font-size: 15px;
 }
 
-.StockChart{
+.StockChart {
   margin-top: 7px;
   align-self: center;
   margin-left: 10px;
 }
 
 
-.CryptoChart{
+.CryptoChart {
   margin-top: 7px;
   align-self: center;
   margin-left: 10px;
 }
+
 /* 
 /* Toastify__toast Toastify__toast-theme--light Toastify__toast--info */
-
-.paw-span1{
+.pwa header{
+font-size: 22px;
+}
+.paw-span1 {
   color: white;
 }
-.pwa-span2{
+
+.pwa-span2 {
   color: #0756f4;
 
   font-weight: 600;
 }
-.pwa{
+
+.pwa {
   align-items: center;
- 
+
 }
- 
-.pwa-button{
-  background-color:#282b32 !important;
-  padding: 0px !important;
+
+.pwa-button {
+  background-color: #282b32 !important;
+  padding: 3px !important;
   margin-top: 5px !important;
-  box-shadow: 2px 2px 2px  rgba(0, 0, 0, 0.5);
-
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  
 }
 
-.pwa-button:hover{
+
+.pwa-button:hover {
   background-color: #01213c !important;
 }
 
-.chartType-menu{
+.chartTypes-select {
+  height: 27px;
+  color: white;
+  background-color: #2E3035;
+  font-size: 14px;
+  width: 56px;
+}
+
+.chartType-menu {
   font-size: 14px !important;
 }
-.chartType-menu:hover{
+
+.chartType-menu:hover {
   background-color: #20232B !important;
 
 }
 
-.chart-type-img{
+.chart-type-img {
   margin-left: -6px;
-  
 }
 
 
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 7px;
   border-radius: 10px;
-  
+
 }
 
 ::-webkit-scrollbar-track {
@@ -743,202 +801,276 @@ margin-right:40px;
 @media only screen and (max-width: 900px) {
 
   /* For mobile phones: */
-  .pages{
+  .pages {
     width: 50px;
   }
+
+  .subOne-details .logo-name {
+    display: block !important;
+  }
+
+  .main-title {
+    display: block !important;
+  }
+    .subOne-details header {
+      font-size: 23px;
+    }
   
-  .subOne-details .logo-name{
-    display: block !important;
-  }
-  .main-title{
-    display: block !important;
-  }
+    .subOne-details h3 {
+      font-size: 20px;
+    }
+  
+    .detail-list p {
+      font-size: 16px;
+      margin: 10px;
+    }
+  
+    .img-sec img {
+      object-fit: contain;
+      height: 220px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+  
+    }
 }
 
-.prosidebar{
+.prosidebar {
   background-color: #24262D;
   width: 30%;
   color: white;
 }
 
-@media only screen and (max-width: 1003px) 
-{
-    .subOne-details .logo-name {
-        display: block !important;
-      }
-    
-      .main-title {
-        display: block !important;
-      }
+
+
+@media only screen and (max-width: 1003px) {
+  .img-sec img {
+      object-fit: contain;
+      height: 250px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+  
+    }
+    .subOne-details header{
+      font-size: 25px;
+    }
+    .subOne-details h3{
+      font-size: 22px;
+    }
+        .detail-list p {
+          font-size: 19px;
+          margin: 11px;
+        }
+
+  .subOne-details .logo-name {
+    display: block !important;
+  }
+
+  .main-title {
+    display: block !important;
+  }
 }
+
 @media only screen and (max-width: 800px) {
 
+  .pwa header {
+      font-size: 19px;
+    }
+
   .CryptoHeader header {
-      font-size: 17px;
-    }
-  
-    .CryptoHeader p {
-      font-size: 15px;
+    font-size: 17px;
+  }
 
-    }
-    .alarm-icon {
-      transform: scale(1.2)
-    }
-  
-    .alarm-icon:hover {
-      transform: scale(1.3)
-    }
-  
-    .volume-value {
-      font-size: 9px;
-      color: #a0a1a4;
-      margin-left: 11px;
-    }
-    .watchlist-btn {
-      font-size: 12px !important;
-    }
+  .CryptoHeader p {
+    font-size: 15px;
+
+  }
+
+  .alarm-icon {
+    transform: scale(1.2)
+  }
+
+  .alarm-icon:hover {
+    transform: scale(1.3)
+  }
+
+  .volume-value {
+    font-size: 9px;
+    color: #a0a1a4;
+    margin-left: 11px;
+  }
+
+  .watchlist-btn {
+    font-size: 12px !important;
+  }
+
   .img-sec {
-      display: none;
-    }
-    .subOne-details header {
-      font-size: 22px;
-      font-weight: 800;
-    }
-    .subOne-details h3 {
-      font-size: 19px;
-    }
-    .detail-list p{
-      font-size: 14px;
-    }
-    .app-description header {
-      font-size: 19px;
-      font-weight: 600;
-    }
-    .app-details {
-      font-size: 11px;
-    }
-    .crypto-bar {
-      display: flex;
-      flex-direction: row;
-      background-color: #393C45;
-      margin-left: 10px;
-      align-items: center;
-      box-shadow: 5px 4px 5px 1px rgba(0, 0, 0, 0.8);
-    }
-    .StockChart{
-      margin-left: 6px;
-    }
-    .CryptoChart{
-      margin-left: 6px;
-    }
+    display: none;
+  }
 
-    .interval-btns button {
-      margin-left: 7px;
-      width: 30px;
-      font-size: 12px;
-      border: none;
-      background: none !important;
-      color: rgb(214, 214, 214);
-      background-color: #282B30 !important;
-      padding: 2px;
-      border-radius: 5px;
-      cursor: pointer !important;
+  .subOne-details header {
+    font-size: 22px;
+    font-weight: 800;
+  }
 
-    }
-        .AppBar img {
-          width: 220px;
-        }
+  .subOne-details h3 {
+    font-size: 19px;
+  }
+
+  .detail-list p {
+    font-size: 14px;
+  }
+
+  .app-description header {
+    font-size: 19px;
+    font-weight: 600;
+  }
+
+  .app-details {
+    font-size: 11px;
+  }
+
+  .crypto-bar {
+    display: flex;
+    flex-direction: row;
+    background-color: #393C45;
+    margin-left: 10px;
+    align-items: center;
+    box-shadow: 5px 4px 5px 1px rgba(0, 0, 0, 0.8);
+  }
+
+  .StockChart {
+    margin-left: 6px;
+  }
+
+  .CryptoChart {
+    margin-left: 6px;
+  }
+
+  .interval-btns button {
+    margin-left: 7px;
+    width: 30px;
+    font-size: 12px;
+    border: none;
+    background: none !important;
+    color: rgb(214, 214, 214);
+    background-color: #282B30 !important;
+    padding: 2px;
+    border-radius: 5px;
+    cursor: pointer !important;
+
+  }
+
+  .AppBar img {
+    width: 280px;
+  }
+  .headerOne img {
+    object-fit: contain;
+    width: 280px;
+
+  }
 }
-@media only screen and (max-width: 705px){
-    .alerts-name {
-        display: none;
-      }
+
+@media only screen and (max-width: 705px) {
+  .alerts-name {
+    display: none;
+  }
 }
+
 @media only screen and (max-width: 650px) {
 
   .market-cards {
-      display: flex;
-      flex-direction: column;
-      margin: 0 auto;
-      align-self: center !important;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-self: center !important;
 
-    }
-    .crypto-comp{
-      align-self: center !important;
-    }
-    .stock-comp{
-      align-self: center !important;
-    }
-
-    .crypto-imgs img{
-      width: 70px !important;
-    }
-
-    .stock-imgs img{
-      width: 60px;
-    }
-  .CryptoHeader header{
-      font-size: 13px;
   }
+
+  .crypto-comp {
+    align-self: center !important;
+  }
+
+  .stock-comp {
+    align-self: center !important;
+  }
+
+  .crypto-imgs img {
+    width: 70px !important;
+  }
+
+  .stock-imgs img {
+    width: 60px;
+  }
+
+  .CryptoHeader header {
+    font-size: 13px;
+  }
+
   .CryptoHeader p {
     font-size: 12px;
   }
-    .alarm-icon {
-      transform: scale(1.05)
-    }
-  
-    .alarm-icon:hover {
-      transform: scale(1.12)
-    }
-  .watchlist-btn{
-    font-size: 10px!important;
+
+  .alarm-icon {
+    transform: scale(1.05)
+  }
+
+  .alarm-icon:hover {
+    transform: scale(1.12)
+  }
+
+  .watchlist-btn {
+    font-size: 10px !important;
     height: 28px;
   }
+
   .CryptoIntervals header {
     display: none;
-    }
-    .interval-btns button {
-      margin-left: 7px;
-      width: 30px;
-      font-size: 12px;
-      border: none;
-      background: none !important;
-      color: rgb(214, 214, 214);
-      background-color: #282B30 !important;
-      padding: 2px;
-      border-radius: 5px;
-      cursor: pointer !important;
+  }
 
-    }
+  .interval-btns button {
+    margin-left: 7px;
+    width: 30px;
+    font-size: 12px;
+    border: none;
+    background: none !important;
+    color: rgb(214, 214, 214);
+    background-color: #282B30 !important;
+    padding: 2px;
+    border-radius: 5px;
+    cursor: pointer !important;
 
-    .AppBar img{
-      width: 160px;
-    }
-    .CryptoSec{
-      height: 230px;
-      align-self: center !important;
-      margin-bottom: 25px;
-    }
-    .CryptoSec p {
-      color: white;
-      font-size: 11.5px;
-    }
+  }
 
-    .CryptoSec header {
-      color: white;
-      font-weight: bold;
-      font-size: 17px;
-      margin-bottom: 5px;
-    }
+  .AppBar img {
+    width: 230px;
+  }
 
-    .CryptoSec span {
-      color: white;
-      color: #0756f4;
-      font-size: 13px;
-      margin-bottom: 5px;
-      text-align: left;
-      font-weight: 500;
-    }
+  .CryptoSec {
+    height: 230px;
+    align-self: center !important;
+    margin-bottom: 25px;
+  }
+
+  .CryptoSec p {
+    color: white;
+    font-size: 11.5px;
+  }
+
+  .CryptoSec header {
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+    margin-bottom: 5px;
+  }
+
+  .CryptoSec span {
+    color: white;
+    color: #0756f4;
+    font-size: 13px;
+    margin-bottom: 5px;
+    text-align: left;
+    font-weight: 500;
+  }
 
   .alert-details header {
     font-size: 18px;
@@ -956,162 +1088,202 @@ margin-right:40px;
     font-size: 11.5px;
     margin-bottom: 20px;
   }
+
   .alert-p-3 {
     font-size: 15px;
   }
-    
+
 }
 
-@media only screen and (max-width: 560px){
+@media only screen and (max-width: 560px) {
 
-  .alert-img-sec{
+  .alert-img-sec {
     display: none;
   }
-  .indicator-img-btn{
-  width: 25px;
-  
-}
-  .indicator-img-btn img{
+
+  .indicator-img-btn {
+    width: 25px;
+
+  }
+
+  .indicator-img-btn img {
     object-fit: contain;
     width: 13px;
   }
 }
+
 @media only screen and (max-width: 500px) {
 
-  .Register header{
+  .Register header {
     font-size: 1.3rem;
 
   }
-  .register-container{
+
+  .register-container {
     padding-bottom: 10px;
   }
-  .register-footer{
+
+  .register-footer {
     display: block !important;
     padding-bottom: 10px;
   }
-  .register-footer p{
+
+  .register-footer p {
     font-size: 11px !important;
     margin-bottom: -5px;
-    
+
   }
-  .register-footer span{
+
+  .register-footer span {
     font-size: 12px !important;
   }
-  .footer header{
+
+  .footer header {
     font-size: 16px;
   }
-  .footer-details p{
+
+  .footer-details p {
     font-size: 10px;
   }
 
   .CryptoHeader header {
     font-size: 12px;
   }
-    .CryptoHeader p {
-      font-size: 11px;
-    }
-    .watchlist-btn {
-      font-size: 10px !important;
-      height: 30px;
-      width: 70px;
-      padding-top: 1px;
-      padding-bottom: 1px;
-    }
+
+  .CryptoHeader p {
+    font-size: 11px;
+  }
+
+  .watchlist-btn {
+    font-size: 10px !important;
+    height: 30px;
+    width: 70px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+  }
 
 
-    .crypto-bar {
-      margin-left: 2px;
-      width: 8;
-    }
+  .crypto-bar {
+    margin-left: 2px;
+    width: 8;
+  }
 
-    .crypto-charts{
-      width:85%
-    }
+  .crypto-charts {
+    width: 85%
+  }
 
-    .CryptoTypes Table {
-      width: 55px;
-      font-size: 15px;
+  .CryptoTypes Table {
+    width: 55px;
+    font-size: 15px;
 
-    }
-    .CryptoTypes Table th {
-      font-size: 9px;
-    }
-    .CryptoTypes Table td {
-      font-size: 8px;
-    }
+  }
 
-    .interval-btns button {
-      margin-left: 3px;
-      width: 28px;
-      font-size: 9px;
-      height: 20px;
-    }
+  .CryptoTypes Table th {
+    font-size: 9px;
+  }
 
-    .indicator-img-btn {
-      width: 25px;
-    }
+  .CryptoTypes Table td {
+    font-size: 8px;
+  }
 
-    .indicator-img-btn img {
-      object-fit: contain;
-      width: 12px;
-    }
-  
+  .interval-btns button {
+    margin-left: 3px;
+    width: 28px;
+    font-size: 9px;
+    height: 20px;
+  }
+
+  .indicator-img-btn {
+    width: 25px;
+  }
+
+  .indicator-img-btn img {
+    object-fit: contain;
+    width: 12px;
+  }
+
+  .chartType-menu {
+    font-size: 12px !important;
+    height: 20px !important;
+
+
+  }
+
+  .chartType-menu:hover {
+    background-color: #20232B !important;
+
+  }
+
+  .chart-type-img {
+    margin-left: -6px;
+    object-fit: contain;
+    width: 12px;
+  }
 }
 
-@media only screen and (max-width: 420px){
+@media only screen and (max-width: 420px) {
+
+
+  .CryptoTypes td {
+    margin-left: -5px;
+    margin-right: -5px;
+
+  }
+
   .CryptoHeader header {
-      font-size: 10px;
-      margin-left: 7px;
-    }
-  
-    .CryptoHeader p {
-      margin-left: 5px;
-      margin-right: 5px;
-      font-size: 9px;
-    }
-  
-    .alarm-icon {
-      border-radius: 5px;
-      box-shadow: inset 4px 4px 4px 4px rgba(0, 0, 0, 0.35);
-      cursor: pointer;
-      transform: scale(1)
-    }
-  
-    .alarm-icon:hover {
-      transform: scale(1.05)
-    }
-  
-    .volume-value {
-      font-size: 7px;
-      color: #a0a1a4;
-      margin-left: 5px;
-     margin-top: 1px;
-    }
+    font-size: 10px;
+    margin-left: 7px;
+  }
 
-    .watchlist-btn {
-      font-size: 9px !important;
-      padding-top: 1px;
-      padding-bottom: 1px;
-    }
+  .CryptoHeader p {
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 9px;
+  }
 
-    .interval-btns button {
-      margin-left: 2px;
-      width: 24px;
-      font-size: 9px;
-      height: 20px;
-    }
+  .alarm-icon {
+    border-radius: 5px;
+    box-shadow: inset 4px 4px 4px 4px rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+    transform: scale(1)
+  }
 
-    .indicator-img-btn {
-      width: 22px;
-      height: 22px;
-      margin-top: 2px;
-    }
+  .alarm-icon:hover {
+    transform: scale(1.05)
+  }
 
-    .indicator-img-btn img {
-      object-fit: contain;
-      width: 10px;
-      margin-bottom: 3px;
-    }
+  .volume-value {
+    font-size: 7px;
+    color: #a0a1a4;
+    margin-left: 5px;
+    margin-top: 1px;
+  }
+
+  .watchlist-btn {
+    font-size: 8px !important;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    height: 25px;
+  }
+
+  .interval-btns button {
+    margin-left: 2px;
+    width: 24px;
+    font-size: 9px;
+    height: 20px;
+  }
+
+  .indicator-img-btn {
+    width: 22px;
+    height: 22px;
+    margin-top: 2px;
+  }
+
+  .indicator-img-btn img {
+    object-fit: contain;
+    width: 10px;
+    margin-bottom: 3px;
+  }
 
 
 }
