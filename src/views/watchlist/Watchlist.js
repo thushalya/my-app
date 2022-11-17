@@ -17,6 +17,7 @@ import { removeMarketList, saveWatchlist } from '../../redux/watchlist';
 import { WindowSharp } from '@mui/icons-material';
 import SimpleLoader from '../../components/loaders/lottieLoader/SimpleLoader';
 import WatchlistLoader from '../../components/loaders/watchlistLoader/WatchlistLoader';
+import NoItemsLoader from '../../components/loaders/noItemsLoader/NoItemsLoader';
 
 export default function Watchlist() {
   
@@ -242,15 +243,17 @@ export default function Watchlist() {
       rows?.length <= 0 
       ? 
       <div >
-      <h1 align='center' style={{ color:'white', left:'50%', size:'50px',marginTop:"20%"}}>No items to display in your watchlist</h1>
+      <h1 className='watchlist-header'>Watchlist</h1>
+      <NoItemsLoader  />
       </div>
       :
       loader ? 
         <Loader/>
       : 
-      <div >
+      <div className='d-flex flex-column justify-content-center'>
+        <h1 className='watchlist-header'>Watchlist</h1>
         <Container maxWidth="lg">
-        <div style={{ height: 400, width: '100%'}}>
+        <div className='watchlist-datagrid'>
           {/* {console.log("rows for the data grid", rows)} */}
           <DataGrid
             rows={
