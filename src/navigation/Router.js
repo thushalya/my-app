@@ -19,8 +19,8 @@ import TokenRequest from './../views/notification/TokenRequest';
 function Router() {
 
   const ROLES = {
-    Admin: "1",
-    User: "2",
+    Admin: "2",
+    User: "1",
   };
   return (
     <BrowserRouter>

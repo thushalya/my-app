@@ -23,9 +23,9 @@ function Navigator() {
                 user= null    
             }
             
-            if(user?.role=="2"){
+            if(user?.role=="1"){
                 navigate('/')
-            }else if (user?.role=="1"){
+            }else if (user?.role=="2"){
                 navigate('/admin')
             }else{
                 navigate('/unauthorized')

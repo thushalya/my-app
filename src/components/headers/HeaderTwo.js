@@ -59,8 +59,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-const userPages = ["Home", "Stock", "Crypto"];
-const pages = [...userPages, "Login","Sign up"];
+let userPages = ["Home", "Stock", "Crypto"];
+let pages = [...userPages, "Login","Sign up"];
 const settings = ["Profile", "Watchlist", "Logout"];
 const HeaderTwo = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -70,6 +70,10 @@ const HeaderTwo = () => {
 
   try{
     var user=jwtDecode(Token.getAccessToken())
+    console.log("user",user)
+    if (user.role=="2" && userPages.length<= 3){
+      userPages = ["Admin", ...userPages]
+    }
     
    }
    catch(err){
