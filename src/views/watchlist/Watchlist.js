@@ -269,7 +269,8 @@ export default function Watchlist() {
               border: 0,
               borderColor: 'primary.dark',
               color: 'white',
-              backgroundColor: '#212529'
+              backgroundColor: '#212529',
+              marginTop: 10,
             }
           }
         />
