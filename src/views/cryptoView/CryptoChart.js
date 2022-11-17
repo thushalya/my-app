@@ -3,7 +3,7 @@ import { createChart, CrosshairMode } from "lightweight-charts";
 import { removeDuplicates,resetExternalIndicatorData,resetInternalIndicators } from "../../utils/functions";
 import { compare } from "../../utils/functions";
 import { useLocation } from "react-router-dom";
-import Loader from "../../components/loader/Loader";
+import Loader from "../../components/loaders/chartLoader/Loader";
 import config from "../../config.json";
 import { getLineChart } from "../../components/technicalIndicators/lineSeries";
 import { getBbandsChart } from "../../components/technicalIndicators/bbandsIndicator";
@@ -210,7 +210,9 @@ function CryptoChart({ market, interval, internalIndicators }) {
               cryptoVolumeData: tempVolumeData,
             })
           );
-          setLoading(false);
+          setTimeout(()=>{
+            setLoading(false);
+          },1000)
         })
         .catch();
 
@@ -576,7 +578,7 @@ function CryptoChart({ market, interval, internalIndicators }) {
 
   return (
     <>
-      {loading ? <Loader position="relative" left="46.5%" top="9%" /> : null}
+      {loading ? <Loader margin={150}/> : null}
       <div
         className="CryptoChart"
         style={{ display: loading ? "none" : "block" }}

@@ -12,6 +12,7 @@ import {
   updateStockDataLimit,
   updateStockTimeStamp,
 } from "../../redux/chart";
+import Loader from "../../components/loaders/chartLoader/Loader";
 
 function StochChart({ marketType, market, interval }) {
   const location = useLocation();
@@ -145,7 +146,9 @@ function StochChart({ marketType, market, interval }) {
           })
         );
 
-        setLoading(false);
+        setTimeout(() => {
+          setLoading(false);
+        }, 2500);
       })
       .catch();
 
@@ -154,14 +157,14 @@ function StochChart({ marketType, market, interval }) {
     };
   }, [market, interval]);
 
-   useEffect(() => {
-     const url =
-       `${config.DOMAIN_NAME}/stoch/${marketType}/` +
-       `${market || marketState}/${
-         interval || intervalState
-       }/${timeStamp}/${dataLimit}`;
-     console.log(url);
-    timeStamp!==0 &&
+  useEffect(() => {
+    const url =
+      `${config.DOMAIN_NAME}/stoch/${marketType}/` +
+      `${market || marketState}/${
+        interval || intervalState
+      }/${timeStamp}/${dataLimit}`;
+    console.log(url);
+    timeStamp !== 0 &&
       fetch(url)
         .then((res) => res.json())
         .then((data) => {
@@ -213,10 +216,7 @@ function StochChart({ marketType, market, interval }) {
           );
         })
         .catch();
-
-   }, [timeStamp]);
-
-
+  }, [timeStamp]);
 
   const [windowDimensions, setWindowDimensions] = useState(
     getWindowDimension()
@@ -264,35 +264,37 @@ function StochChart({ marketType, market, interval }) {
 
   return (
     <>
-      {/* {loading ? <Loader position="relative" left="46.5%" top="9%" /> : null} */}
-      <div className="d-flex flex-row">
-        <div
-          className="CryptoChart"
-          ref={ref}
-          onMouseUpCapture={loadPrevious}
-          onTouchEnd={loadPrevious}
-          style={{
-            marginBottom: "-10px",
-            marginLeft: "15px",
-            marginRight: "20px",
-          }}
-        />
-        <div>
-          <Typography
+      {loading ? <Loader margin={65} /> : null}
+      <div style={{ display: loading ? "none" : "block" }}>
+        <div className="d-flex flex-row">
+          <div
+            className="CryptoChart"
+            ref={ref}
+            onMouseUpCapture={loadPrevious}
+            onTouchEnd={loadPrevious}
             style={{
-              margin: "0 auto",
-              marginTop: "1rem",
-              marginBottom: "-10px",
-              color: "white",
-              width: "fit-content",
+              marginBottom: "10px",
+              marginLeft: "15px",
+              marginRight: "20px",
+              marginTop:"30px"
             }}
-            variant="h6"
-          >
-            STOCH
-          </Typography>
+          />
+          <div>
+            <Typography
+              style={{
+                margin: "0 auto",
+                marginTop: "5rem",
+                marginBottom: "-10px",
+                color: "white",
+                width: "fit-content",
+              }}
+              variant="h6"
+            >
+              STOCH
+            </Typography>
+          </div>
         </div>
       </div>
-      ;
     </>
   );
 }
