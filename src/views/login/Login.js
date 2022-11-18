@@ -108,11 +108,11 @@ function Login() {
           // dispatch(save(response.data))
 
           console.log('Token found', isTokenFound)
-
-          console.log("logging in...");
+        console.log("logging in...");
         const id = jwtDecode(Token.getAccessToken())['user_id'];
         console.log("id is", id);
         const response_ = await UserServices.getUser(id);
+        console.log("user services", response_);
         const getuser=response_.data.data
         if (getuser['active'] == '0'){
             Swal.fire({
@@ -159,7 +159,6 @@ function Login() {
                 console.log("token list is, ", response)
               }
               dispatch(save(token))
-              return token
             }
             Notification.requestPermission().then(function(permission){
               console.log(permission)

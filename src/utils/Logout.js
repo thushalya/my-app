@@ -3,12 +3,16 @@ import { useEffect,useState } from "react";
 import Loader from "../components/loader/Loader";
 import AlertServices from "../services/AlertServices";
 import { useSelect } from "@mui/base";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import PageLoader from "../components/pageLoader/PageLoader";
+import { useNavigate } from "react-router";
+import { save } from "../redux/alert";
 
 function Logout() {
 
+  const  navigate = useNavigate()
   const [loader, setLoader] = useState(false);
+  const dispatch = useDispatch()
   useEffect(()=>{
     logout();
   },[])
@@ -19,14 +23,15 @@ function Logout() {
     try {
       setLoader(true);
       // const response = await AuthServices.logout();
-      const response = await AlertServices.removeToken(token);
-      console.log("response remove token, ", response)
-      localStorage.clear();
-      window.location.href="/login";
+      // const response = await AlertServices.removeToken(token);
+      // console.log("response remove token, ", response)
+      dispatch(save(""))
+      sessionStorage.clear();
+      navigate("/login")
 
     } catch (error) {
-      localStorage.clear();
-      window.location.href="/login";
+      sessionStorage.clear();
+      navigate("/login")
       
     }
     setLoader(false); 

@@ -3,6 +3,7 @@ import Token from "./Token.js";
 import config from "../config.json";
 import jwtDecode from "jwt-decode";
 import dayJS from "dayjs";
+import { useNavigate } from "react-router";
 // import Messages from "../helpers/Messages";
 
 Axios.defaults.withCredentials = true;
@@ -28,7 +29,7 @@ axiosInstance.interceptors.request.use(async (req) => {
         const user = await jwtDecode(bearer_token);
         // unix time expired 
         const isExpired = dayJS(user.exp * 1000).isBefore(dayJS());
-    
+        
         console.log("expired :", isExpired);
 
         if (!isExpired) {
@@ -45,7 +46,7 @@ axiosInstance.interceptors.request.use(async (req) => {
                 // credentials true
                 withCredentials: true,
             })
-            // console.log("response :", response);
+            console.log("response for new token:", response);
 
             Token.removeAccessToken();
             bearer_token = response.data.access_token;
@@ -81,6 +82,7 @@ axiosInstance.interceptors.request.use(async (req) => {
 // });
 
 axiosInstance.interceptors.response.use((response) => {
+    console.log("hee hee logout wenwa hnde", response);
     return response;
 }, (error) => {
     if ([401, 403].includes(error?.response?.status) || Token.getAuth() === null) {
@@ -90,6 +92,8 @@ axiosInstance.interceptors.response.use((response) => {
         //     custom_message: "Your session has expired. Please login again."
         // })
         // return window.location.href = '/logout';
+        // return window.location.href = '/logout';
+        // navigator.navigate('/logout');
     }
     return Promise.reject(error);
 });
