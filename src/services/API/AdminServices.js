@@ -2,7 +2,7 @@
 
 import config from "../../config.json";
 // import axios from "../HttpServices";
-// import token from "../Token";
+import token from "../Token";
 import axios from 'axios';
 const APIEndpoint = config.DOMAIN_NAME + "/admin";
 
@@ -25,7 +25,7 @@ const getUsers = (skip,take,search, filter)=> {
     //     old_password: data["old_password"],
     //     user_id: data["user_id"],
     //   },
-    //   headers: { Authorization: `Bearer ${token.getAccessToken()}` },
+      headers: { Authorization: `Bearer ${token.getAccessToken()}` },
     });
   }
   
