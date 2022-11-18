@@ -50,7 +50,7 @@ function StockView() {
         stockVolumeData: [],
       })
     );
-    dispatch(updateStockDataLimit(280));
+    dispatch(updateStockDataLimit(380));
     dispatch(updateStockTimeStamp(0));
     resetExternalIndicatorData(dispatch);
     resetInternalIndicators(dispatch);
@@ -63,7 +63,7 @@ function StockView() {
         stockVolumeData: [],
       })
     );
-    dispatch(updateStockDataLimit(280));
+    dispatch(updateStockDataLimit(380));
     dispatch(updateStockTimeStamp(0));
     resetExternalIndicatorData(dispatch);
     resetInternalIndicators(dispatch);

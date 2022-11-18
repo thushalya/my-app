@@ -45,7 +45,6 @@ function CryptoView() {
     rsi: false,
     stoch: false,
 })
-
   const changeCryptoType = (marketType) => {
     setMarket(marketType);
     dispatch(
@@ -54,7 +53,7 @@ function CryptoView() {
         cryptoVolumeData: [],
       })
     );
-    dispatch(updateCryptoDataLimit(280));
+    dispatch(updateCryptoDataLimit(380));
     dispatch(updateCryptoTimeStamp(0));
    
     resetInternalIndicators(dispatch);
@@ -69,7 +68,7 @@ function CryptoView() {
         cryptoVolumeData: [],
       })
     );
-    dispatch(updateCryptoDataLimit(280));
+    dispatch(updateCryptoDataLimit(380));
     dispatch(updateCryptoTimeStamp(0));
 
     resetInternalIndicators(dispatch);

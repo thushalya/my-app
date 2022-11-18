@@ -332,7 +332,7 @@ function StockChart({ market, interval, internalIndicators }) {
            stockVolumeData: [],
          })
        );
-       dispatch(updateStockDataLimit(280));
+       dispatch(updateStockDataLimit(380));
        dispatch(updateStockTimeStamp(0));
     };
   }, [market, interval, internalIndicators, chartType]);

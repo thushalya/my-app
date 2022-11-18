@@ -377,7 +377,7 @@ function CryptoChart({ market, interval, internalIndicators }) {
           cryptoVolumeData: [],
         })
       );
-      dispatch(updateCryptoDataLimit(280))
+      dispatch(updateCryptoDataLimit(380));
       dispatch(updateCryptoTimeStamp(0))
 
     };

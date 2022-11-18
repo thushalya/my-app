@@ -72,7 +72,7 @@ function CryptoHeader({ market, interval }) {
   } catch (err) {
     user = null;
   }
-  user = true;
+
   useEffect(() => {
     let eventSource = new EventSource(
       `${config.DOMAIN_NAME}/present/` + `${market || marketState}/1d`

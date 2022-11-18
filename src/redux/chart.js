@@ -9,13 +9,13 @@ export const chartSlice = createSlice({
     cryptoChartDataLength: 0,
     cryptoVolumeData: [],
     cryptoTimeStamp: 0,
-    cryptoDataLimit: 280,
+    cryptoDataLimit: 380,
 
     stockChartData: [],
-    stockChartDataLength:0,
+    stockChartDataLength: 0,
     stockVolumeData: [],
     stockTimeStamp: 0,
-    stockDataLimit: 280,
+    stockDataLimit: 380,
 
     chartType: CANDLESTICK,
     internalIndicatorData: {
@@ -48,7 +48,7 @@ export const chartSlice = createSlice({
     updateCryptoChartData: (state, action) => {
       state.cryptoChartData = action.payload.cryptoChartData;
       state.cryptoVolumeData = action.payload.cryptoVolumeData;
-      state.cryptoChartDataLength = (action.payload.cryptoChartData).length
+      state.cryptoChartDataLength = action.payload.cryptoChartData.length;
     },
     updateChartType: (state, action) => {
       state.chartType = action.payload;
@@ -59,7 +59,7 @@ export const chartSlice = createSlice({
     updateCryptoDataLimit: (state, action) => {
       state.cryptoDataLimit = action.payload;
     },
-    updateIndicatorData: (state,action) => {
+    updateIndicatorData: (state, action) => {
       return {
         ...state,
         internalIndicatorData: {
@@ -68,18 +68,19 @@ export const chartSlice = createSlice({
         },
       };
     },
-    updateExternalIndicatorData: (state,action) =>{
-      return{
-        ...state,externalIndicatorData:{
+    updateExternalIndicatorData: (state, action) => {
+      return {
+        ...state,
+        externalIndicatorData: {
           ...state.externalIndicatorData,
-          [action.payload.indicatorType]:action.payload.data,
-        }
-      }
+          [action.payload.indicatorType]: action.payload.data,
+        },
+      };
     },
     updateStockChartData: (state, action) => {
       state.stockChartData = action.payload.stockChartData;
       state.stockVolumeData = action.payload.stockVolumeData;
-      state.stockChartDataLength = (action.payload.stockChartData).length;
+      state.stockChartDataLength = action.payload.stockChartData.length;
     },
     updateStockTimeStamp: (state, action) => {
       state.stockTimeStamp = action.payload;
