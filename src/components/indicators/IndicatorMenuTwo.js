@@ -66,7 +66,7 @@ const IndicatorMenuTwo = ({ displayExternalIndicators }) => {
   };
 
   return (
-    <div data-testid="externalIndicators" className="indicator-select-btn">
+    <div data-testid="externalIndicatorMenu" className="indicator-select-btn">
       <button
         aria-controls="simple-menu"
         aria-haspopup="true"
