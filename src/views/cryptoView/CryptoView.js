@@ -18,11 +18,12 @@ import {
   updateCryptoTimeStamp,
   updateIndicatorData,
 } from "../../redux/chart";
-import PageLoader from "../../components/pageLoader/PageLoader";
+// import PageLoader from "../../components/pageLoader/PageLoader";
 import {
   resetInternalIndicators,
   resetExternalIndicatorData,
 } from "../../utils/functions";
+import Fade from "react-reveal/Fade";
 
 function CryptoView() {
   const dispatch = useDispatch();
@@ -104,20 +105,20 @@ function CryptoView() {
 
   const { macd, obv, roc, rsi, stoch } = externalIndicators;
   return (
-    <div>
-      {loading ? (
-        <PageLoader />
-      ) : (
     <div className="CryptoView">
-      <HeaderTwo />
+      <Fade top><HeaderTwo /></Fade>
+      
       <div className="d-flex flex-row">
         <div className="crypto-charts d-flex flex-column">
-          <CryptoHeader market={market} interval={interval} />
-          <CryptoIntervals
-            changeInterval={changeInterval}
-            addInternalIndicators={addInternalIndicators}
-            addExternalIndicators={addExternalIndicators}
-          />
+          <Fade right duration={1000} ><CryptoHeader market={market} interval={interval} /></Fade>        
+          <Fade left duration={1000} delay={600}>
+            <CryptoIntervals
+              changeInterval={changeInterval}
+              addInternalIndicators={addInternalIndicators}
+              addExternalIndicators={addExternalIndicators}
+            />
+          </Fade>
+          
           <CryptoChart
             market={market}
             interval={interval}
@@ -129,16 +130,18 @@ function CryptoView() {
           {macd && <MACDChart marketType="crypto" market={market} interval={interval} />}
           {stoch && <StochChart marketType="crypto" market={market} interval={interval}/>}
         </div>
-        <div className="types-crypto">
-          <CryptoTypes changeCryptoType={changeCryptoType} />
-        </div>
+        <Fade duration={1000} delay={1500}>
+          <div className="types-crypto">
+            <CryptoTypes changeCryptoType={changeCryptoType} />
+          </div>
+        </Fade>
+        
         {/* alert button */}
         {/* TODO: 
         fix css of the alert button */}
       </div>
     </div>
-      )}
-    </div>
+  
   );
 }
 

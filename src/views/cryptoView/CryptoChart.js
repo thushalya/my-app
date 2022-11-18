@@ -212,7 +212,7 @@ function CryptoChart({ market, interval, internalIndicators }) {
           );
           setTimeout(()=>{
             setLoading(false);
-          },1000)
+          },2000)
         })
         .catch();
 

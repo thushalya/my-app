@@ -6,7 +6,7 @@ import HomeSubOne from "./HomeSubOne";
 import HomeSubTwo from "./HomeSubTwo";
 import StockSec from "./StockSec";
 import Slide from "react-reveal/Slide";
-import Flip from "react-reveal/Flip";
+import Fade from "react-reveal/Fade";
 
 
 import Footer from "./Footer";
@@ -28,7 +28,7 @@ function HomeView() {
         <PageLoader />
       ) : (
         <div className="homeView ">
-          <HeaderTwo />
+          <Fade top><HeaderTwo /></Fade>
           <div
             id="carouselExampleInterval"
             className="carousel slide"

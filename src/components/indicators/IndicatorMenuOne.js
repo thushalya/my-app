@@ -68,7 +68,7 @@ const IndicatorMenuOne = ({ displayInternalIndicators }) => {
   
 
   return (
-    <div data-testid="internalSelect" className="indicator-select-btn">
+    <div data-testid="internalIndicatorMenu" className="indicator-select-btn">
       <button
         className="indicator-img-btn"
         aria-controls="simple-menu"

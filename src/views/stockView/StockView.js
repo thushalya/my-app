@@ -14,11 +14,12 @@ import {
   updateStockTimeStamp,
   updateIndicatorData,
 } from "../../redux/chart";
-import PageLoader from "../../components/pageLoader/PageLoader";
+// import PageLoader from "../../components/pageLoader/PageLoader";
 import {
   resetInternalIndicators,
   resetExternalIndicatorData,
 } from "../../utils/functions";
+import Fade from "react-reveal/Fade";
 
 function StockView() {
 
@@ -88,39 +89,39 @@ function StockView() {
   }, []);
 
   return (
-    <div>
-      {loading ? (
-        <PageLoader />
-      ) : (
-        <div className="CryptoView">
-          <HeaderTwo />
-          <div className="d-flex flex-row">
-            <div className="crypto-charts d-flex flex-column">
-              <StockHeader market={market} interval={interval} />
-              <StockIntervals
-                changeInterval={changeInterval}
-                addInternalIndicators={addInternalIndicators}
-                addExternalIndicators={addExternalIndicators}
-              />
-              <StockChart
-                market={market}
-                interval={interval}
-                internalIndicators={internalIndicators}
-              />
+  
+      <div className="CryptoView">
+        <Fade top><HeaderTwo /></Fade>
+        <div className="d-flex flex-row">
+          <div className="crypto-charts d-flex flex-column">
+            <Fade right duration={1000} ><StockHeader market={market} interval={interval} /></Fade>
+            <Fade left duration={1000} delay={600}>
+            <StockIntervals
+              changeInterval={changeInterval}
+              addInternalIndicators={addInternalIndicators}
+              addExternalIndicators={addExternalIndicators}
+            />
+            </Fade>
+            <StockChart
+              market={market}
+              interval={interval}
+              internalIndicators={internalIndicators}
+            />
 
-              {rsi && ( <LineChart marketType="stock" market={market} interval={interval} type="rsi"/>)}
-              {obv && ( <LineChart marketType="stock" market={market} interval={interval} type="obv"/>)}
-              {roc && ( <LineChart marketType="stock" market={market} interval={interval} type="roc"/>)}
-              {macd && ( <MACDChart marketType="stock" market={market} interval={interval} /> )}
-              {stoch && ( <StochChart marketType="stock" market={market} interval={interval} />)}
-            </div>
-            <div className="types-crypto">
-              <StockTypes changeStockType={changeStockType} />
-            </div>
+            {rsi && ( <LineChart marketType="stock" market={market} interval={interval} type="rsi"/>)}
+            {obv && ( <LineChart marketType="stock" market={market} interval={interval} type="obv"/>)}
+            {roc && ( <LineChart marketType="stock" market={market} interval={interval} type="roc"/>)}
+            {macd && ( <MACDChart marketType="stock" market={market} interval={interval} /> )}
+            {stoch && ( <StochChart marketType="stock" market={market} interval={interval} />)}
+          </div>
+          <div className="types-crypto">
+            <Fade duration={1000} delay={1500}>
+            <StockTypes changeStockType={changeStockType} />
+            </Fade>
           </div>
         </div>
-      )}
-    </div>
+      </div>
+
   );
 }
 

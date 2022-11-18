@@ -252,8 +252,8 @@ body {
 .img-sec img {
   object-fit: contain;
   height: 280px;
-  margin-top: 22px;
-  margin-bottom: 25px;
+  margin-top: 25px;
+  margin-bottom: 28px;
 
 }
 
@@ -797,9 +797,69 @@ font-size: 22px;
   background: rgb(31, 31, 31);
 }
 
+.prosidebar {
+  background-color: #24262D;
+  width: 30%;
+  color: white;
+}
+
+.watchlist-loader {
+  margin-top: 60px;
+}
+
+.watchlist-header {
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+  letter-spacing: 1px;
+}
+
+.watchlist-datagrid {
+  height: 400px;
+  width: 100%;
+  margin-top: -50px;
+}
+
+@media only screen and (max-width: 1003px) {
+  .subOne-details .logo-name {
+    display: block !important;
+  }
+
+  .main-title {
+    display: block !important;
+  }
+  .img-sec img {
+    object-fit: contain;
+    height: 250px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+  }
+
+  .subOne-details header {
+    font-size: 25px;
+  }
+
+  .subOne-details h3 {
+    font-size: 22px;
+  }
+
+  .detail-list p {
+    font-size: 19px;
+    margin: 11px;
+  }
+
+  .subOne-details .logo-name {
+    display: block !important;
+  }
+
+  .main-title {
+    display: block !important;
+  }
+}
+
 @media only screen and (max-width: 900px) {
 
-  /* For mobile phones: */
   .pages {
     width: 50px;
   }
@@ -811,236 +871,158 @@ font-size: 22px;
   .main-title {
     display: block !important;
   }
-}
-
-.prosidebar{
-  background-color: #24262D;
-  width: 30%;
-  color: white;
-}
-
-.watchlist-loader{
-  margin-top: 60px; 
-}
-
-.watchlist-header{
-  color: white;
-  text-align: center;
-  margin-top: 20px;
-  letter-spacing: 1px;
-}
-
-.watchlist-datagrid{
-  height: 400px;
-  width: 100%;
-  margin-top:-50px;
-}
-
-@media screen and (max-width: 800px) {
-  .watchlist-loader{
-    margin-top: 100px; 
-    margin-left: -52px;
+  .crypto-only-intervals header{
+    display: none;
+  }
+  .crypto-top {
+    height: 80px;
   }
 
-  .no-item-loader{
-    margin-top: 0px; 
-    margin-left: -50px;
+  .volumes {
+    flex-direction: column;
   }
-
-  .watchlist-header{
-    margin-top: 50px;
-    font-size: 50px;
+  .CryptoTypes {
+    margin-top: 144px;
+  }
+  .CryptoHeader p {
+    font-size: 15px;
+  }
+  .volumes-sub {
+    margin: 2px
+  }
+  .volume-value {
+    font-size: 11px;
   }
 }
 
 
-@media only screen and (max-width: 1003px) 
-{
-    .subOne-details .logo-name {
-        display: block !important;
-      }
-    
-      .main-title {
-        display: block !important;
-      }
-}
 @media only screen and (max-width: 800px) {
 
   .CryptoHeader header {
       font-size: 17px;
   }
-    .subOne-details header {
-      font-size: 23px;
-    }
-  
-    .subOne-details h3 {
-      font-size: 20px;
-    }
-  
-    .detail-list p {
-      font-size: 16px;
-      margin: 10px;
-    }
-  
-    .img-sec img {
-      object-fit: contain;
-      height: 220px;
-      margin-top: 20px;
-      margin-bottom: 20px;
-  
-    }
-    .CryptoHeader header {
-      font-size: 17px;
-    }
-
-    .CryptoHeader p {
-      font-size: 15px;
-    }
-    .volume-value {
-      font-size: 10px;
-      color: #a0a1a4;
-      margin-left: 11px;
-    }
-
-    .watchlist-btn {
-      font-size: 12px !important;
-    }
-}
-
-.prosidebar {
-  background-color: #24262D;
-  width: 30%;
-  color: white;
-}
-
-
-
-@media only screen and (max-width: 1003px) {
-  .img-sec img {
-      object-fit: contain;
-      height: 250px;
-      margin-top: 20px;
-      margin-bottom: 20px;
-  
-    }
-    .subOne-details header{
-      font-size: 25px;
-    }
-    .subOne-details h3{
-      font-size: 22px;
-    }
-        .detail-list p {
-          font-size: 19px;
-          margin: 11px;
-        }
-
-  .subOne-details .logo-name {
-    display: block !important;
-  }
-
-  .main-title {
-    display: block !important;
-  }
-}
-
-@media only screen and (max-width: 800px) {
-
-  .pwa header {
-      font-size: 19px;
-    }
-
-  .alarm-icon {
-    transform: scale(1.2)
-  }
-
-  .alarm-icon:hover {
-    transform: scale(1.3)
-  }
-
-  .img-sec {
-    display: none;
-  }
-
   .subOne-details header {
-    font-size: 22px;
-    font-weight: 800;
+    font-size: 23px;
   }
 
   .subOne-details h3 {
-    font-size: 19px;
+    font-size: 20px;
   }
 
   .detail-list p {
-    font-size: 14px;
+    font-size: 16px;
+    margin: 10px;
   }
 
-  .app-description header {
-    font-size: 19px;
-    font-weight: 600;
-  }
-
-  .app-details {
-    font-size: 11px;
-  }
-
-  .crypto-bar {
-    display: flex;
-    flex-direction: row;
-    background-color: #393C45;
-    margin-left: 10px;
-    align-items: center;
-    box-shadow: 5px 4px 5px 1px rgba(0, 0, 0, 0.8);
-  }
-
-  .StockChart {
-    margin-left: 6px;
-  }
-
-  .CryptoChart {
-    margin-left: 6px;
-  }
-
-  .interval-btns button {
-    margin-left: 7px;
-    width: 30px;
-    font-size: 12px;
-    border: none;
-    background: none !important;
-    color: rgb(214, 214, 214);
-    background-color: #282B30 !important;
-    padding: 2px;
-    border-radius: 5px;
-    cursor: pointer !important;
-  }
-
-  .AppBar img {
-    width: 280px;
-  }
-  .headerOne img {
+  .img-sec img {
     object-fit: contain;
-    width: 280px;
-  }
-
-  .crypto-top{
-    height: 80px;
-  }
-  .volumes{
-    flex-direction: column;
-  }
-  .volumes-sub{
-    margin: 3px;
-  }
-  .volume-value {
-    font-size: 10px;
+    height: 220px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 
   }
-    .CryptoIntervals header {
-      display: none;
+
+  .CryptoHeader p {
+    font-size: 15px;
+  }
+
+  .watchlist-btn {
+    font-size: 12px !important;
+  }
+  .watchlist-loader {
+    margin-top: 100px;
+    margin-left: -52px;
+  }
+
+  .no-item-loader {
+    margin-top: 0px;
+    margin-left: -50px;
+  }
+
+  .watchlist-header {
+    margin-top: 50px;
+    font-size: 50px;
     }
-    .CryptoTypes{
-      margin-top: 144px;
-    }
+ .pwa header {
+   font-size: 19px;
+ }
+
+ .alarm-icon {
+   transform: scale(1.2)
+ }
+
+ .alarm-icon:hover {
+   transform: scale(1.3)
+ }
+
+ .img-sec {
+   display: none;
+ }
+
+
+ .detail-list p {
+   font-size: 14px;
+ }
+
+ .app-description header {
+   font-size: 19px;
+   font-weight: 600;
+ }
+
+ .app-details {
+   font-size: 11px;
+ }
+
+ .crypto-bar {
+   display: flex;
+   flex-direction: row;
+   background-color: #393C45;
+   margin-left: 10px;
+   align-items: center;
+   box-shadow: 5px 4px 5px 1px rgba(0, 0, 0, 0.8);
+ }
+
+ .StockChart {
+   margin-left: 6px;
+ }
+
+ .CryptoChart {
+   margin-left: 6px;
+ }
+
+ .interval-btns button {
+   margin-left: 7px;
+   width: 30px;
+   font-size: 12px;
+   border: none;
+   background: none !important;
+   color: rgb(214, 214, 214);
+   background-color: #282B30 !important;
+   padding: 2px;
+   border-radius: 5px;
+   cursor: pointer !important;
+ }
+
+ .AppBar img {
+   width: 280px;
+ }
+
+ .headerOne img {
+   object-fit: contain;
+   width: 280px;
+ }
+ .volumes-sub {
+   margin: 3px;
+ }
+ .volume-value {
+   font-size: 10px;
+ }
+ .CryptoIntervals header {
+   display: none;
+ }
 }
+
+
 
 @media only screen and (max-width: 705px) {
   .alerts-name {
