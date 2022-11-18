@@ -113,7 +113,7 @@ export default function Notifications(){
         { field:'id', hide:true},
         { field: 'date', headerName: 'Date', width: 175, headerAlign:'center', align:'center', sortable:true },
         { field: 'symbol', headerName: 'Symbol', width: 100, headerAlign:'center', align:'center', sortable:false },
-        { field: 'type', headerName: 'Type', width: 200, headerAlign:'center', align:'center', sortable:false },
+        { field: 'type', headerName: 'Type', width: 120, headerAlign:'center', align:'center', sortable:false },
         { field: 'price', headerName: 'Price',type: 'number', width: 120, headerAlign:'center', align:'center', sortable:false },
         
         // { field: 'current peak price', headerName: 'Current Peak',type: 'number', width: 120, headerAlign:'center', align:'center', sortable:false },
