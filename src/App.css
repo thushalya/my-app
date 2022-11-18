@@ -865,9 +865,17 @@ font-size: 22px;
   letter-spacing: 1px;
 }
 
+.watchlist-header2 {
+  color: white;
+  text-align: center;
+  margin-top: 100px;
+  letter-spacing: 1px;
+}
+
 .watchlist-datagrid {
   height: 400px;
-  width: 100%;
+  width: 90%;
+  margin-left: 80px;
   margin-top: -50px;
 }
 
@@ -980,18 +988,22 @@ font-size: 22px;
     font-size: 12px !important;
   }
   .watchlist-loader {
-    margin-top: 100px;
-    margin-left: -52px;
+    margin-top: 120px;
+    margin-left: -20px;
   }
 
   .no-item-loader {
-    margin-top: 0px;
-    margin-left: -50px;
+    margin-top: 100px;
+    margin-left: 0px;
   }
 
   .watchlist-header {
     margin-top: 50px;
     font-size: 50px;
+    }
+  .watchlist-header2 {
+    margin-top: 100px;
+    font-size: 30px;
     }
  .pwa header {
    font-size: 19px;
