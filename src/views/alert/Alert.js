@@ -96,7 +96,8 @@ export default function Alert({market}) {
 
     // handeling adding of alerts
     // [count, setCount] = useState(0)
-    const handleSetAlert = async() => {
+    const handleSetAlert = async(e) => {
+      e.preventDefault();
       console.log("data triggered ", data)
       if (data.length <= 0){
         setPopLoading(false)
@@ -182,10 +183,10 @@ export default function Alert({market}) {
     return(
     <div className='Alerts'>
       {data?.length <= 0 ?
-        <Box style={{marginTop:'50px', width:'200px', color:'white', textAlign:'center', overflowY:'hidden'}}>
+        <Box className="No-Alerts-Box" >
         <p>No alerts set</p>
-        <AlarmAddOutlinedIcon onClick={(event)=>handleClick(event)} style={{marginTop:'20px', transform:'scale(2)'}}/>
-        <p style={{marginTop:'30px'}}>Click to add an alert</p>
+        <AlarmAddOutlinedIcon  aria-describedby={id} className="add-alert-icon" onClick={(event)=>handleClick(event)} style={{marginTop:'20px'}}/>
+        <p className='add-alert-p' style={{marginTop:'20px'}}>Click to add an alert</p>
         </Box>:
     
       <Table className="alerttable" striped bordered hover variant="dark" style={{textAlign:'center', background:'#212529'}} >
@@ -193,12 +194,12 @@ export default function Alert({market}) {
           <tr>
             <th>Alerts</th>
             <th >
-              <AlarmAddOutlinedIcon onClick={(event)=>handleClick(event)}/>
+              <AlarmAddOutlinedIcon className="add-alert-icon-second" aria-describedby={id} onClick={(event)=>handleClick(event)}/>
             </th>
           </tr>
           <tr>
             <th>Cryptocurrency</th>
-            <th></th>
+            <th>Type</th>
             <th>Price</th>
             <th>Remove</th>
           </tr>
@@ -210,7 +211,7 @@ export default function Alert({market}) {
             // {console.log(data, " data")}
             return (
               <tr key={data.crypto_price}>
-                <td className="d-flex flex-row" align='center'>
+                <td >
                   {data.crypto_name}  
                 </td>
                 <td>
@@ -221,9 +222,9 @@ export default function Alert({market}) {
                 </td>
                 <td>
                 <Button 
-                startIcon={<DeleteIcon style={{position:'relative', left:'40%'}}/>}
+                startIcon={<DeleteIcon/>}
                 color="primary"
-                sx= {{pr:3, pl:3, w:'auto', maxHeight:'5px'}}
+                sx= {{ w:'auto', maxHeight:'5px'}}
                 onClick={(event) =>{
                   //console.log("cell values", cellValues)
                   handleRemove(event, data);
@@ -256,16 +257,15 @@ export default function Alert({market}) {
       >
       
           <Form className='alertForm'>
-            <Form.Group className="mb-3" controlId="formBasicMarket">
-              <Form.Label>Cryptocurrency</Form.Label>
-              <Form.Control className = 'alert-form-control' type="text" placeholder={market} disabled={true}/>
+            <Form.Group className="mb-3 pt-2" controlId="formBasicMarket">
+              <p className = 'alert-form-control-disbaled' type="text" >{market}/USDT</p>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicValue">
               <Form.Label>Value</Form.Label>
-              <Form.Control className='alert-form-control' name='value' type='number' step="0.01" min='0' placeholder="Enter Value" onChange={handleChange}/>
+              <Form.Control className='alert-form-control' name='value' type='number' step="0.01" min='0' placeholder="Enter Value" onChange={handleChange} required/>
             </Form.Group>
-            <Button className="alert-btn signup-btn" id="alert-btn" onClick={handleSetAlert}>
+            <Button type="submit" className="alert-btn " id="alert-btn" onClick={handleSetAlert}>
               Set Alert
             </Button>
         </Form>

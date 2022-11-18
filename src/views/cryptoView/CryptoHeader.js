@@ -32,10 +32,17 @@ const Toast = Swal.mixin({
 function CryptoHeader({ market, interval }) {
   const obj = { price: 0, volume: 0, high: 0, low: 0 };
   const [values, setValues] = useState(obj);
-  // for alert
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  }
+
+  const [anchorEl, setAnchorEl] = useState(null);
+  const handleAlert =(e)=>{
+    setAnchorEl(e.currentTarget)
+  }
+  const open = Boolean(anchorEl);
+  const id = open ? "simple-popover" : undefined;
 
   const handleClick = async () => {
     const response = await WatchlistServices.addMarket({
@@ -101,15 +108,25 @@ function CryptoHeader({ market, interval }) {
             Alerts
           </p>
           <AccessAlarmsIcon
+          aria-describedby={id}
             className="alarm-icon"
             sx={{ color: "white" }}
-            onClick={handleOpen}
+            // onClick={handleOpen}
+            onClick={handleAlert}
           />
 
           <Popover
-            sx={{ mt: 20, ml: 10, borderWidth: 0, maxWidth: "400px" }}
+            anchorOrigin={{
+              vertical: "bottom",
+              horizontal: "left",
+            }}
+            className="alert-popover"
+            // sx={{ mt: 16, ml: 10, borderWidth: 0, maxWidth: "300px" }}
             open={open}
             onClose={handleClose}
+            id={id}
+            anchorEl={anchorEl}
+
           >
             <Alert
               open={open}

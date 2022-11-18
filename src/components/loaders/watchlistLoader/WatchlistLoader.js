@@ -16,7 +16,7 @@ const WatchlistLoader = () => {
     
     return (
         <div className="watchlist-loader">
-        <Lottie options={defaultOptions} height={500} width={500}/>
+        <Lottie options={defaultOptions} height={450} width={450}/>
         </div>
     );
 };
