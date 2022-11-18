@@ -18,6 +18,7 @@ import { WindowSharp } from '@mui/icons-material';
 import SimpleLoader from '../../components/loaders/lottieLoader/SimpleLoader';
 import WatchlistLoader from '../../components/loaders/watchlistLoader/WatchlistLoader';
 import NoItemsLoader from '../../components/loaders/noItemsLoader/NoItemsLoader';
+import Slide from 'react-reveal/Slide';
 
 export default function Watchlist() {
   
@@ -78,7 +79,7 @@ export default function Watchlist() {
   const userDecode = Token.getAuth()
   const user_id = userDecode['user_id']
   const [loading, setLoading] = React.useState(true);
-  const [loading2, setLoading2] = React.useState(false);
+  const [loading2, setLoading2] = React.useState(true);
 
   const checkMarket = async(symbol) => {
       console.log("calling check market")
@@ -99,27 +100,30 @@ export default function Watchlist() {
       return response
     }
   useEffect(()=>{
-    setTimeout(() => {
-      setLoading(false)
-    }, 1000);
     getWatchlist()
 
   }, []);
   const getWatchlist = async() => {
-    setLoading2(true)
+    
+    
+    const response = await WatchlistServices.viewWatchlist()
+    if (response.status === 200){
+      console.log("response get watchlist:", response)
+      const data_ = response.data.data
+      console.log("data of list", data_)
+      if (data_.length === 0){
+        setLoading2(false)
+        setData([])
+      }
+      else{
+        setData(data_)
+      }
+      console.log("finised loading")
+    }
     setTimeout(() => {
       setLoading2(false)
-    }, 3000);
-    const response = await WatchlistServices.viewWatchlist()
+    }, 4000);
     
-    console.log("response get watchlist:", response)
-    const data_ = response.data.data
-    // console.log("data of list", data_)
-    if (data_==null)
-      setData([])
-    else
-      setData(data_)
-    console.log("finised loading")
   };
   useEffect(()=>{
     console.log(removed)
@@ -230,11 +234,6 @@ export default function Watchlist() {
   
   return (
     <div>
-    {loading
-    ? 
-      <PageLoader/>
-    :
-    <div>
       <HeaderTwo/>
 
       { 
@@ -244,6 +243,7 @@ export default function Watchlist() {
       ? 
       <div >
       <h1 className='watchlist-header'>Watchlist</h1>
+      <h2 className='watchlist-header2'>Your watchlist is empty</h2>
       <NoItemsLoader  />
       </div>
       :
@@ -252,6 +252,7 @@ export default function Watchlist() {
       : 
       <div className='d-flex flex-column justify-content-center'>
         <h1 className='watchlist-header'>Watchlist</h1>
+        <Slide right>
         <Container maxWidth="lg">
         <div className='watchlist-datagrid'>
           {/* {console.log("rows for the data grid", rows)} */}
@@ -279,8 +280,8 @@ export default function Watchlist() {
         />
         </div>
         </Container>
+        </Slide>
       </div>}
-    </div>}
     </div>
   )
 }

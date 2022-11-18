@@ -16,7 +16,7 @@ const NoItemsLoader = () => {
     
     return (
         <div className="no-item-loader">
-        <Lottie options={defaultOptions} height={500} width={500}/>
+        <Lottie options={defaultOptions} height={300} width={300}/>
         </div>
     );
 };

@@ -3,17 +3,17 @@ import { createSlice } from "@reduxjs/toolkit";
 export const watchlistSlice = createSlice({
     name: "watchlist",
     initialState: {
-        removeMarket : []
+        watchlist: [],
     },
     reducers: {
-        saveWatchlist: (state, action) => {
-            state.removeMarket = [...state.removeMarket, action.payload]
+        addToWatchlist: (state, action) => {
+            state.watchlist = [...state.watchlist, action.payload];
         },
-        removeMarketList: (state) => {
-            state.removeMarket = []
+        removeFromWatchlist: (state, action) => {
+            state.watchlist = state.watchlist.filter((item) => item !== action.payload);
         }
     },
 });
 
-export const {saveWatchlist, removeMarketList} = watchlistSlice.actions;
+export const { addToWatchlist, removeFromWatchlist } = watchlistSlice.actions;
 export default watchlistSlice.reducer;
