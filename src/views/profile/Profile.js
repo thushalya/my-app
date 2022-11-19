@@ -43,6 +43,7 @@ import SimpleLoader from '../../components/loaders/lottieLoader/SimpleLoader';
 import PageLoader from '../../components/pageLoader/PageLoader';
 import Swal from 'sweetalert2';
 import defaultPic from "../../assets/DefaultProfilePic/default_image.png";
+import { getByTestId } from '@testing-library/react';
 
 const style = {
     position: 'relative',
@@ -372,8 +373,8 @@ if (loader) {
             }
 
             <div data-testid='profile-elem' className='container1'>
-            <Button className="button" size="lg" onClick={handleSubmit} style={{fontSize:'14px'}}>Save</Button>
-            <Button className="button" size='lg' onClick={handleShow} style={{fontSize:'14px'}}>Change Password</Button>
+            <Button data-testid='test-save' className="button" size="lg" onClick={handleSubmit} style={{fontSize:'14px'}}>Save</Button>
+            <Button data-testid='test-change'className="button" size='lg' onClick={handleShow} style={{fontSize:'14px'}}>Change Password</Button>
             </div>
             {/* <Button className='btn btn-secondary button w-20 update-btn' size="lg" onClick={handleOpen} style={{fontSize:'14px'}}>Edit</Button> */}
         </Form>
@@ -386,8 +387,8 @@ if (loader) {
             </div>
         } */}
         { show &&
-            <div style={{marginRight:'18px', width:'10px'}}>
-            <ChangePassModal sx={{mt:-8, borderWidth:0 }}
+            <div  style={{marginRight:'18px', width:'10px'}}>
+            <ChangePassModal data-testid='change-password-modal' sx={{mt:-8, borderWidth:0 }}
             open={show}
             onClose={handleClose}
             aria-labelledby="modal-modal-title"
