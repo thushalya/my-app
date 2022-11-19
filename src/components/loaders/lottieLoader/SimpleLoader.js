@@ -14,8 +14,8 @@ const SimpleLoader = () => {
     };
     
     return (
-        <div>
-        <Lottie options={defaultOptions} height={1000} width={500} />
+        <div className='simple-loader-div'>
+        <Lottie options={defaultOptions} height={300} width={300} />
         </div>
     );
 };

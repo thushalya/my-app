@@ -31,13 +31,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import NotificationServices from "../../services/NotificationServices";
 import { increment, setCount } from "../../redux/notification";
+import defaultPic from "../../assets/DefaultProfilePic/default_image.png";
 
 const style = {
   position: 'relative',
   top: '40%',
   left: '50%',
-  width: 800,
-  maxWidth: 'calc(100% - 20px)',
+  maxWidth: 700,
+  border:0,
+  // maxWidth: 'calc(100% - 20px)',
   transform: 'translate(-50%, -50%)',
   paddingLeft: 0,
   paddingRight:0
@@ -329,6 +331,7 @@ const HeaderTwo = () => {
                   onClose={handleClose}
                   aria-labelledby="modal-modal-title"
                   aria-describedby="modal-modal-description"
+                  disableAutoFocus={true}
                 >
                   <Box sx={style}>
                     <Notifications increment={increment} />
@@ -345,7 +348,7 @@ const HeaderTwo = () => {
                 <Tooltip title="Open settings">
                   <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                     {/* {console.log('kkkkk')} */}
-                    <Avatar key={link} alt="Remy Sharp" src={link} />
+                    <Avatar key={link} src={(link != '') ? link : defaultPic} />
                   </IconButton>
                 </Tooltip>
                 <Menu

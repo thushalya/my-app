@@ -14,10 +14,7 @@ import Token from "../../services/Token";
 import { useDispatch, useSelector } from "react-redux";
 import { decrement, setCount } from "../../redux/notification";
 import SimpleLoader from "../../components/loaders/lottieLoader/SimpleLoader"
-
-// TODO: 
-// 1. css fix
-// 2. Loader
+import Slide from 'react-reveal/Slide';
 
 export default function Notifications(){
   // for no new notification alert
@@ -36,7 +33,7 @@ export default function Notifications(){
       setLoader(true)
       setTimeout(() => {
         setLoader(false)
-      }, 1000);
+      }, 1500);
       const rows = await NotificationServices.getNotifications();
       const rows_ = rows?.data['last day notifications'].map((row, index) => {
         return {
@@ -57,22 +54,6 @@ export default function Notifications(){
     };
     useEffect(()=>{
       callHistoricNotifications();
-      // let eventSource = new EventSource(
-      //   `${config.DOMAIN_NAME}/notifications/present`,
-      //   {headers: { Authorization: `Bearer ${Token.getAccessToken()}` }}
-      // );
-      // eventSource.addEventListener(
-      //   "message",
-      //   function (e) {
-      //     let parsedData = JSON.parse(e.data);
-      //     console.log("parsedData", parsedData)
-      //     // let object = {
-      //     //   time: parsedData[0],
-            
-      //     // };
-      //     // candleSeries.current.update(object);
-      //   }
-      // );
     }, [])
     
     
@@ -85,7 +66,6 @@ export default function Notifications(){
           color="inherit"
           onClick={handleClose_}
         >
-          <CloseIcon fontSize="small" />
         </IconButton>
       </Fragment>
     );
@@ -111,7 +91,7 @@ export default function Notifications(){
     }
     const columns = [
         { field:'id', hide:true},
-        { field: 'date', headerName: 'Date', width: 175, headerAlign:'center', align:'center', sortable:true },
+        { field: 'date', headerName: 'Date', width: 200, headerAlign:'center', align:'center', sortable:true },
         { field: 'symbol', headerName: 'Symbol', width: 100, headerAlign:'center', align:'center', sortable:false },
         { field: 'type', headerName: 'Type', width: 120, headerAlign:'center', align:'center', sortable:false },
         { field: 'price', headerName: 'Price',type: 'number', width: 120, headerAlign:'center', align:'center', sortable:false },
@@ -156,7 +136,9 @@ export default function Notifications(){
         :
         data && data?.length <= 0
         ? 
+        <Slide right>
           <Snackbar
+            className="snackbar-alert"
             sx={{position:'absolute'}}
             open={open_}
             autoHideDuration={6000}
@@ -165,9 +147,11 @@ export default function Notifications(){
             action={action}
             anchorOrigin={{ vertical:'top',  horizontal:'center'}}
           />
+          </Slide>
         : 
-        <Container maxWidth="sm" sx={{boarder:0}}>
-        <div style={{ height: 400, width: '100%'}}>
+        <Slide right>
+        <Container maxWidth="sm" sx={{boarder:0, maxWidth:800}}>
+        <div className='notification-div'>
           
           <DataGrid
             rows={data}
@@ -177,6 +161,7 @@ export default function Notifications(){
             disableColumnFilter
             disableColumnSelector
             disableColumnMenu
+            disableSelectionOnClick
             sx={{
               m:2,
               boxShadow: 0,
@@ -189,6 +174,7 @@ export default function Notifications(){
           />
           </div>
           </Container>
+          </Slide>
     );
 }
 
