@@ -8,7 +8,6 @@ function HomeSubTwo() {
   return (
     <div className="HomeSubTwo d-flex flex-row justify-content-evenly white">
       <Slide left duration={2500}>
-        
       <div className="subOne-details">
         <header> <span className="main-title">Crypto analysis</span></header>
          <h3 ><span className="h3-first">Analyse</span> <span className="h3-second">Crypto Currencies</span></h3>
@@ -16,6 +15,7 @@ function HomeSubTwo() {
         <div className="detail-list d-flex flex-column">
             <p><span className="start-span"><StarIcon className="star-icon" /></span><span className="blue-keyword"> Visualize </span> <span> crypto charts</span></p>
             <p><span className="start-span"><StarIcon className="star-icon" /></span><span> View </span><span className="blue-keyword"> real time </span><span>data</span> </p>
+            <p><span className="start-span"><StarIcon className="star-icon" /></span><span className="blue-keyword"> Technical Indicator </span><span>analysis</span> </p>
             <p><span className="start-span"><StarIcon className="star-icon" /></span> <span> Make your predictions smartly</span></p>
         </div>
       </div>

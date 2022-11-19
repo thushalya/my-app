@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap"
+import "react-bootstrap/dist/react-bootstrap.min";
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import {presistor, store} from "./redux/store";
 import { PersistGate } from "redux-persist/integration/react"
 import { Provider } from "react-redux";
-import "react-bootstrap/dist/react-bootstrap.min";
+
 import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

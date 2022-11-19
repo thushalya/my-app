@@ -5,10 +5,9 @@ import CryptoSec from "./CryptoSec";
 import HomeSubOne from "./HomeSubOne";
 import HomeSubTwo from "./HomeSubTwo";
 import StockSec from "./StockSec";
+import MobileDesc from "./MobileDesc";
 import Slide from "react-reveal/Slide";
 import Fade from "react-reveal/Fade";
-
-
 import Footer from "./Footer";
 import PageLoader from "../../components/pageLoader/PageLoader";
 import PreLoader from "../../components/loader/PageLoader";
@@ -28,7 +27,9 @@ function HomeView() {
         <PageLoader />
       ) : (
         <div className="homeView ">
-          <Fade top><HeaderTwo /></Fade>
+          <Fade top>
+            <HeaderTwo />
+          </Fade>
           <div
             id="carouselExampleInterval"
             className="carousel slide"
@@ -67,7 +68,6 @@ function HomeView() {
               <span className="visually-hidden">Next</span>
             </button>
           </div>
-
           <div className="app-description d-flex flex-column">
             <header>Crypto Stock Explorer is a platform where you can</header>
             <div className="app-details">
@@ -82,7 +82,6 @@ function HomeView() {
           {/* <Flip duration={3000}>
             <PWA />
           </Flip> */}
-
           <div className="market-cards">
             <Slide left duration={1500}>
               <CryptoSec className="crypto-comp" />
@@ -92,6 +91,7 @@ function HomeView() {
             </Slide>
           </div>
           <AlertDetails />
+          <MobileDesc/>
           <Footer />
         </div>
       )}

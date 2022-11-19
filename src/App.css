@@ -398,7 +398,36 @@ body {
   justify-content: space-evenly;
 
 }
+.mobileDesc{
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
 
+.mobile-img-sec{
+  margin-right: 40px;
+}
+
+.mobile-img-sec img{
+  object-fit: contain;
+  width: 350px;
+}
+.mobile-descriptions header{
+  font-size: 20px;
+  margin-bottom: 50px;
+  margin-top: 7px;
+  color: white;
+  max-width: 400px;
+}
+.mobile-descriptions p{
+  font-size: 18px;
+  color: white;
+  
+  max-width: 400px;
+}
 .AlertDetails {
   color: white;
   align-items: center;
@@ -962,7 +991,16 @@ font-size: 22px;
 }
 
 @media only screen and (max-width: 800px) {
-
+.mobile-img-sec img {
+    object-fit: contain;
+    width: 280px !important;
+  }
+  .mobile-img-sec {
+    margin-right: 30px;
+  }
+.mobile-descriptions p {
+  max-width: 370px;
+}
   .CryptoHeader header {
       font-size: 17px;
   }
@@ -1129,9 +1167,32 @@ font-size: 22px;
       align-self: center !important;
   
     }
+.mobile-descriptions header {
+  font-size: 17px;
+  max-width: 300px;
+}
+
+.mobile-descriptions p {
+  font-size: 16px;
+  max-width: 300px;
+
+  
+}
 }
 
 @media only screen and (max-width: 650px) {
+  .mobile-img-sec{
+    margin-right: 10px;
+  }
+  .mobile-descriptions header {
+    font-size: 16px;
+      max-width: 250px;
+    } 
+    .mobile-descriptions p {
+      max-width: 250px;
+      font-size: 15px;
+  
+    }
 
   .crypto-comp {
     align-self: center !important;
@@ -1263,6 +1324,34 @@ font-size: 22px;
     width: 25px;
 
   }
+  .AlertDetails {
+    margin-bottom: -20px;
+  }
+
+  .mobileDesc {
+    display: flex;
+    flex-direction: column;
+  }
+  .mobile-img-sec{
+    margin-bottom: -17px;
+  }
+  .mobile-img-sec img{
+    margin-bottom: -20px;
+    width: 270px !important;
+  }
+
+  .mobile-descriptions header {
+    font-size: 15px;
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+
+  .mobile-descriptions p {
+    max-width: 250px;
+    font-size: 15px;
+    max-width: 300px;
+
+  }
 
   .indicator-img-btn img {
     object-fit: contain;
@@ -1274,7 +1363,10 @@ font-size: 22px;
 }
 
 @media only screen and (max-width: 500px) {
-
+  .market-cards {
+    margin-top: -50px !important;
+  
+    }
   .Register header {
     font-size: 1.3rem;
 
