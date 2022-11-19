@@ -122,7 +122,7 @@ function Register() {
               <InputLabel sx={{fontSize:"13px",mt:"-7px"}} className="inputLabel" htmlFor="outlined-adornment-firstname">
                 First Name
               </InputLabel>
-              <OutlinedInput className="outLineInput" id="outlined-adornment-firstname" type={"text"}
+              <OutlinedInput data-testid='test-fname' className="outLineInput" id="outlined-adornment-firstname" type={"text"}
                 style={{ color: "rgb(194, 193, 193)", fontSize: "13px" }}
                 name="First Name" value={state["First Name"]} onChange={handleChange} error={fNameError != ""} label="First Name"/>
             </FormControl>
@@ -135,7 +135,7 @@ function Register() {
               <InputLabel sx={{fontSize:"13px",mt:"-7px"}} className="inputLabel" htmlFor="outlined-adornment-lastname">
                 Last Name
               </InputLabel>
-              <OutlinedInput className="outLineInput" id="outlined-adornment-lastname" type={"text"}
+              <OutlinedInput data-testid='test-lname' className="outLineInput" id="outlined-adornment-lastname" type={"text"}
                 style={{ color: "rgb(194, 193, 193)", fontSize: "13px" }}
                 name="Last Name" value={state["Last Name"]} onChange={handleChange} error={lNameError != ""} label="Last Name"/>
             </FormControl>
@@ -150,12 +150,12 @@ function Register() {
                 <InputLabel sx={{fontSize:"13px",mt:"-7px"}} className="inputLabel" htmlFor="outlined-adornment-email">
                   Email
                 </InputLabel>
-                <OutlinedInput data-testid='email' className="outLineInput" id="outlined-adornment-email" type={"email"}
+                <OutlinedInput data-testid='test-email' className="outLineInput" id="outlined-adornment-email" type={"email"}
                   style={{ color: "rgb(194, 193, 193)", fontSize: "13px" }}
                   name="Email" value={state["Email"]} onChange={handleChange} error={emailError != ""} label="Email"/>
               </FormControl>
               {emailError !== "" && (
-                  <p className="login-signup-error mb-0" style={{ color: "red", fontSize: "10px" }}>
+                  <p data-testid='test-email-error' className="login-signup-error mb-0" style={{ color: "red", fontSize: "10px" }}>
                     {emailError}
                   </p>
                 )
@@ -165,7 +165,7 @@ function Register() {
               <InputLabel sx={{fontSize:"13px",mt:"-7px"}} className="inputLabel"htmlFor="outlined-adornment-password">
                 Password
               </InputLabel>
-              <OutlinedInput className="outLineInput" id="outlined-adornment-password" type={showPassword ? "text" : "password"}
+              <OutlinedInput data-testid='test-password' className="outLineInput" id="outlined-adornment-password" type={showPassword ? "text" : "password"}
                 style={{ color: "rgb(194, 193, 193)", fontSize: "13px" }}
                 name="Password" value={state["Password"]} placeholder='password' onChange={handleChange} error={passwordError != ""}
                 endAdornment={
@@ -188,7 +188,7 @@ function Register() {
               <InputLabel sx={{fontSize:"13px",mt:"-7px"}} className="inputLabel"htmlFor="outlined-adornment-confirmPassword">
                 Confirm Password
               </InputLabel>
-              <OutlinedInput className="outLineInput" id="outlined-adornment-confirmPassword" type={showConfirmPassword ? "text" : "password"}
+              <OutlinedInput data-testid='test-cpassword' className="outLineInput" id="outlined-adornment-confirmPassword" type={showConfirmPassword ? "text" : "password"}
                 style={{ color: "rgb(194, 193, 193)", fontSize: "13px" }}
                 name="Confirm Password" value={state["Confirm Password"]} onChange={handleChange} error={confirmPassError != ""}
                 endAdornment={
@@ -202,15 +202,15 @@ function Register() {
               />
             </FormControl>
             {confirmPassError !== "" && (
-              <p className="login-signup-error mb-0" style={{ color: "red", fontSize: "10px" }}>
+              <p data-testid='cpassword-error' className="login-signup-error mb-0" style={{ color: "red", fontSize: "10px" }}>
                 {confirmPassError}
               </p>
             )}
 
-              <button data-testid='register-elem' type="submit" className="login-btn signup-btn" id="login-btn" onClick={handleSubmit}>Sign up</button>
+              <button data-testid='test-register-elem' type="submit" className="login-btn signup-btn" id="login-btn" onClick={handleSubmit}>Sign up</button>
               <div className=" col-7 align-self-center justify-content-between register-login-footer register-footer">
                 <p style={{ fontSize: "12px" }}>Already have an account?</p>
-                <span style={{ fontSize: "12px" }}><Link style={{textDecoration:"none"}} to="/login">Login</Link></span>
+                <span style={{ fontSize: "12px" }}><Link data-testid='test-login' style={{textDecoration:"none"}} to="/login">Login</Link></span>
               </div>
           </Form>
         </div>
