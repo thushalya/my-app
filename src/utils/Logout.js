@@ -27,6 +27,12 @@ function Logout() {
       // console.log("response remove token, ", response)
       dispatch(save(""))
       sessionStorage.clear();
+      try{
+          const jwt = sessionStorage.getItem("AccessToken");
+        }
+      catch(err){
+        navigate("/login");
+      }
       navigate("/login")
 
     } catch (error) {

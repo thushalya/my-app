@@ -21,7 +21,7 @@ const ReactNotificationComponent = ({ title, body }) => {
 
   return (
     <ToastContainer
-      autoClose={2500}
+      autoClose={5000}
       hideProgressBar
       newestOnTop={false}
       closeOnClick
