@@ -19,12 +19,13 @@ import Typography from '@mui/material/Typography';
 import Form from 'react-bootstrap/Form';
 import Swal from 'sweetalert2';
 import { Box } from '@mui/system';
+import SimpleLoader from '../../components/loaders/lottieLoader/SimpleLoader';
 
-// todo: which loader to use?
 
 export default function Alert({market}) {
     // popover
     const [anchorEl, setAnchorEl] = useState(null);
+    const [loader, setLoader] = useState(true);
     const Toast = Swal.mixin({
       toast: true,
       position: 'top',
@@ -177,12 +178,16 @@ export default function Alert({market}) {
     const [popLoading, setPopLoading] = useState(true);
     console.log("the data", data)
     useEffect( () => {
+      setTimeout(() => {
+        setLoader(false)
+      }, 1000);
       getAlerts();
     }, [])
 
     return(
     <div className='Alerts'>
-      {data?.length <= 0 ?
+      { loader ? <SimpleLoader/> :
+      data?.length <= 0 ?
         <Box className="No-Alerts-Box" >
         <p>No alerts set</p>
         <AlarmAddOutlinedIcon  aria-describedby={id} className="add-alert-icon" onClick={(event)=>handleClick(event)} style={{marginTop:'20px'}}/>

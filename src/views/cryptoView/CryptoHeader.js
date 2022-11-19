@@ -14,6 +14,8 @@ import Swal from "sweetalert2";
 import { Container } from "@mui/system";
 import { Popover, Popper } from "@mui/material";
 import Token from "../../services/Token";
+import { useDispatch, useSelector } from "react-redux";
+import { addToWatchlist, initWatchlist } from "../../redux/watchlist";
 
 const Toast = Swal.mixin({
   toast: true,
@@ -32,6 +34,13 @@ const Toast = Swal.mixin({
 function CryptoHeader({ market, interval }) {
   const obj = { price: 0, volume: 0, high: 0, low: 0 };
   const [values, setValues] = useState(obj);
+  
+  // watchlist from redux store
+  let {watchlist} = useSelector(state => state.watchlist)
+  const dipsatch = useDispatch()
+
+  // state to see if watchlist is alreay added
+  const [watchlistAdded, setWatchlistAdded] = useState(false);
 
   const handleClose = () => {
     setAnchorEl(null);
@@ -48,6 +57,7 @@ function CryptoHeader({ market, interval }) {
     const response = await WatchlistServices.addMarket({
       crypto: market == "" ? marketState + "/USDT" : market + "/USDT",
     });
+    console.log(response, "he hee");
     if (response.status == 200) {
       if (response.data.message == "Crypto type already added") {
         Toast.fire({
@@ -56,6 +66,8 @@ function CryptoHeader({ market, interval }) {
           text: "Already added to watchlist",
         });
       } else {
+        dipsatch(initWatchlist(response.data.data))
+        setWatchlistAdded(true);
         Toast.fire({
           icon: "success",
           title: `${market == "" ? marketState + "/USDT" : market + "/USDT"}`,
@@ -94,6 +106,15 @@ function CryptoHeader({ market, interval }) {
         low:parsedData[3]
       });
     });
+    console.log("market", market);
+    console.log("marketState", marketState);
+    if (watchlist?.includes(market+"/USDT") || (watchlist?.includes("BTC/USDT") && market == "")) {
+      console.log("watchlist added")
+      setWatchlistAdded(true)
+    }else{
+      console.log("watchlist not added")
+      setWatchlistAdded(false)
+    }
 
     return () => {
       eventSource.close();
@@ -163,11 +184,20 @@ function CryptoHeader({ market, interval }) {
         </div>
       </div>
 
-      {user && (
+      {user && (!(watchlistAdded)
+      ?
+      (
         <button type="button" onClick={handleClick} className="watchlist-btn">
           Add to watchlist
         </button>
-      )}
+      )
+      :
+      (
+        <button type="button" disabled="disabled" className="watchlist-btn-disabled">
+          Added
+        </button>
+      ))
+      }
     </div>
   );
 }
