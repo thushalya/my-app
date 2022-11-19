@@ -21,7 +21,7 @@ function HomeSubTwo() {
       </div>
       </Slide>
       <Slide right duration={2500}>
-        <div className="img-sec" >
+        <div className="img-sec img-crypto" >
         <img src={Crypto} alt="" />
       </div>
       </Slide>

@@ -424,7 +424,7 @@ input:-webkit-autofill {
 }
 .mobile-descriptions header{
   font-size: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
   margin-top: 7px;
   color: white;
   max-width: 400px;
@@ -1562,7 +1562,9 @@ font-size: 22px;
 
 @media only screen and (max-width: 420px) {
 
-
+.register-login-footer {
+    justify-content: space-around;
+  }
 
   .CryptoHeader header {
     font-size: 10px;
