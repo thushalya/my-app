@@ -145,7 +145,9 @@ function Login() {
           title: 'Login Successful'
         })
         console.log('response',getuser['imagepath'])
-        dispatch(saveImage(getuser['imagepath']))
+        if (getuser['imagepath']){
+          dispatch(saveImage(getuser['imagepath']))
+        }
         
 
           // To load once

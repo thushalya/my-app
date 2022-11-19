@@ -253,7 +253,7 @@ export default function Watchlist() {
       <div className='d-flex flex-column justify-content-center'>
         <h1 className='watchlist-header'>Watchlist</h1>
         <Slide right>
-        <Container maxWidth="lg">
+        <Container maxWidth="lg" className='watchlist-container'>
         <div className='watchlist-datagrid'>
           {/* {console.log("rows for the data grid", rows)} */}
           <DataGrid

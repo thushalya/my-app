@@ -42,6 +42,7 @@ import { saveImage } from '../../redux/profile';
 import SimpleLoader from '../../components/loaders/lottieLoader/SimpleLoader';
 import PageLoader from '../../components/pageLoader/PageLoader';
 import Swal from 'sweetalert2';
+import defaultPic from "../../assets/DefaultProfilePic/default_image.png";
 
 const style = {
     position: 'relative',
@@ -161,6 +162,7 @@ useEffect(() => {
         setLoader(false);   //hide loader
     }, 1000)
     getUser();  //get user details
+    // console.log("link",link)
 }, [])
 
 const getUser = async () => {
@@ -169,7 +171,7 @@ const getUser = async () => {
         const response = await UserServices.getUser(id);
         const getuser=response.data.data
         
-        dispatch(saveImage(getuser['imagepath']))   //save image path in redux
+        // dispatch(saveImage(getuser['imagepath']))   //save image path in redux
         
 
         state = {
@@ -267,7 +269,7 @@ if (loader) {
     return (
         <div className='container2' style={{'display':'flex', 'flexDirection': 'column'}}>
         {/* {console.log('image',state['ImagePath'])} */}
-        <HeaderTwo  imagepath={state['ImagePath']}/>
+        <HeaderTwo/>
         
         <div className='form-container col-xl-5 mt-5 pt-5 mx-auto profile-form display-flex flex-column'>
             
@@ -275,9 +277,9 @@ if (loader) {
 
 
             <div onMouseEnter={()=>setIsShown(true)} onMouseLeave={()=>setIsShown(false)} className="profile-pic-div" style={{position: 'relative', left: '50%', marginTop:'-200px', maxWidth:'50%'}}>
-                <img  data-testid='profile-pic' src={state['ImagePath']} id="photo" className='photo'/>
+                <img  data-testid='profile-pic' src={(link != '') ? link : defaultPic} id="photo" className='photo'/>
                 <input onChange={handleChangePhoto} type="file" id="file" className='file'/>
-            { show && <label    htmlFor="file" id="uploadBtn" className='uploadBtn'>Choose Photo</label>}
+            { isShown && <label    htmlFor="file" id="uploadBtn" className='uploadBtn'>Choose Photo</label>}
             </div>
             <Form className="form-group register-form container col-xl-10 d-flex flex-column " style={style}>
 
