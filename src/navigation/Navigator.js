@@ -19,6 +19,7 @@ function Navigator() {
         try {
             try {
                 var user = jwtDecode(Token.getAccessToken())
+                console.log("user is :", user)
             } catch (error) {
                 user= null    
             }
