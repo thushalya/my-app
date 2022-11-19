@@ -45,21 +45,7 @@ function Login() {
     Password: "",
   };
 
-  // google login
-  const onSuccess = (res) => {
-    console.log("Login SUCCESS! Current user", res.profileObj);
-    const response = AuthServices.googleLogin(res);
-    console.log("Response, ", response)
-  }
-  const onFailure = (res) => {
-      console.log("Login FAILED! res:", res);
-  }
-  const client_id = "106174331388-iokgsqk1gm07khha74tq9evt4k798ucf.apps.googleusercontent.com"
-
-  ////////////////////////////////////////
-
   const [state, setState] = useState(formValues);
-  // const [bool, setBool] = useState(false)
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -254,17 +240,6 @@ function Login() {
             <button data-testid='login-elem' type="submit" className="login-btn" id="login-btn" onClick={handleSubmit} >
               Login
             </button>
-            {/* <div id="googleSignInButton" style={{position:'relative', display:'flex', justifyContent:'center', marginBottom:'25px', marginTop:'-10%'}}>
-              <GoogleLogin
-                  clientId={client_id}
-                  buttonText="Sign in with google"
-                  onSuccess={onSuccess}
-                  onFailure={onFailure}
-                  cookiePolicy={'single_host_origin'}
-                  isSignedIn={true}
-                  theme='dark'
-              />
-            </div> */}
             <div className=" col-7 align-self-center justify-content-between register-login-footer login-footer">
               <p style={{ fontSize: "15px", color:'grey' }}>No account?</p>
               <span style={{ fontSize: "15px" ,}}>{" "}
