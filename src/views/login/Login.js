@@ -25,6 +25,7 @@ import UserServices from "../../services/API/UserServices";
 import { saveImage } from "../../redux/profile";
 import Swal from 'sweetalert2';
 import PageLoader from "../../components/pageLoader/PageLoader";
+import { addToWatchlist, initWatchlist } from "../../redux/watchlist";
 
 // import TokenRequest from "../notification/TokenRequest";
 
@@ -33,11 +34,11 @@ function Login() {
 
   const navigate = useNavigate();
   const location = useLocation();
-  console.log("location is", location?.state?.from);
+  // console.log("location is", location?.state?.from);
 
   const from =
-    (location.state?.from == "/logout" ? "/navigate" : location.state?.from) ||
-    "/navigate";
+    (location.state?.from ||
+    "/navigate");
 
   const formValues = {
     Email: "",
@@ -106,7 +107,6 @@ function Login() {
         console.log(" response is", response);
         // check for 200
         if (response.status == 200){
-          
           // const [getFcmToken,setFcmToken]=useState("")
           console.log("response of loggin in....", response)
           // dispatch(save(response.data))
@@ -116,7 +116,8 @@ function Login() {
         const id = jwtDecode(Token.getAccessToken())['user_id'];
         console.log("id is", id);
         const response_ = await UserServices.getUser(id);
-        console.log("user services", response_);
+        // console.log("user services", response_.data.data.watchlist);
+        dispatch(initWatchlist(response_.data.data.watchlist))
         const getuser=response_.data.data
         if (getuser['active'] == '0'){
             Swal.fire({
@@ -172,7 +173,7 @@ function Login() {
                 tokenFunc()
               }
           })
-
+          
         }
         // console.log("response is for login", response);
 
