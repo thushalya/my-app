@@ -61,8 +61,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-let userPages = ["Home", "Stock", "Crypto"];
-let pages = [...userPages, "Login","Sign up"];
+var userPages = ["Home", "Stock", "Crypto"];
+var pages = [...userPages, "Login","Sign up"];
 const settings = ["Profile", "Watchlist", "Logout"];
 const HeaderTwo = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -72,8 +72,12 @@ const HeaderTwo = () => {
 
   try{
     var user=jwtDecode(Token.getAccessToken())
-    console.log("user",user)
-    if (user.role=="2" && userPages.length<= 3){
+    if (user?.role==="1" && userPages.includes("Admin")){
+      // remove admin page from user pages
+      userPages.splice(userPages.indexOf("Admin"),1)
+    }
+    if (user?.role==="2" && userPages?.length<= 3){
+      // console.log("user",user)
       userPages = ["Admin", ...userPages]
     }
     

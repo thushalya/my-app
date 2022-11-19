@@ -41,6 +41,8 @@ Cypress.Commands.add('mockNavigatorServiceWorker', { prevSubject: 'element'}, (s
     })
 })
 
+
+// login command
 Cypress.Commands.add('login', (email, password) => {
     cy.visit('/login')
     cy.get('[data-testid="email"]').type('nipun99@gmail.com')
