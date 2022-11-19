@@ -16,6 +16,7 @@ function HomeSubOne() {
         <div className="detail-list d-flex flex-column">
             <p><span className="start-span"><StarIcon className="star-icon" /></span><span className="blue-keyword"> Visualize </span> <span> stock charts</span></p>
             <p><span className="start-span"><StarIcon className="star-icon" /></span><span className="blue-keyword"> Backtest </span> <span> with your own strategies</span></p>
+            <p><span className="start-span"><StarIcon className="star-icon" /></span><span className="blue-keyword"> Technical Indicator </span><span>analysis</span> </p>
             <p><span className="start-span"><StarIcon className="star-icon" /></span> <span> Make your predictions smartly</span></p>
         </div>
       </div>
