@@ -208,17 +208,17 @@ function Login() {
       <div className="Login">
         <HeaderOne />
         <div
-          className="login-container col-9 col-sm-6 col-lg-4 col-md-5 col-xl-4 col-xxl-4 container d-flex flex-column"
+          className="login-container col-9 col-sm-7 col-lg-5 col-md-6 col-xl-5 col-xxl-4 container d-flex flex-column"
           style={{ backgroundColor: "rgb(17, 23, 38)" }}
         >
           <header>Welcome</header>
           <Form className=" container col-xl-10 d-flex flex-column ">
-            <FormControl sx={{ m: 1 }} variant="outlined" className="register-form-control">
-              <InputLabel sx={{fontSize:"13px",mt:"-7px"}} className="inputLabel" htmlFor="outlined-adornment-email">
+            <FormControl margin="normal" sx={{ m: 1 }} variant="outlined" className="register-form-control">
+              <InputLabel sx={{fontSize:"15px"}} className="inputLabel" htmlFor="outlined-adornment-email">
                 Email
               </InputLabel>
               <OutlinedInput data-testid="email" className="outLineInput" id="outlined-adornment-email" type={"email"}
-                style={{ color: "rgb(194, 193, 193)" , fontSize: "13px"}}
+                style={{ color: "rgb(194, 193, 193)" , fontSize: "15px"}}
                 name="Email" onChange={handleChange} error={emailError != "" && true} label="Password"/>
             </FormControl>
             {emailError !== "" && (
@@ -228,11 +228,11 @@ function Login() {
             )}
 
             <FormControl sx={{ m: 1 }} variant="outlined" className="register-form-control">
-              <InputLabel sx={{fontSize:"13px",mt:"-7px"}} className="inputLabel"htmlFor="outlined-adornment-password">
+              <InputLabel sx={{fontSize:"15px"}} className="inputLabel"htmlFor="outlined-adornment-password">
                 Password
               </InputLabel>
-              <OutlinedInput data-testid='password' placeholder="password" className="outLineInput" id="outlined-adornment-password" type={showPassword ? "text" : "password"}
-                style={{ color: "rgb(194, 193, 193)", fontSize: "13px" }}
+              <OutlinedInput placeholder="password" className="outLineInput" id="outlined-adornment-password" type={showPassword ? "text" : "password"}
+                style={{ color: "rgb(194, 193, 193)", fontSize: "15px" }}
                 name="Password" onChange={handleChange} error={passwordError != ""}
                 endAdornment={
                   <InputAdornment position="end">
@@ -265,9 +265,9 @@ function Login() {
               />
             </div> */}
             <div className=" col-7 align-self-center justify-content-between register-login-footer login-footer">
-              <p style={{ fontSize: "12px", color:'grey' }}>No account?</p>
-              <span style={{ fontSize: "12px" }}>{" "}
-                <Link data-testid='signup-elem' style={{ textDecoration: "none", alignItems: "center" }} to="/register">
+              <p style={{ fontSize: "15px", color:'grey' }}>No account?</p>
+              <span style={{ fontSize: "15px" ,}}>{" "}
+                <Link style={{ textDecoration: "none", alignItems: "center",color:"#01ADC2" }} to="/register">
                   Signup now{" "}
                 </Link>
               </span>
