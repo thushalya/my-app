@@ -90,9 +90,7 @@ const AllUsers = () => {  // For the admin to view all users
       setLoader(false);
     }, 1800);
     try {
-      let response = null;
-      response = await AdminServices.getUsers(skip_value, take, search, filter);
-      
+      const response = await AdminServices.getUsers(skip_value, take, search, filter);
       setSearch(search);
       setSkip(skip_value);
       setUsers(response.data.data.users);

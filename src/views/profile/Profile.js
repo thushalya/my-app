@@ -63,6 +63,13 @@ const Profile = () => {
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
 
+    const formValues = {    // initial form values
+        'First Name': '',
+        'Last Name': '',
+        'DOB':'',
+        'Country':''
+    }
+    
     var [state, setState] = useState(formValues);
     const [fNameError,setfNameError]=useState("")
     const [lNameError,setlNameError]=useState("")
@@ -73,12 +80,7 @@ const Profile = () => {
     const userDecode = Token.getAuth() // get token from storage
     const id = userDecode['user_id'] // get user id from token
 
-    const formValues = {    // initial form values
-        'First Name': '',
-        'Last Name': '',
-        'DOB':'',
-        'Country':''
-    }
+    
 
 
     const {link} = useSelector((state)=>state.profile)  // getting image link from redux store

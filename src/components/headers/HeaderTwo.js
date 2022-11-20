@@ -22,7 +22,6 @@ import NotificationsRoundedIcon from "@mui/icons-material/NotificationsRounded";
 import Badge from "@mui/material/Badge";
 import NotificationModal from "@mui/material/Modal";
 import Notifications from "../../views/notification/Notifications";
-import DummyData from "../../views/notification/notificationDummyData.json";
 import Snackbar from "@mui/material/Snackbar";
 import CloseIcon from "@mui/icons-material/Close";
 import { useEffect } from "react";
