@@ -6,16 +6,13 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import DeleteIcon from '@mui/icons-material/Delete'
 import '../../assets/css/watchlist.css'
-import { autocompleteClasses, Container } from '@mui/material';
+import { Container } from '@mui/material';
 import Token from '../../services/Token';
 import WatchlistServices from '../../services/WatchlistServices';
 import Loader from '../../components/loader/Loader';
 import Swal from 'sweetalert2';
-import PageLoader from '../../components/pageLoader/PageLoader';
 import { useDispatch, useSelector } from 'react-redux';
 import { initWatchlist} from '../../redux/watchlist';
-import { WindowSharp } from '@mui/icons-material';
-import SimpleLoader from '../../components/loaders/lottieLoader/SimpleLoader';
 import WatchlistLoader from '../../components/loaders/watchlistLoader/WatchlistLoader';
 import NoItemsLoader from '../../components/loaders/noItemsLoader/NoItemsLoader';
 import Slide from 'react-reveal/Slide';
@@ -28,14 +25,16 @@ export default function Watchlist() {
   const [eventSources, setEventSources] = useState([])
   const [records, setRecords] = useState(new Map())
   const [removed, setRemoved] = useState(false)
+  const userDecode = Token.getAuth()
+  const [loading2, setLoading2] = React.useState(true);
   
-  const dispatch = useDispatch()
+  const dispatch = useDispatch()  // for redux
 
+  // delete item from watchlist
   const handleDelete = async(e, id, symbol) => {
     
     setRemoved(true)
     const response = await checkMarket(symbol)
-    console.log("response :", response)
     if (response.status === 200){
           Swal.fire({
             title: `${symbol}`,
@@ -61,19 +60,12 @@ export default function Watchlist() {
         })
     }
     
-    console.log("hee heee")
-    
     setRemoved(false)
   }
   
-  const [itemArr, setItemArr] = useState([])
-  const userDecode = Token.getAuth()
-  const user_id = userDecode['user_id']
-  const [loading, setLoading] = React.useState(true);
-  const [loading2, setLoading2] = React.useState(true);
 
+  // check market response for deleting item from watchlist
   const checkMarket = async(symbol) => {
-      console.log("calling check market")
       let record_ = records
         record_.delete(symbol)
         setRecords(record_)
@@ -82,26 +74,22 @@ export default function Watchlist() {
         data_ = data_.filter((item, index) => {
           return item !== symbol
         })
-        console.log("data", data_)
         setRemoved(true)
         setData(data_)
       const response = await WatchlistServices.removeMarket(symbol)
-      
-      console.log("response in checkMarket", response)
       return response
     }
+
+  // get watchlist data at first render
   useEffect(()=>{
     getWatchlist()
-
   }, []);
+
+  // get watchlist data
   const getWatchlist = async() => {
-    
-    
     const response = await WatchlistServices.viewWatchlist()
     if (response.status === 200){
-      console.log("response get watchlist:", response)
       const data_ = response.data.data
-      console.log("data of list", data_)
       if (data_.length === 0){
         setLoading2(false)
         setData([])
@@ -109,7 +97,6 @@ export default function Watchlist() {
       else{
         setData(data_)
       }
-      console.log("finised loading")
     }
     setTimeout(() => {
       setLoading2(false)
@@ -117,13 +104,13 @@ export default function Watchlist() {
     
   };
   useEffect(()=>{
-    console.log(removed)
     if(removed){return}
     let watcheventSource = null
     if (data !== null) {
-      console.log("data in event source", data)
       for (let i in data) {
+          //  event source added to listen to market changes of the relevent crpto currency
           watcheventSource  = new EventSource( "http://127.0.0.1:5000/present/" + data[i].split('/')[0] + '/1m')
+          // event listerner
           watcheventSource.addEventListener(
             'message',
             function(e){
@@ -143,11 +130,10 @@ export default function Watchlist() {
           )
           eventSources.push(watcheventSource)
           setEventSources(eventSources)
-
       }
-      
     }
 
+    // clean up function for event sources
     return async() => {
       if (eventSources.length !== 0) {
         for (let eventsource of eventSources) {
@@ -159,11 +145,8 @@ export default function Watchlist() {
 
   },[data])
 
-  // useEffect(()=>{
-  //     const response = WatchlistServices.removeMarket(removeMarket)
-  //     console.log("response :", response) 
-  // },[removeMarket])
 
+  // format data for data grid
   const setformat=()=>{
     const rows=[]
     const ids = []
@@ -172,10 +155,10 @@ export default function Watchlist() {
       ids.push(value.id)
       rows.push(value)
     }
-    // console.log("rows", rows)
     setRows(rows)
     setLoader(false)
   }
+
   const columns = [
     { field:'id', hide:true},
     { field: 'symbol', headerName: 'Symbol', width: 150, headerAlign:'center', align:'center' },
@@ -195,8 +178,6 @@ export default function Watchlist() {
           color="primary"
           sx= {{pr:3, pl:3, w:'auto'}}
           onClick={(event) =>{
-            console.log("cell values", cellValues)
-            
             Swal.fire({
               title: 'Are you sure?',
               text: `Remove ${cellValues.row.symbol} from watchlist`,
@@ -247,7 +228,6 @@ export default function Watchlist() {
         <Slide right>
         <Container maxWidth="lg" className='watchlist-container'>
         <div className='watchlist-datagrid'>
-          {/* {console.log("rows for the data grid", rows)} */}
           <DataGrid
             rows={
             rows

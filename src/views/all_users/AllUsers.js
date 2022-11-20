@@ -1,20 +1,11 @@
 import "./AllUsers.css";
-// import HeaderTwo from "../../components/headers/HeaderTwo";
-import { Card, Form, Button, Table, FormControl, InputGroup, DropdownButton, Dropdown, Pagination, } from "react-bootstrap";
-import { useNavigate, useParams } from "react-router-dom";
+import {Button, Table,DropdownButton, Dropdown,} from "react-bootstrap";
 import { useEffect, useState } from "react";
 import AdminServices from "../../services/API/AdminServices";
 import UserServices from "../../services/API/UserServices";
 import Paginate from "../../components/pagination/paginate.js";
-// import { toast } from 'react-toastify';
-// import Loader from "../../components/loader/Loader";
-// import Messages from "../../helpers/Messages";
-import { Link } from "react-router-dom";
-// import 'font-awesome/css/font-awesome.css';
 
-import Token from "../../services/Token";
 import HeaderTwo from "../../components/headers/HeaderTwo";
-import FilterListIcon from '@mui/icons-material/FilterList';
 import Swal from "sweetalert2";
 import WatchlistLoader from "../../components/loaders/watchlistLoader/WatchlistLoader";
 
@@ -74,7 +65,6 @@ const AllUsers = () => {  // For the admin to view all users
   const [search, setSearch] = useState("");
   const [filterBy, setFilterBy] = useState("");
   const searchUser = () => {
-    console.log("searching by", search, filterBy);
     if (search === "") {
       Toast.fire({
         icon: 'error',
@@ -109,7 +99,6 @@ const AllUsers = () => {  // For the admin to view all users
       setTotalItems(response.data.data.usercount);  // For pagination
     } catch (error) {
       console.log(error)
-      
     }
     
   };

@@ -1,9 +1,0 @@
-[
-    { "id": 2, "symbol": "ETHUSD", "message": "Increment by 10 precent","open price": 4343, "current peak": 5554, "isRead": false },
-    { "id": 1, "symbol": "BTCUSD", "message": "Increment by 10 precent","open price": 4343, "current peak": 5554, "isRead": false },
-    { "id": 3, "symbol": "OPSUSD", "message": "Increment by 5 precent","open price": 4343, "current peak": 5554, "isRead": false },
-    { "id": 4, "symbol": "ETGUSD", "message": "Increment by 15 precent","open price": 4343, "current peak": 5554, "isRead": false },
-    { "id": 5, "symbol": "POTUSD", "message": "Increment by 10 precent","open price": 4343, "current peak": 5554, "isRead": false },
-    { "id": 6, "symbol": "RTFUSD", "message": "Increment by 15 precent","open price": 4343, "current peak": 5554, "isRead": false },
-    { "id": 7, "symbol": "PERPUSD", "message": "Increment by 14 precent","open price": 4343, "current peak": 5554, "isRead": false }
-]
