@@ -10,18 +10,13 @@ describe("Test Register component", () =>{
     }    
     it("render register form with signup button", () => {
         createInstance();
-        const btnList = screen.getByTestId('register-elem');
+        const btnList = screen.getByTestId('test-register-elem');
         expect(btnList).not.toBeNull();
     });
     it("email input should accept email", async() => {
         createInstance();
-        const email = screen.getByTestId("email");
+        const email = screen.getByTestId("test-email");
         await userEvent.type(email, "nameonly");
         expect(email.value).not.toBe("nameonly@gmail.com");
     });
-    it("password input should have type password", () =>{
-        createInstance();
-        const password = screen.getByPlaceholderText("password");
-        expect(password).toHaveAttribute("type", "password");
-    });
-})
+});

@@ -4,7 +4,7 @@ describe('User profile', () => {
         cy.visit('/profile')
     })
     
-    it('change first name and save', () => {
+    it('change firstname and save', () => {
         // inputs from outlinedinput
         cy.get('[data-testid="first-name"]').click().clear().type('Kasun')
         cy.get('[data-testid="test-save"]').click()

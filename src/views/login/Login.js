@@ -218,7 +218,7 @@ function Login() {
               <InputLabel sx={{fontSize:"15px"}} className="inputLabel"htmlFor="outlined-adornment-password">
                 Password
               </InputLabel>
-              <OutlinedInput placeholder="password" className="outLineInput" id="outlined-adornment-password" type={showPassword ? "text" : "password"}
+              <OutlinedInput data-testid="password" placeholder="password" className="outLineInput" id="outlined-adornment-password" type={showPassword ? "text" : "password"}
                 style={{ color: "rgb(194, 193, 193)", fontSize: "15px" }}
                 name="Password" onChange={handleChange} error={passwordError != ""}
                 endAdornment={
@@ -243,7 +243,7 @@ function Login() {
             <div className=" col-7 align-self-center justify-content-between register-login-footer login-footer">
               <p style={{ fontSize: "15px", color:'grey' }}>No account?</p>
               <span style={{ fontSize: "15px" ,}}>{" "}
-                <Link style={{ textDecoration: "none", alignItems: "center",color:"#01ADC2" }} to="/register">
+                <Link data-testid="signup-elem" style={{ textDecoration: "none", alignItems: "center",color:"#01ADC2" }} to="/register">
                   Signup now{" "}
                 </Link>
               </span>
