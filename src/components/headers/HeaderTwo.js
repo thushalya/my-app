@@ -327,7 +327,7 @@ const HeaderTwo = () => {
             {user && (
               <div style={{ marginRight: "18px" }}>
                 <Badge badgeContent={count} color="primary">
-                  <NotificationsRoundedIcon sx={{}} onClick={handleOpen} />
+                  <NotificationsRoundedIcon data-cy='test-notification-btn' sx={{}} onClick={handleOpen} />
                 </Badge>
                 <NotificationModal
                   sx={{ mt: -8, borderWidth: 0 }}

@@ -211,7 +211,7 @@ function Register() {
               <button data-testid='test-register-elem' type="submit" className="login-btn signup-btn" id="login-btn" onClick={handleSubmit}>Sign up</button>
               <div className=" col-7 align-self-center justify-content-between register-login-footer register-footer">
                 <p style={{ fontSize: "15px" }}>Already have an account?</p>
-                <span style={{ fontSize: "15px" }}><Link style={{textDecoration:"none",color:"#01ADC2"}} to="/login">Login</Link></span>
+                <span  style={{ fontSize: "15px" }}><Link data-testid='test-login' style={{textDecoration:"none",color:"#01ADC2"}} to="/login">Login</Link></span>
               </div>
           </Form>
         </div>

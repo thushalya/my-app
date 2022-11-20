@@ -103,17 +103,8 @@ export default function Notifications(){
           filterable: false,
           renderCell : (cellValues) => {
             return (
-              // <Button variant="outlined" 
-              // startIcon={<DeleteIcon style={{position:'relative', left:'40%'}}/>}
-              // color="primary"
-              // sx= {{pr:3, pl:3, w:'auto'}}
-              // onClick={(event) =>{
-              //   handleDelete(event, cellValues.id);
-              // }}
-              //   Mark As Read
-              // >
-              // </Button>
               <Button variant="outlined" 
+              data-cy='test-mark-read'
               startIcon={<CheckIcon style={{position:'relative', left:'40%'}}/>}
               color="primary"
               sx= {{pr:3, pl:3, w:'auto'}}
@@ -151,7 +142,7 @@ export default function Notifications(){
         : 
         <Slide right>
         <Container maxWidth="sm" sx={{boarder:0, maxWidth:800}}>
-        <div className='notification-div'>
+        <div data-cy='test-notification' className='notification-div'>
           
           <DataGrid
             rows={data}
@@ -178,4 +169,3 @@ export default function Notifications(){
     );
 }
 
-// export default NotificationModal;

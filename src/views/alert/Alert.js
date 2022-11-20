@@ -194,7 +194,7 @@ export default function Alert({market}) {
         <p className='add-alert-p' style={{marginTop:'20px'}}>Click to add an alert</p>
         </Box>:
     
-      <Table className="alerttable" striped bordered hover variant="dark" style={{textAlign:'center', background:'#212529'}} >
+      <Table data-cy='test-alert' className="alerttable" striped bordered hover variant="dark" style={{textAlign:'center', background:'#212529'}} >
         <thead>
           <tr>
             <th>Alerts</th>
