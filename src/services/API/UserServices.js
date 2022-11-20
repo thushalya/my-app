@@ -7,7 +7,6 @@ import axios from 'axios';
 const APIEndpoint = config.DOMAIN_NAME + "/api";
 
 const updateprofile = (data,id) => {
-  console.log(data)
   return axios({
     method: "post",
     url: APIEndpoint + `/user/update-profile/${id}`,
@@ -32,7 +31,6 @@ const getUser = (id) => {
 
 
 const updatePasswordByUser = (data) => {
-  console.log("data sent", data)
   return axios({
     method: "post",
     url: APIEndpoint + "/user/update-password-by-user",
@@ -47,7 +45,6 @@ const updatePasswordByUser = (data) => {
 
 
 const updatePhoto = (id,formData) => {
-  console.log(id,formData)
   return axios({
     method: "post",
     url: APIEndpoint + `/user/update-photo/${id}`,

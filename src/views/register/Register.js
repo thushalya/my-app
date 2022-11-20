@@ -15,6 +15,7 @@ import { FormControl } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import PageLoader from "../../components/pageLoader/PageLoader";
+import Swal from 'sweetalert2';
 
 function Register() {
   const Navigate = useNavigate();
@@ -40,6 +41,20 @@ function Register() {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const [loader, setLoader] = useState(false);
+
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top',
+    background:'#111726',
+    color:'white',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
 
   const togglePassword=()=>{
     setShowPassword(!showPassword);
@@ -97,7 +112,10 @@ function Register() {
           Navigate("/login")
         }
       }catch(error){
-        console.log(error.response.data.message)
+        Toast.fire({
+          icon: 'error',
+          title: error.response.data.message
+        })
         console.log("Failed registration")
       }
     }
