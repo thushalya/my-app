@@ -1,27 +1,29 @@
 import React, { useState, useEffect } from "react";
 import "../../assets/css/Notifications.css"
-import { autocompleteClasses, Container } from '@mui/material';
+import { Container } from '@mui/material';
 import Button from '@mui/material/Button';
 import {DataGrid} from '@mui/x-data-grid';
-import DeleteIcon from '@mui/icons-material/Delete'
 import CheckIcon from '@mui/icons-material/Check';
 import Snackbar from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';
-import CloseIcon from '@mui/icons-material/Close';
 import NotificationServices from "../../services/NotificationServices";
 import { Fragment } from "react";
-import Token from "../../services/Token";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import { decrement, setCount } from "../../redux/notification";
 import SimpleLoader from "../../components/loaders/lottieLoader/SimpleLoader"
 import Slide from 'react-reveal/Slide';
 
+
+// notification component
 export default function Notifications(){
+
   // for no new notification alert
     const [open_, setOpen_] = useState(true);
-    const handleOpen_ = () => setOpen_(true);
-    // let {count} = useSelector(state => state.notification)
-    const dispatch = useDispatch()
+    const [loader, setLoader] = useState(true);
+    const [data, setData] = useState([]);
+    const dispatch = useDispatch()  // for redux
+
+    // for closing no new notification alert
     const handleClose_ = (event, reason) => {
       if (reason == 'clickaway'){
         return;
@@ -29,6 +31,8 @@ export default function Notifications(){
       setOpen_(false);
       return
     };
+
+    // getting all historical notifications
     const callHistoricNotifications = async() => {
       setLoader(true)
       setTimeout(() => {
@@ -45,13 +49,11 @@ export default function Notifications(){
         }
       
       })
-      console.log("rows", rows_)
-      // console.log("rows", rows?.data['last day notifications'])
       setData(rows_)
-      console.log("data  notifications:", rows)
-      console.log("length of data", rows?.data['last day notifications'].length)
-      dispatch(setCount(rows?.data['last day notifications'].length))
+      dispatch(setCount(rows?.data['last day notifications'].length)) // for redux
     };
+
+    // getting all new notifications
     useEffect(()=>{
       callHistoricNotifications();
     }, [])
@@ -69,34 +71,32 @@ export default function Notifications(){
         </IconButton>
       </Fragment>
     );
-    const [loader, setLoader] = useState(true);
-    const [data, setData] = useState([]);
+
+    // for reading a notification
     const handleMark = async(e, id, symbol, price) => {
         const data_ = {'symbol': symbol.split("/")[0], 'price': price}
-        console.log("data_", data_)
         const response = await NotificationServices.readNotification(data_);
-        console.log("response for reading notification", response)
         if (response.data == 'success'){
           setData(data.filter(item => item.id !== id))
           dispatch(decrement())
         }
     }
+
+    // for reading all notifications
     const handleMarkAll = async(e) => {
       const response = await NotificationServices.readAllNotifications();
-      console.log("response for reading all notifications", response)
       if (response.data == 'success'){
         setData([])
         dispatch(setCount(0))
       }
     }
+
     const columns = [
         { field:'id', hide:true},
         { field: 'date', headerName: 'Date', width: 200, headerAlign:'center', align:'center', sortable:true },
-        { field: 'symbol', headerName: 'Symbol', width: 100, headerAlign:'center', align:'center', sortable:false },
+        { field: 'symbol', headerName: 'Symbol', width: 100, headerAlign:'center', align:'center', sortable:true },
         { field: 'type', headerName: 'Type', width: 120, headerAlign:'center', align:'center', sortable:false },
-        { field: 'price', headerName: 'Price',type: 'number', width: 120, headerAlign:'center', align:'center', sortable:false },
-        
-        // { field: 'current peak price', headerName: 'Current Peak',type: 'number', width: 120, headerAlign:'center', align:'center', sortable:false },
+        { field: 'price', headerName: 'Price',type: 'number', width: 120, headerAlign:'center', align:'center', sortable:true },
         {
           field: "Mark As Read",
           sortable: false,
@@ -109,9 +109,7 @@ export default function Notifications(){
               color="primary"
               sx= {{pr:3, pl:3, w:'auto'}}
               onClick={(event) =>{
-                console.log("cellValues", cellValues)
                 handleMark(event, cellValues.id, cellValues.row.symbol, cellValues.row.price);
-                // handleMarkAll(event);
               }}
               >
               </Button>

@@ -7,8 +7,8 @@ describe("HomeView", () => {
 
   it("load homeview ", () => {
     cy.get('[data-cy="test-homeview-subone"]').should("be.visible");
-    cy.get('[data-cy="test-Login"]').should("be.visible");
-    cy.get('[data-cy="test-Sign up"]').should("be.visible");
+    // cy.get('[data-cy="test-Login"]').should("be.visible");
+    // cy.get('[data-cy="test-Sign up"]').should("be.visible");
     cy.get('[data-cy="test-alertdetails"]').should("be.visible");
     cy.get('[data-cy="test-mobilesec"]').should("be.visible");
   });

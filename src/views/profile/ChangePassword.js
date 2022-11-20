@@ -1,5 +1,4 @@
 import React from 'react'
-import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import "../../assets/css/UpdateProfile.css";
 import '../../assets/font-awesome/css/font-awesome.css';
@@ -75,7 +74,6 @@ const ChangePassword = () => {  // change password
         })
     }
 
-    const errors = {};
 
     const handleSubmit= async(e)=>{     // handle submit
         e.preventDefault()
@@ -124,7 +122,6 @@ const ChangePassword = () => {  // change password
                     icon: 'error',
                     title: 'Error Occured'
                 })
-                console.log(error.response)
             }
         }
         setTimeout(() => {

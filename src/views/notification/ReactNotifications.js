@@ -3,13 +3,16 @@ import PropTypes from 'prop-types'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
+
+// toast component for foreground notifications
 const ReactNotificationComponent = ({ title, body }) => {
   let hideNotif = title === ''
 
-  if (!hideNotif) {
+  if (!hideNotif) { // if there is a notification
     toast.info(<Display/>)
   }
 
+  // display component
   function Display () {
     return (
       <div>
@@ -20,6 +23,7 @@ const ReactNotificationComponent = ({ title, body }) => {
   }
 
   return (
+    // toast container
     <ToastContainer
       autoClose={5000}
       hideProgressBar

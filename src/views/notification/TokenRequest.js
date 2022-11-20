@@ -1,15 +1,10 @@
 import React, { useState, useEffect } from 'react'
-// import { fetchToken } from '../../firebaseInit'
 import { fetchToken } from '../../firebaseInit';
 import AlertServices from '../../services/AlertServices';
-// import { fetchToken} from './../../utils/firebaseInit';
 
+// firebase token request component
 const TokenRequest = props => {
   const [isTokenFound, setTokenFound] = useState(false)
-  // const [getFcmToken,setFcmToken]=useState("")
-  // const dispatch = useDispatch()
-
-  console.log('Token found', isTokenFound)
 
   // To load once
   useEffect(() => {
@@ -18,9 +13,7 @@ const TokenRequest = props => {
     async function tokenFunc () {
       data = await fetchToken(setTokenFound)
       if (data) {
-        console.log('Token is', data)
         const response = await AlertServices.addToken(data)
-        console.log("token list is, ", response)
       }
       return data
     }
