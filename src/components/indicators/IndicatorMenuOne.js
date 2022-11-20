@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
@@ -33,9 +33,7 @@ const useStyles = makeStyles((theme) => ({
     width: "35px",
     boxShadow: "inset 0px 4px 4px rgba(0, 0, 0, 0.25)",
   },
-  formControl: {
-    
-  },
+  formControl: {},
 }));
 
 const IndicatorMenuOne = ({ displayInternalIndicators }) => {
@@ -65,8 +63,6 @@ const IndicatorMenuOne = ({ displayInternalIndicators }) => {
     displayInternalIndicators(indicators);
   };
 
-  
-
   return (
     <div data-testid="internalIndicatorMenu" className="indicator-select-btn">
       <button
@@ -78,6 +74,7 @@ const IndicatorMenuOne = ({ displayInternalIndicators }) => {
         <img src={candleStick} alt="candleStick" />
       </button>
       <Menu
+        data-cy="test-internal-indicators"
         id="simple-menu"
         anchorEl={anchorEl}
         keepMounted

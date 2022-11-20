@@ -19,7 +19,6 @@ const useStyles = makeStyles((theme) => ({
     "& .MuiPaper-root": {
       backgroundColor: "#20232B",
       width: "135px",
-      
     },
   },
   controlLabel: {
@@ -76,6 +75,7 @@ const IndicatorMenuTwo = ({ displayExternalIndicators }) => {
         <img src={Indicator} alt="indicators" />
       </button>
       <Menu
+        data-cy="test-external-indicators"
         id="simple-menu"
         anchorEl={anchorEl}
         keepMounted

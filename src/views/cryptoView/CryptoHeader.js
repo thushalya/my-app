@@ -34,22 +34,22 @@ const Toast = Swal.mixin({
 function CryptoHeader({ market, interval }) {
   const obj = { price: 0, volume: 0, high: 0, low: 0 };
   const [values, setValues] = useState(obj);
-  
+
   // watchlist from redux store
-  let {watchlist} = useSelector(state => state.watchlist)
-  const dipsatch = useDispatch()
+  let { watchlist } = useSelector((state) => state.watchlist);
+  const dipsatch = useDispatch();
 
   // state to see if watchlist is alreay added
   const [watchlistAdded, setWatchlistAdded] = useState(false);
 
   const handleClose = () => {
     setAnchorEl(null);
-  }
+  };
 
   const [anchorEl, setAnchorEl] = useState(null);
-  const handleAlert =(e)=>{
-    setAnchorEl(e.currentTarget)
-  }
+  const handleAlert = (e) => {
+    setAnchorEl(e.currentTarget);
+  };
   const open = Boolean(anchorEl);
   const id = open ? "simple-popover" : undefined;
 
@@ -66,7 +66,7 @@ function CryptoHeader({ market, interval }) {
           text: "Already added to watchlist",
         });
       } else {
-        dipsatch(initWatchlist(response.data.data))
+        dipsatch(initWatchlist(response.data.data));
         setWatchlistAdded(true);
         Toast.fire({
           icon: "success",
@@ -103,17 +103,20 @@ function CryptoHeader({ market, interval }) {
         price: parsedData[4],
         volume: parsedData[5],
         high: parsedData[2],
-        low:parsedData[3]
+        low: parsedData[3],
       });
     });
     console.log("market", market);
     console.log("marketState", marketState);
-    if (watchlist?.includes(market+"/USDT") || (watchlist?.includes("BTC/USDT") && market == "")) {
-      console.log("watchlist added")
-      setWatchlistAdded(true)
-    }else{
-      console.log("watchlist not added")
-      setWatchlistAdded(false)
+    if (
+      watchlist?.includes(market + "/USDT") ||
+      (watchlist?.includes("BTC/USDT") && market == "")
+    ) {
+      console.log("watchlist added");
+      setWatchlistAdded(true);
+    } else {
+      console.log("watchlist not added");
+      setWatchlistAdded(false);
     }
 
     return () => {
@@ -122,15 +125,18 @@ function CryptoHeader({ market, interval }) {
   }, [market]);
 
   return (
-    <div className="CryptoHeader crypto-bar stock-header crypto-top">
+    <div
+      className="CryptoHeader crypto-bar stock-header crypto-top"
+      data-cy="test-crypto-header"
+    >
       {user && (
         <div className="d-flex">
           <p className="alerts-name" style={{ marginRight: "20px" }}>
             Alerts
           </p>
           <AccessAlarmsIcon
-          data-cy='test-alert-btn'
-          aria-describedby={id}
+            data-cy="test-alert-btn"
+            aria-describedby={id}
             className="alarm-icon"
             sx={{ color: "white" }}
             // onClick={handleOpen}
@@ -138,6 +144,7 @@ function CryptoHeader({ market, interval }) {
           />
 
           <Popover
+            data-cy="test-alert-popup"
             anchorOrigin={{
               vertical: "bottom",
               horizontal: "left",
@@ -148,7 +155,6 @@ function CryptoHeader({ market, interval }) {
             onClose={handleClose}
             id={id}
             anchorEl={anchorEl}
-
           >
             <Alert
               open={open}
@@ -185,20 +191,26 @@ function CryptoHeader({ market, interval }) {
         </div>
       </div>
 
-      {user && (!(watchlistAdded)
-      ?
-      (
-        <button type="button" onClick={handleClick} className="watchlist-btn">
-          Add to watchlist
-        </button>
-      )
-      :
-      (
-        <button type="button" disabled="disabled" className="watchlist-btn-disabled">
-          Added
-        </button>
-      ))
-      }
+      {user &&
+        (!watchlistAdded ? (
+          <button
+            data-cy="test-watchlist-btn"
+            type="button"
+            onClick={handleClick}
+            className="watchlist-btn"
+          >
+            Add to watchlist
+          </button>
+        ) : (
+          <button
+            data-cy="test-watchlist-btn"
+            type="button"
+            disabled="disabled"
+            className="watchlist-btn-disabled"
+          >
+            Added
+          </button>
+        ))}
     </div>
   );
 }
