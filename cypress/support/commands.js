@@ -44,9 +44,13 @@
 
 // login command
 Cypress.Commands.add('login', (email, password) => {
+    // intercept request
     cy.visit('/login')
-    cy.get('[data-testid="email"]').type('nipun1969@gmail.com')
-    cy.get('[data-testid="password"]').type('zSVCmBY$47lI')
+    cy.intercept('/login').as('login')
+    cy.get('[data-testid="email"]').type('nipun99@gmail.com')
+    cy.get('[data-testid="password"]').type('Iam@1234')
     cy.get('[data-testid="login-elem"]').click()
+    cy.wait(3000)
+    // cy.wait('@login')
 })
 

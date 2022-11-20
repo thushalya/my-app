@@ -129,6 +129,7 @@ function CryptoHeader({ market, interval }) {
             Alerts
           </p>
           <AccessAlarmsIcon
+          data-cy='test-alert-btn'
           aria-describedby={id}
             className="alarm-icon"
             sx={{ color: "white" }}

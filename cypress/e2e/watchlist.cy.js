@@ -1,4 +1,4 @@
-describe('User profile', () => {
+describe('Watchlist', () => {
     beforeEach(() => {
         cy.login()
         cy.visit('/watchlist')
