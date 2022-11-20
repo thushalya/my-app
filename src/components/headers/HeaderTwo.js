@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import jwtDecode from "jwt-decode";
-import Token from "../../services/Token"
+import Token from "../../services/Token";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -17,14 +17,14 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import Logo from "../../assets/Logo.png";
-import NotificationsRoundedIcon from '@mui/icons-material/NotificationsRounded';
+import NotificationsRoundedIcon from "@mui/icons-material/NotificationsRounded";
 // import NotificationModal from '../../views/notification/NotificationModal';
-import Badge from '@mui/material/Badge';
-import NotificationModal from '@mui/material/Modal';
+import Badge from "@mui/material/Badge";
+import NotificationModal from "@mui/material/Modal";
 import Notifications from "../../views/notification/Notifications";
-import DummyData from "../../views/notification/notificationDummyData.json"
-import Snackbar from '@mui/material/Snackbar';
-import CloseIcon from '@mui/icons-material/Close';
+import DummyData from "../../views/notification/notificationDummyData.json";
+import Snackbar from "@mui/material/Snackbar";
+import CloseIcon from "@mui/icons-material/Close";
 import { useEffect } from "react";
 import TokenRequest from "../../views/notification/TokenRequest";
 import { useDispatch, useSelector } from "react-redux";
@@ -34,15 +34,15 @@ import { increment, setCount } from "../../redux/notification";
 import defaultPic from "../../assets/DefaultProfilePic/default_image.png";
 
 const style = {
-  position: 'relative',
-  top: '40%',
-  left: '50%',
+  position: "relative",
+  top: "40%",
+  left: "50%",
   maxWidth: 700,
-  border:0,
+  border: 0,
   // maxWidth: 'calc(100% - 20px)',
-  transform: 'translate(-50%, -50%)',
+  transform: "translate(-50%, -50%)",
   paddingLeft: 0,
-  paddingRight:0
+  paddingRight: 0,
 };
 
 const useStyles = makeStyles((theme) => ({
@@ -60,46 +60,43 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
 var userPages = ["Home", "Stock", "Crypto"];
-var pages = [...userPages, "Login","Sign up"];
+var pages = [...userPages, "Login", "Sign up"];
 const settings = ["Profile", "Watchlist", "Logout"];
 const HeaderTwo = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
-  let {count} = useSelector(state => state.notification)
-  const dispatch = useDispatch()
+  let { count } = useSelector((state) => state.notification);
+  const dispatch = useDispatch();
 
-  try{
-    var user=jwtDecode(Token.getAccessToken())
-    if (user?.role==="1" && userPages.includes("Admin")){
+  try {
+    var user = jwtDecode(Token.getAccessToken());
+    if (user?.role === "1" && userPages.includes("Admin")) {
       // remove admin page from user pages
-      userPages.splice(userPages.indexOf("Admin"),1)
+      userPages.splice(userPages.indexOf("Admin"), 1);
     }
-    if (user?.role==="2" && userPages?.length<= 3){
+    if (user?.role === "2" && userPages?.length <= 3) {
       // console.log("user",user)
-      userPages = ["Admin", ...userPages]
+      userPages = ["Admin", ...userPages];
     }
-    
-   }
-   catch(err){
-     user=null
-   }
-
-  const getCount = async() => {
-      if (!user) return
-      const response = await NotificationServices.getNotificationCount();
-      if (response.status === 200) {
-        dispatch(setCount(response.data))
-      }
-      console.log("get count response", response)
+  } catch (err) {
+    user = null;
   }
+
+  const getCount = async () => {
+    if (!user) return;
+    const response = await NotificationServices.getNotificationCount();
+    if (response.status === 200) {
+      dispatch(setCount(response.data));
+    }
+    console.log("get count response", response);
+  };
   useEffect(() => {
-    getCount()
-  }, [])
+    getCount();
+  }, []);
   // var [count, setCount] = useState(0);
 
-  const {link} = useSelector((state)=>state.profile)
+  const { link } = useSelector((state) => state.profile);
   // console.log("link", link)
   const classes = useStyles();
   // console.log('allloooo')
@@ -123,7 +120,6 @@ const HeaderTwo = () => {
   // console.log('ssssssssss',imagepath)
   const handleCloseNavMenu = (e) => {
     setAnchorElNav(null);
-    
   };
 
   const handleCloseUserMenu = () => {
@@ -131,22 +127,21 @@ const HeaderTwo = () => {
     setAnchorElUser(null);
   };
 
-   const directPage=(e)=>{
+  const directPage = (e) => {
     setAnchorElNav(null);
     // console.log("page is",e.target.name);
-   }
+  };
 
-   function colorBackground(e) {
-     e.target.style.background = "red";
-   }
+  function colorBackground(e) {
+    e.target.style.background = "red";
+  }
 
-   function clearBackground(e){
+  function clearBackground(e) {
     e.target.style.background = "none";
-   }
+  }
 
-   
-    // const user = false;
-   
+  // const user = false;
+
   // for modal
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -210,6 +205,7 @@ const HeaderTwo = () => {
                     className={classes.font}
                     sx={{ fontSize: "15px" }}
                     key={page}
+                    data-cy={`test-${page}`}
                   >
                     <Link
                       state={{
@@ -236,7 +232,7 @@ const HeaderTwo = () => {
                 ))}
               {user &&
                 userPages.map((page) => (
-                  <MenuItem key={page}>
+                  <MenuItem key={page} data-cy={`test-${page}`}>
                     <Link
                       state={{
                         market:
@@ -263,6 +259,7 @@ const HeaderTwo = () => {
               {!user &&
                 pages.map((page) => (
                   <Link
+                    data-cy={`test-${page}`}
                     state={{
                       market:
                         page == "Crypto"
@@ -296,6 +293,7 @@ const HeaderTwo = () => {
               {user &&
                 userPages.map((page) => (
                   <Link
+                    data-cy={`test-${page}`}
                     state={{
                       market:
                         page == "Crypto"
@@ -327,7 +325,11 @@ const HeaderTwo = () => {
             {user && (
               <div style={{ marginRight: "18px" }}>
                 <Badge badgeContent={count} color="primary">
-                  <NotificationsRoundedIcon data-cy='test-notification-btn' sx={{}} onClick={handleOpen} />
+                  <NotificationsRoundedIcon
+                    data-cy="test-notification-btn"
+                    sx={{}}
+                    onClick={handleOpen}
+                  />
                 </Badge>
                 <NotificationModal
                   sx={{ mt: -8, borderWidth: 0 }}
@@ -350,9 +352,13 @@ const HeaderTwo = () => {
             {user && (
               <Box sx={{ flexGrow: 0, marginRight: "5px" }}>
                 <Tooltip title="Open settings">
-                  <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                  <IconButton
+                    data-cy="avatar-test"
+                    onClick={handleOpenUserMenu}
+                    sx={{ p: 0 }}
+                  >
                     {/* {console.log('kkkkk')} */}
-                    <Avatar key={link} src={(link != '') ? link : defaultPic} />
+                    <Avatar key={link} src={link != "" ? link : defaultPic} />
                   </IconButton>
                 </Tooltip>
                 <Menu

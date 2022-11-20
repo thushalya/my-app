@@ -4,8 +4,8 @@ import Fade from "react-reveal/Fade";
 
 function MobileDesc() {
   return (
-    <div className="mobileDesc">
-      <Fade left >
+    <div className="mobileDesc" data-cy="test-mobilesec">
+      <Fade left>
         <div className="mobile-img-sec">
           <img src={Mobile} alt="" />
         </div>
@@ -17,7 +17,7 @@ function MobileDesc() {
             place
           </header>
         </Fade>
-        <Fade right delay={330} >
+        <Fade right delay={330}>
           <p>
             <span>Add to your</span>{" "}
             <span className="blue-keyword">home screen </span>

@@ -6,7 +6,7 @@ import Zoom from "react-reveal/Zoom";
 
 function HomeSubOne() {
   return (
-    <div className="HomeSubOne d-flex flex-row justify-content-evenly white">
+    <div className="HomeSubOne d-flex flex-row justify-content-evenly white" data-cy="test-homeview-subone">
       <Slide left duration={2500}>
         
       <div className="subOne-details">

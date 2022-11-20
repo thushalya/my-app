@@ -15,6 +15,7 @@ function CryptoSec() {
          navigate("/crypto");
         }}
         className="CryptoSec d-flex flex-column mx-auto"
+        data-cy="test-homeview-cryptosec"
       >
         <div className="crypto-imgs d-flex flex-row ">
           <img id="img1" src={Bitcoin} alt="" />

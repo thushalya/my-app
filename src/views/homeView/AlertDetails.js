@@ -4,7 +4,10 @@ import Fade from "react-reveal/Fade";
 
 function AlertDetails() {
   return (
-    <div className="AlertDetails d-flex flex-row justify-content-center">
+    <div
+      className="AlertDetails d-flex flex-row justify-content-center"
+      data-cy="test-alertdetails"
+    >
       <Fade left>
         <div className="alert-details">
           <header>
