@@ -1,12 +1,11 @@
 import "./AllUsers.css";
 // import HeaderTwo from "../../components/headers/HeaderTwo";
-import Searchbar from "../../components/Searchbar/Searchbar.tsx";
 import { Card, Form, Button, Table, FormControl, InputGroup, DropdownButton, Dropdown, Pagination, } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import AdminServices from "../../services/API/AdminServices";
 import UserServices from "../../services/API/UserServices";
-import Paginate from "../../components/pagination/paginate.tsx";
+import Paginate from "../../components/pagination/paginate.js";
 // import { toast } from 'react-toastify';
 // import Loader from "../../components/loader/Loader";
 // import Messages from "../../helpers/Messages";

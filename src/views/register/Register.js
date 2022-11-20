@@ -14,6 +14,7 @@ import InputAdornment from "@mui/material/InputAdornment";
 import { FormControl } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import PageLoader from "../../components/pageLoader/PageLoader";
 
 function Register() {
   const Navigate = useNavigate();
@@ -103,12 +104,12 @@ function Register() {
 
     setTimeout(() => {
       setLoader(false);
-    }, 10);
+    }, 1000);
     console.log(state)
   }
 
    if (loader) {
-     return <Loader position="absolute" top="45%" left="47%" />;
+     return <PageLoader position="absolute" top="45%" left="47%" />;
    }else{
     return (
       <div className="Register ">
