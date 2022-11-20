@@ -16,6 +16,7 @@ import { initWatchlist} from '../../redux/watchlist';
 import WatchlistLoader from '../../components/loaders/watchlistLoader/WatchlistLoader';
 import NoItemsLoader from '../../components/loaders/noItemsLoader/NoItemsLoader';
 import Slide from 'react-reveal/Slide';
+import config from "../../config.json";
 
 export default function Watchlist() {
   
@@ -109,7 +110,7 @@ export default function Watchlist() {
     if (data !== null) {
       for (let i in data) {
           //  event source added to listen to market changes of the relevent crpto currency
-          watcheventSource  = new EventSource( "http://127.0.0.1:5000/present/" + data[i].split('/')[0] + '/1m')
+          watcheventSource  = new EventSource( `${config.DOMAIN_NAME}/present/` + data[i].split('/')[0] + '/1m')
           // event listerner
           watcheventSource.addEventListener(
             'message',
