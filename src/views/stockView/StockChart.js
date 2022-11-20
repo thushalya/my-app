@@ -3,7 +3,11 @@ import { createChart, CrosshairMode } from "lightweight-charts";
 import Loader from "../../components/loaders/chartLoader/Loader";
 import { useLocation } from "react-router";
 import { compare } from "../../utils/functions";
-import { removeDuplicates ,resetExternalIndicatorData,resetInternalIndicators} from "../../utils/functions";
+import {
+  removeDuplicates,
+  resetExternalIndicatorData,
+  resetInternalIndicators,
+} from "../../utils/functions";
 import { getLineChart } from "../../components/technicalIndicators/lineSeries";
 import { getBbandsChart } from "../../components/technicalIndicators/bbandsIndicator";
 import config from "../../config.json";
@@ -59,7 +63,7 @@ function StockChart({ market, interval, internalIndicators }) {
 
   useEffect(() => {
     console.log("Chart data1", stockChartData);
-    setLoading(true)
+    setLoading(true);
     chart.current = createChart(ref.current, {
       width: 0,
       height: 0,
@@ -175,26 +179,26 @@ function StockChart({ market, interval, internalIndicators }) {
           });
           lineSeries.current.setData(tempLineData);
         }
-         if (chartType == BAR) {
-           barSeries.current = chart.current.addBarSeries({
-             thinBars: false,
-             downColor: "#A70808",
-             upColor: "#129F01",
-           });
-           barSeries.current.applyOptions({
-             scaleMargins: {
-               top: 0.05,
-               bottom: 0.17,
-             },
-           });
-           barSeries.current.setData(tempChartData);
-         }
+        if (chartType == BAR) {
+          barSeries.current = chart.current.addBarSeries({
+            thinBars: false,
+            downColor: "#A70808",
+            upColor: "#129F01",
+          });
+          barSeries.current.applyOptions({
+            scaleMargins: {
+              top: 0.05,
+              bottom: 0.17,
+            },
+          });
+          barSeries.current.setData(tempChartData);
+        }
 
         volumeSeries.current.setData(tempVolumeData);
 
-        setTimeout(()=>{
+        setTimeout(() => {
           setLoading(false);
-        },1500)
+        }, 1500);
 
         dispatch(
           updateStockChartData({
@@ -324,16 +328,16 @@ function StockChart({ market, interval, internalIndicators }) {
     // chart.current.timeScale().scrollToPosition(stockChartDataLength);
     return () => {
       chart.current.remove();
-       resetExternalIndicatorData(dispatch);
-       resetInternalIndicators(dispatch);
-       dispatch(
-         updateStockChartData({
-           stockChartData: [],
-           stockVolumeData: [],
-         })
-       );
-       dispatch(updateStockDataLimit(380));
-       dispatch(updateStockTimeStamp(0));
+      resetExternalIndicatorData(dispatch);
+      resetInternalIndicators(dispatch);
+      dispatch(
+        updateStockChartData({
+          stockChartData: [],
+          stockVolumeData: [],
+        })
+      );
+      dispatch(updateStockDataLimit(380));
+      dispatch(updateStockTimeStamp(0));
     };
   }, [market, interval, internalIndicators, chartType]);
 
@@ -378,7 +382,8 @@ function StockChart({ market, interval, internalIndicators }) {
             ...stockVolumeData,
           ]).sort(compare);
 
-          if(chartType==CANDLESTICK) candleSeries.current.setData(tempChartData);
+          if (chartType == CANDLESTICK)
+            candleSeries.current.setData(tempChartData);
           if (chartType == BAR) barSeries.current.setData(tempChartData);
 
           if (chartType == LINE) {
@@ -526,6 +531,7 @@ function StockChart({ market, interval, internalIndicators }) {
     <>
       {loading ? <Loader margin={150} /> : null}
       <div
+        data-cy="test-stock-chart"
         className="StockChart"
         style={{ display: loading ? "none" : "block", marginBottom: "15px" }}
         ref={ref}

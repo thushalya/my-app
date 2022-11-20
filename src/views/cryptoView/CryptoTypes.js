@@ -1,43 +1,41 @@
-import React from 'react' 
-import { useEffect } from 'react'
-import { useState } from 'react'
-import { Table } from 'react-bootstrap'
-import ChartServices from "../../services/ChartServices"
-import BitcoinIcon from "../../assets/bitcoin.png"
-import EthIcon from "../../assets/etherium.png"
-import SolanIcon from "../../assets/solana.png"
-import BinanceIcon from "../../assets/binance.png"
-import AvaxIcon from "../../assets/avax.png"
-import TrxIcon from "../../assets/trx.png"
+import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
+import { Table } from "react-bootstrap";
+import ChartServices from "../../services/ChartServices";
+import BitcoinIcon from "../../assets/bitcoin.png";
+import EthIcon from "../../assets/etherium.png";
+import SolanIcon from "../../assets/solana.png";
+import BinanceIcon from "../../assets/binance.png";
+import AvaxIcon from "../../assets/avax.png";
+import TrxIcon from "../../assets/trx.png";
 
-function CryptoTypes({changeCryptoType}) {
+function CryptoTypes({ changeCryptoType }) {
+  const [cryptoTypes, setCryptoTypes] = useState([]);
 
-  const [cryptoTypes,setCryptoTypes] = useState([])
-  
-  useEffect(()=>{
+  useEffect(() => {
     getCryptoList();
-  },[])
+  }, []);
 
-  const getCryptoList=async()=>{
+  const getCryptoList = async () => {
     try {
-      const cryptos= await ChartServices.getcryptolist();
-     
+      const cryptos = await ChartServices.getcryptolist();
+
       setCryptoTypes(cryptos.data.data);
-    } catch (error) {
-      
-    }
-  }
-    const handleClick = (type) => {
-      changeCryptoType(type);
-    }
+    } catch (error) {}
+  };
+  const handleClick = (type) => {
+    changeCryptoType(type);
+  };
 
   return (
-    <div className="CryptoTypes">
+    <div className="CryptoTypes" data-cy="test-crypto-types">
       <Table striped hover variant="dark">
         <thead>
           <tr>
             <th>
-              <span>Types</span><br />
+              <span>Types</span>
+              <br />
               <span>/USDT</span>
             </th>
           </tr>
@@ -87,4 +85,4 @@ function CryptoTypes({changeCryptoType}) {
   );
 }
 
-export default CryptoTypes
+export default CryptoTypes;

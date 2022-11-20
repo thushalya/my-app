@@ -1,11 +1,15 @@
-import React from 'react'
-import IndicatorMenuOne from '../../components/indicators/IndicatorMenuOne';
-import IndicatorMenuTwo from '../../components/indicators/IndicatorMenuTwo';
+import React from "react";
+import IndicatorMenuOne from "../../components/indicators/IndicatorMenuOne";
+import IndicatorMenuTwo from "../../components/indicators/IndicatorMenuTwo";
 import ChartTypes from "../../components/chartType/ChartType";
 
-function CryptoIntervals({ changeInterval, addInternalIndicators,addExternalIndicators }) {
+function CryptoIntervals({
+  changeInterval,
+  addInternalIndicators,
+  addExternalIndicators,
+}) {
   const intervals = ["1m", "5m", "30m", "1h", "1d"];
- 
+
   const handleClick = (interval) => {
     changeInterval(interval);
   };
@@ -14,13 +18,15 @@ function CryptoIntervals({ changeInterval, addInternalIndicators,addExternalIndi
     addInternalIndicators(indicators);
   };
 
-  const displayExternalIndicators = (indicators)=>{
-    addExternalIndicators(indicators)
-  }
+  const displayExternalIndicators = (indicators) => {
+    addExternalIndicators(indicators);
+  };
 
-  
   return (
-    <div className="CryptoIntervals crypto-bar crypto-only-intervals">
+    <div
+      className="CryptoIntervals crypto-bar crypto-only-intervals"
+      data-cy="test-crypto-interval"
+    >
       <div className="d-flex flex-row justify content-center align-items-center">
         <header className="crypto-stock-charts ">Charts</header>
         <ChartTypes />
@@ -28,9 +34,13 @@ function CryptoIntervals({ changeInterval, addInternalIndicators,addExternalIndi
       <div className="d-flex flex-row justify-content-evenly align-items-center">
         <header className="indicator-title">Indicators</header>
         <IndicatorMenuOne
+          // //cypress test id for internal indicators
+          // data-cy="test-internal-indicators"
           displayInternalIndicators={displayInternalIndicators}
         />
         <IndicatorMenuTwo
+          // //cypress test id for external indicators
+          // data-cy="test-external-indicators"
           displayExternalIndicators={displayExternalIndicators}
         />
       </div>
@@ -57,4 +67,4 @@ function CryptoIntervals({ changeInterval, addInternalIndicators,addExternalIndi
   );
 }
 
-export default CryptoIntervals
+export default CryptoIntervals;

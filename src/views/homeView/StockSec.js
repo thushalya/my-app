@@ -11,6 +11,7 @@ function StockSec() {
         navigate("/stock");
       }}
       className="CryptoSec d-flex flex-column mx-auto"
+      data-cy="test-homeview-stocksec"
     >
       <div className="stock-imgs d-flex flex-row ">
         <img id="img1" src={Stock1} alt="" />

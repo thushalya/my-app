@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Table } from "react-bootstrap";
 import ChartServices from "../../services/ChartServices";
-import AAPL from "../../assets/AAPL.png"
+import AAPL from "../../assets/AAPL.png";
 import AMD from "../../assets/AMD.png";
 import AMZN from "../../assets/AMZN.png";
 import BABA from "../../assets/BABA.png";
@@ -14,7 +14,6 @@ import NFLX from "../../assets/NFLX.png";
 import NKE from "../../assets/NKE.png";
 import NVDA from "../../assets/NVDA.png";
 import TSLA from "../../assets/TSLA.png";
-
 
 function StockTypes({ changeStockType }) {
   const [stockTypes, setStockTypes] = useState([]);
@@ -35,7 +34,7 @@ function StockTypes({ changeStockType }) {
   };
 
   return (
-    <div className="CryptoTypes">
+    <div className="CryptoTypes" data-cy="test-stock-types">
       <Table striped hover variant="dark">
         <thead>
           <tr>
@@ -79,8 +78,9 @@ function StockTypes({ changeStockType }) {
                             ? NKE
                             : type == "NVDA"
                             ? NVDA
-                            :type == "TSLA"
-                            ?TSLA :""
+                            : type == "TSLA"
+                            ? TSLA
+                            : ""
                         }
                       />
                       <p>{type}</p>
@@ -96,4 +96,4 @@ function StockTypes({ changeStockType }) {
   );
 }
 
-export default StockTypes
+export default StockTypes;
