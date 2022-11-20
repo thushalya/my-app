@@ -189,7 +189,8 @@ export default function Watchlist() {
       filterable: false,
       renderCell : (cellValues) => {
         return (
-          <Button variant="outlined" 
+          <Button variant="outlined"
+          data-cy='test-watchlist-remove' 
           startIcon={<DeleteIcon style={{position:'relative', left:'40%'}}/>}
           color="primary"
           sx= {{pr:3, pl:3, w:'auto'}}
@@ -229,7 +230,7 @@ export default function Watchlist() {
 
       { 
       loading2 ?
-       <WatchlistLoader/> :
+       <WatchlistLoader data-cy='watchlist-loader'/> :
       rows?.length <= 0 
       ? 
       <div >
@@ -242,7 +243,7 @@ export default function Watchlist() {
         <Loader/>
       : 
       <div className='d-flex flex-column justify-content-center'>
-        <h1 className='watchlist-header'>Watchlist</h1>
+        <h1 data-cy='test-watchlist-h' className='watchlist-header'>Watchlist</h1>
         <Slide right>
         <Container maxWidth="lg" className='watchlist-container'>
         <div className='watchlist-datagrid'>

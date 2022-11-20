@@ -14,6 +14,7 @@ import InputAdornment from "@mui/material/InputAdornment";
 import { FormControl } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import PageLoader from "../../components/pageLoader/PageLoader";
 
 function Register() {
   const Navigate = useNavigate();
@@ -103,12 +104,12 @@ function Register() {
 
     setTimeout(() => {
       setLoader(false);
-    }, 10);
+    }, 1000);
     console.log(state)
   }
 
    if (loader) {
-     return <Loader position="absolute" top="45%" left="47%" />;
+     return <PageLoader position="absolute" top="45%" left="47%" />;
    }else{
     return (
       <div className="Register ">
@@ -210,7 +211,7 @@ function Register() {
               <button data-testid='test-register-elem' type="submit" className="login-btn signup-btn" id="login-btn" onClick={handleSubmit}>Sign up</button>
               <div className=" col-7 align-self-center justify-content-between register-login-footer register-footer">
                 <p style={{ fontSize: "15px" }}>Already have an account?</p>
-                <span style={{ fontSize: "15px" }}><Link style={{textDecoration:"none",color:"#01ADC2"}} to="/login">Login</Link></span>
+                <span  style={{ fontSize: "15px" }}><Link data-testid='test-login' style={{textDecoration:"none",color:"#01ADC2"}} to="/login">Login</Link></span>
               </div>
           </Form>
         </div>

@@ -33,19 +33,24 @@
 
 
 
-// can't access property "addEventListener", navigator.serviceWorker is undefined
-Cypress.Commands.add('mockNavigatorServiceWorker', { prevSubject: 'element'}, (subject, options) => {
-    // mock window addEventListener to prevent service worker registration
-    cy.window().then((win) => {
-        cy.stub(win.navigator, 'serviceWorker').as('serviceWorker')
-    })
-})
+// // can't access property "addEventListener", navigator.serviceWorker is undefined
+// Cypress.Commands.add('mockNavigatorServiceWorker', { prevSubject: 'element'}, (subject, options) => {
+//     // mock window addEventListener to prevent service worker registration
+//     cy.window().then((win) => {
+//         cy.stub(win.navigator, 'serviceWorker').as('serviceWorker')
+//     })
+// })
 
 
 // login command
 Cypress.Commands.add('login', (email, password) => {
+    // intercept request
     cy.visit('/login')
+    cy.intercept('/login').as('login')
     cy.get('[data-testid="email"]').type('nipun99@gmail.com')
     cy.get('[data-testid="password"]').type('Iam@1234')
     cy.get('[data-testid="login-elem"]').click()
+    cy.wait(3000)
+    // cy.wait('@login')
 })
+

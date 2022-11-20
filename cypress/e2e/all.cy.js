@@ -1,0 +1,7 @@
+import './login.cy'
+import './profile.cy'
+import './logout.cy'
+import './register.cy'
+import './watchlist.cy'
+import './notifications.cy'
+import './alerts.cy'
